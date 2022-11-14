@@ -6,19 +6,19 @@ Los tiempos en que solo los científicos y los desarrolladores de \textit{softwa
 
 \subsection{Orígenes}
 
-Las interfaces de usuario existen desde el surgimiento de las computadoras, incluso mucho antes de que se estableciera el campo de la interacción humano-computadora. A lo largo de los años, han aparecido algunos artículos sobre la historia de la interacción humano-computadora y las interfaces de usuario, centrándose principalmente en la era de la interfaz gráfica y los primeros visionarios como Bush, Engelbart y Kay [\cite{5}][\cite{6}][\cite{7}][\cite{8}].
+Las interfaces de usuario existen desde el surgimiento de las computadoras, incluso mucho antes de que se estableciera el campo de la interacción humano-computadora. A lo largo de los años, han aparecido algunos artículos sobre la historia de la interacción humano-computadora y las interfaces de usuario, centrándose principalmente en la era de la interfaz gráfica y los primeros visionarios como Bush, Engelbart y Kay [\cite{5,6,7,8}].
 
-En las primeras computadoras, la interfaz de usuario consistía en la entrada de una tarjeta perforada o un medio equivalente y, aparte de esta consola operativa, los humanos no tenían interacción con estas primeras computadoras en tiempo real.
+En las primeras computadoras, la interfaz de usuario consistía en la entrada de una tarjeta perforada o un medio equivalente y, aparte de esta consola operativa, los humanos no tenían interacción con estas primeras computadoras en tiempo real[\cite{6,8}].
 
-Las interfaces de usuario complicadas se consideraron un gasto innecesario porque el \textit{software} fue diseñado para utilizar el procesador al máximo. Esto comenzó a cambiar cuando se introdujeron las interfaces de línea de comandos, las cuales redujeron en gran medida la latencia a segundos en lugar de días u horas porque la interfaz de usuario era una serie de transacciones de solicitud y respuesta que permitía al usuario cambiar de opinión sobre las transacciones en respuesta a datos en tiempo real de transacciones anteriores.
+Las interfaces de usuario complicadas se consideraron un gasto innecesario porque el \textit{software} fue diseñado para utilizar el procesador al máximo. Esto comenzó a cambiar cuando se introdujeron las interfaces de línea de comandos[\cite{7}], las cuales redujeron en gran medida la latencia a segundos en lugar de días u horas porque la interfaz de usuario era una serie de transacciones de solicitud y respuesta que permitía al usuario cambiar de opinión sobre las transacciones en respuesta a datos en tiempo real de transacciones anteriores.
 
-La siguiente progresión clave de la interfaz de usuario fue la introducción de terminales de visualización de video. Hacer que sus entradas de comando aparecieran en una pantalla y poder modificarlas de manera inversa fue mucho más rápido que tenerlas impresas. También tenía sentido desde el punto de vista económico al eliminar la necesidad de tinta y materiales de impresión.
+La siguiente progresión clave de la interfaz de usuario fue la introducción de terminales de visualización de video[\cite{7}]. Hacer que sus entradas de comando aparecieran en una pantalla y poder modificarlas de manera inversa fue mucho más rápido que tenerlas impresas. También tenía sentido desde el punto de vista económico al eliminar la necesidad de tinta y materiales de impresión.
 
 %Finalmente, llegó la GUI, originada principalmente en el Centro de Investigación de Palo Alto (PARC) de Xerox, adoptada y mejorada por Apple y estandarizada efectivamente por Microsoft en sus sistemas operativos Windows.
 
-Luego, en los años 70, los primeros conceptos de interfaz gráfica de usuario se desarrollaron en la empresa Xerox. Su propósito principal era permitir manejar ordenadores con el ratón y el teclado en lugar de solo con instrucciones en formato de texto. Xerox Alto fue el primer PC con una interfaz gráfica.
+Luego, en los años 70, los primeros conceptos de interfaz gráfica de usuario se desarrollaron en la empresa Xerox [\cite{5,8}]. Su propósito principal era permitir manejar ordenadores con el ratón y el teclado en lugar de solo con instrucciones en formato de texto. Xerox Alto fue el primer PC con una interfaz gráfica[\cite{7}].
 
-Posteriormente, la llegada de los primeros productos Apple y Microsoft trajo consigo un importante salto adelante en esta materia, tanto así que hoy en día es impensable la interacción con un sistema informático sin este tipo de herramientas virtuales (o naturales) a nuestra disposición.
+Posteriormente, la llegada de los primeros productos Apple y Microsoft trajo consigo un importante salto adelante en esta materia, tanto así que hoy en día es impensable la interacción con un sistema informático sin este tipo de herramientas virtuales (o naturales) a nuestra disposición[\cite{7,5}].
 
 \subsection{Concepto y características}
 
@@ -317,42 +317,71 @@ Con todo lo expuesto anteriormente, se puede comprobar que Vue es una tecnologí
 
 \subsection{Pinia}
 
-Hoy en día es necesario hacer uso de alguna librería que nos permita gestionar el estado, almacén de datos compartido por los componentes de la aplicación. La versión 3 de VueJS nos facilita Pinia, librería que gestiona el estado haciendo uso de un store [37]. Un store es un almacén centralizado para mantener los datos que están disponibles, se ha generado uno por cada módulo favoreciendo a la división del código.
+%Hoy en día es necesario hacer uso de alguna librería que nos permita gestionar el estado, almacén de datos compartido por los componentes de la aplicación. La versión 3 de VueJS nos facilita Pinia, librería que gestiona el estado haciendo uso de un store [37]. Un store es un almacén centralizado para mantener los datos que están disponibles, se ha generado uno por cada módulo favoreciendo a la división del código.
 
-Pinia es un nuevo sistema de gestión de estado para Vue.js. Esta es una gran herramienta para cuando se desea compartir datos entre componentes en la aplicación. Una de las razones para usar una herramienta como Pinia (o Vuex para el caso) es que lanzar eventos y escuchar estos eventos en la aplicación puede volverse bastante desordenado y desestructurado. Los sistemas de gestión de estados como Pinia (Vuex, Redux, etc.) pueden ayudar a solucionar esto.
+Pinia es un nuevo sistema de gestión de estado para Vue [\cite{57}]. Esta es una gran herramienta para cuando se desea compartir datos entre componentes en la aplicación. Una de las razones para usar una herramienta como Pinia (o Vuex para el caso) es que lanzar eventos y escuchar estos eventos en la aplicación puede volverse bastante desordenado y desestructurado. Los sistemas de gestión de estados como Pinia (Vuex, Redux, etc.) pueden ayudar a solucionar esto.
 
-Pinia tiene una API más simple que Vuex: La API de Pinia es más simple e intuitiva que Vuex.
+Una gran ventaja de Pinia es su diseño modular, a diferencia de Vuex que proporciona solo una tienda la cual puede tener múltiples módulos dentro de ella, en Pinia se pueden crear varias tiendas que pueden ser importadas directamente a los componentes donde son necesarias[\cite{57}]. Esto permite una mejor división del código y simplifica el desarrollo lo cual es beneficioso para el sistema del presente trabajo.
 
-Pinia tiene un diseño modular: Vuex le proporciona una sola tienda que puede tener múltiples módulos dentro de ella. Mientras que en Pinia, puede crear varias tiendas que se pueden importar a componentes directamente donde se necesitan. Esto permite a los empaquetadores dividir mejor el código y proporciona mejores inferencias de TypeScript.
-Tener varias tiendas en lugar de una sola también simplifica el desarrollo, ya que solo se deben usar los métodos de Pinia Store (o módulo) cada vez, en lugar de toda la tienda en Vuex.
+Pinia tiene soporte integrado para Typescript [\cite{57}], lo cual permite integrar de forma nativa definiciones de tipo dentro de las acciones de Pinia y obtener documentación automática sobre los argumentos que toman las acciones. Además, la seguridad de tipos agrega muchos beneficios a nuestra aplicación, como la prevención de posibles errores de tiempo de ejecución.
 
-Pinia tiene soporte integrado para Typescript: Lograr que Vuex admitiera tipos siempre había sido una experiencia dolorosa para los desarrolladores de Vue.js. Pinia es una biblioteca de administración de estado completamente tipada que elimina este problema. La seguridad de tipos agrega muchos beneficios a su aplicación, como la prevención de posibles errores de tiempo de ejecución, pero incluso si no está desarrollando su aplicación en TypeScript, obtendrá otros grandes beneficios, gracias a la experiencia de desarrollador rediseñada de Pinia, como la finalización automática. y autosugestión.
-La compatibilidad con TypeScript de Pinia significa que puede hacer cosas como configurar una interfaz para su estado, integrar de forma nativa definiciones de tipo dentro de las acciones de Pinia y obtener documentación automática sobre los argumentos que toman las acciones, completa con autosugerencia y finalización.
+Por las razones anteriormente expresadas fue seleccionado Pinia como el sistema de gestión de estados de la aplicación Vue que sera implementada para dar solución al problema de este trabajo.
 
-Por estas razones se seleccionó Pinia como el sistema de gestión de estados de la aplicación Vue.js que se implementará para dar solución al problema de este trabajo.
+%Pinia tiene una API más simple que Vuex: La API de Pinia es más simple e intuitiva que Vuex.
 
-Pinia se utiliza para guardar el estado de los componentes. Cada vez que se deben enviar datos a la base de datos, se lleva a cabo un determinado procedimiento. Primero, los datos se almacenan temporalmente dentro de la tienda responsable de Pinia y desde dentro de la tienda se activa una llamada API a través de las denominadas acciones. Cada vez que se utiliza Pinia se pueden crear muchas tiendas (Pinia 2022).
+%Pinia tiene un diseño modular: Vuex le proporciona una sola tienda que puede tener múltiples módulos dentro de ella. Mientras que en Pinia, puede crear varias tiendas que se pueden importar a componentes directamente donde se necesitan. Esto permite a los empaquetadores dividir mejor el código y proporciona mejores inferencias de TypeScript.
+%Tener varias tiendas en lugar de una sola también simplifica el desarrollo, ya que solo se deben usar los métodos de Pinia Store (o módulo) cada vez, en lugar de toda la tienda en Vuex.
+
+%Pinia tiene soporte integrado para Typescript: Lograr que Vuex admitiera tipos siempre había sido una experiencia dolorosa para los desarrolladores de Vue.js. Pinia es una biblioteca de administración de estado completamente tipada que elimina este problema. La seguridad de tipos agrega muchos beneficios a su aplicación, como la prevención de posibles errores de tiempo de ejecución, pero incluso si no está desarrollando su aplicación en TypeScript, obtendrá otros grandes beneficios, gracias a la experiencia de desarrollador rediseñada de Pinia, como la finalización automática. y autosugestión.
+%La compatibilidad con TypeScript de Pinia significa que puede hacer cosas como configurar una interfaz para su estado, integrar de forma nativa definiciones de tipo dentro de las acciones de Pinia y obtener documentación automática sobre los argumentos que toman las acciones, completa con autosugerencia y finalización.
+
+%Por estas razones se seleccionó Pinia como el sistema de gestión de estados de la aplicación Vue.js que se implementará para dar solución al problema de este trabajo.
+
+%Pinia se utiliza para guardar el estado de los componentes. Cada vez que se deben enviar datos a la base de datos, se lleva a cabo un determinado procedimiento. Primero, los datos se almacenan temporalmente dentro de la tienda responsable de Pinia y desde dentro de la tienda se activa una llamada API a través de las denominadas acciones. Cada vez que se utiliza Pinia se pueden crear muchas tiendas (Pinia 2022).
 
 \subsection{Typescript}
 
-En septiembre del 2020 se liberó lo que conocemos como Vue 3. Todas las novedades de esta nueva versión han relanzado el framework como uno de los más provechosos, obteniendo los desarrolladores una mayor agilidad en su uso. En esta versión todo el framework ha sido implementado bajo TypeScript, el cual ahora se incorpora por defecto en Vue. Esto facilita la reutilización de código y una detección temprana de errores.
+TypeScript (TS) es un lenguaje de programación desarrollado por Microsoft. TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS), porque dota al lenguaje de varias características adicionales como el sistema de tipos, el cual nos permite escribir código con menos errores, más sencillo, coherente y fácil de probar [\cite{58, 59}]. 
 
-TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS). Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido. Algunas ventajas que presenta este lenguaje son las siguientes:
+Los lenguajes de programación tipificados estáticamente están mejor documentados porque el tipado estático en sí mismo actúa como una documentación [\cite{58,60,61}].Esto es una ventaja porque brinda mayor facilidad para otras personas trabajar con nuestro sistema, el cual requiere de posteriores cambios o arreglos a medida que su uso aumente. 
 
-• Permite usar tipos: esto trae varias ventajas, permite detectar algunos errores en tiempo de diseño sin llegar a la ejecución como pasa con JavaScript, es más fácil entender el código de un vistazo, si se trabaja con algun editor que admita TypeScript se puede detectar errores mientras escribe el código.
-• Es un lenguaje Orientado a Objetos y se pueden usar las características de este: herencia, interfaces, errores tipográficos genéricos, lo que permite un código más ordenado y limpio.
-• Al ser un superconjunto de JavaScript, amplía todas sus funcionalidades, por lo que es compatible con las bibliotecas de JavaScript existentes.
+La compatibilidad con TypeScript de Pinia y Vue fueron un factor decisivo para la elección de este lenguaje, además de los ya mencionados beneficios que trae consigo su empleo.
+%Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido [\cite{58, 59}].
 
-TypeScript (TS) es un lenguaje increíblemente bien elaborado que respeta y amplía sus raíces de JavaScript. El sistema de tipos parece más expresivo y menos rígido que el de los lenguajes más estáticos y tipificados léxicamente como C$\#$ o Java. Es posible codificar tipos complejos, incluso recursivos, en TypeScript, y se ha demostrado que la sintaxis de definición de tipo es en sí misma Turing-completa. Por estas razones este lenguaje fue seleccionado para la solución del problema de este trabajo.
 
+%TypeScript agrega escritura estática a JavaScript. [\cite{58, 59}]
+
+%Se informó que los lenguajes de programación tipificados estáticamente están mejor documentados porque el tipado estático en sí mismo actúa como una documentación.[\cite{58}]
+
+%En septiembre del 2020 se liberó lo que conocemos como Vue 3. Todas las novedades de esta nueva versión han relanzado el framework como uno de los más provechosos, obteniendo los desarrolladores una mayor agilidad en su uso. En esta versión todo el framework ha sido implementado bajo TypeScript, el cual ahora se incorpora por defecto en Vue. Esto facilita la reutilización de código y una detección temprana de errores.
+
+%TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS). Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido. Algunas ventajas que presenta este lenguaje son las siguientes:
+
+%• Permite usar tipos: esto trae varias ventajas, permite detectar algunos errores en tiempo de diseño sin llegar a la ejecución como pasa con JavaScript, es más fácil entender el código de un vistazo, si se trabaja con algun editor que admita TypeScript se puede detectar errores mientras escribe el código.
+%• Es un lenguaje Orientado a Objetos y se pueden usar las características de este: herencia, interfaces, errores tipográficos genéricos, lo que permite un código más ordenado y limpio.
+%• Al ser un superconjunto de JavaScript, amplía todas sus funcionalidades, por lo que es compatible con las bibliotecas de JavaScript existentes.
+
+%TypeScript (TS) es un lenguaje increíblemente bien elaborado que respeta y amplía sus raíces de JavaScript. El sistema de tipos parece más expresivo y menos rígido que el de los lenguajes más estáticos y tipificados léxicamente como C$\#$ o Java. Es posible codificar tipos complejos, incluso recursivos, en TypeScript, y se ha demostrado que la sintaxis de definición de tipo es en sí misma Turing-completa. Por estas razones este lenguaje fue seleccionado para la solución del problema de este trabajo.
+
+%Los tipos TS, como cualquier lenguaje escrito, dejan claras sus intenciones, lo que hace que sea mucho más fácil para otras personas trabajar con su código.
 
 \section{REST API}
 
-La arquitectura orientada a servicios (SOA) se usa generalmente al desarrollar soluciones de software empresarial. Esto brinda flexibilidad para desarrollar diferentes módulos comerciales como servicios allí al brindar escalabilidad y confiabilidad. Entonces la aplicación se acopla débilmente. SOAP y REST son dos enfoques famosos de los servicios web. SOAP (Protocolo simple de acceso a objetos) es un protocolo, mientras que REST (Transferencia de estado representacional) es un estilo arquitectónico en el que se accede a los servicios en forma de Recursos y, en general, se implementan a través de comunicaciones web a través del protocolo HTTP estándar. Los lenguajes de modelado se utilizan para expresar conocimiento/información sobre el sistema que vamos a desarrollar. Para el servicio REST Varios lenguajes/marcos de modelado están presentes en los mundos de la API REST. RAML, Swagger y API Blueprint ahora se usan ampliamente en el desarrollo de API REST.
+%La arquitectura orientada a servicios (SOA) se usa generalmente al desarrollar soluciones de software empresarial. Esto brinda flexibilidad para desarrollar diferentes módulos comerciales como servicios allí al brindar escalabilidad y confiabilidad. Entonces la aplicación se acopla débilmente. SOAP y REST son dos enfoques famosos de los servicios web. SOAP (Protocolo simple de acceso a objetos) es un protocolo, mientras que REST (Transferencia de estado representacional) es un estilo arquitectónico en el que se accede a los servicios en forma de Recursos y, en general, se implementan a través de comunicaciones web a través del protocolo HTTP estándar. Los lenguajes de modelado se utilizan para expresar conocimiento/información sobre el sistema que vamos a desarrollar. Para el servicio REST Varios lenguajes/marcos de modelado están presentes en los mundos de la API REST. RAML, Swagger y API Blueprint ahora se usan ampliamente en el desarrollo de API REST.
 
-REST significa transferencia de estado representacional. Este término fue acuñado por primera vez por Roy Fielding[17]. REST se refiere al estilo arquitectónico. El estilo arquitectónico REST está ganando popularidad, pero hay mucho debate y una preocupación creciente sobre el modelado de servicios web REST (API REST). El estilo arquitectónico REST describe seis restricciones. Estas restricciones, aplicadas a la arquitectura, fueron comunicadas originalmente por Roy Fielding en su tesis doctoral y definen la base del estilo RESTful. Interfaz uniforme, sin estado, almacenable en caché, cliente-servidor, sistema en capas, código bajo demanda son las restricciones impuestas por la arquitectura REST[17].
+REST significa transferencia de estado representacional. Este término fue acuñado por primera vez por Roy Fielding[\cite{62}]. REST se refiere al estilo arquitectónico. El estilo arquitectónico REST describe seis restricciones. Estas restricciones, aplicadas a la arquitectura, fueron comunicadas originalmente por Roy Fielding en su tesis doctoral y definen la base del estilo \textit{RESTful}. 
 
-Una API REST describe un conjunto de recursos y un conjunto de operaciones que se pueden llamar en esos recursos. Las operaciones en una API REST se pueden llamar desde cualquier cliente HTTP, incluido el código JavaScript del lado del cliente que se ejecuta en un navegador web[5].
+Las restricciones impuestas por la arquitectura REST [\cite{56,62}] son las siguientes:
+\begin{itemize}
+\item Interfaz uniforme
+\item Sin estado
+\item Almacenable en caché
+\item Cliente-servidor
+\item Sistema en capas
+\item Código bajo demanda
+\end{itemize}
+
+Una REST API describe un conjunto de recursos y un conjunto de operaciones que se pueden llamar en esos recursos [\cite{56}]. La comunicación de la interfaz de usuario de nuestro sistema con el backend se establece mediante un servicio REST API.
 
 %FS 2022-BA-EP-Wisotzki
 
