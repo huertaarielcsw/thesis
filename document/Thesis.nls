@@ -1,0 +1,20 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{\textbf{API}}]\begingroup Interfaz de programación de aplicaciones, un punto final de, por ejemplo, una base de datos con la que diferentes aplicaciones pueden interactuar y hacer uso de la aplicación.\nomeqref {1.0}
+		\nompageref{19}
+
+ \nomgroup{B}
+
+  \item [{\textbf{Backend}}]\begingroup La parte del sistema que no está contenida o cargada en la aplicación del usuario, generalmente la API, el servidor y las bases de datos\nomeqref {0}
+		\nompageref{3}
+
+ \nomgroup{F}
+
+  \item [{\textbf{Framework}}]\begingroup Una gran biblioteca con una amplia funcionalidad, que a menudo depende de una gran cantidad de otras bibliotecas.\nomeqref {1.0}
+		\nompageref{16}
+  \item [{\textbf{Frontend}}]\begingroup La parte del sistema a la que el usuario tiene acceso directo, generalmente contiene la interfaz de usuario y la lógica de la aplicación.\nomeqref {1.0}
+		\nompageref{16}
+
+\end{thenomenclature}

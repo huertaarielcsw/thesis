@@ -1,5 +1,7 @@
 \chapter{Estado del Arte}\label{chapter:state-of-the-art}
 
+En este primer capítulo nombrado Estado del Arte, se pretende explicar el estado actual de las tecnologías en las que se basa el tema central de este proyecto. Explicando de forma clara y concisa todo lo que engloba las interfaces de usuarios actualmente, pasando por alguna anotación histórica para poder comprender su evolución. Además, presentaremos la información obtenida tras una pequeña investigación sobre distintos \textit{front-ends} que posean características similares al que en este documento presentamos.
+
 \section{Interfaz de Usuario}
 
 Los tiempos en que solo los científicos y los desarrolladores de \textit{software} podían usar los ordenadores han quedado muy atrás. Hoy en día, casi todo el mundo puede manejar un PC o una tableta, a menudo incluso sin necesitar conocimientos especializados previos. Esto fue posible gracias al desarrollo de las interfaces gráficas de usuario, un tipo de interfaz de usuario.
@@ -233,7 +235,7 @@ Se han diseñado muchos tipos de herramientas para ayudar a crear software de in
 
 %La construcción de un front end es una tarea delicada dentro de la creación de un proyecto, debido a que no solo puede regirse a los gustos del desarrollador o del cliente, sino también debe regirse a las capacidades técnicas que nos brindan determinadas herramientas de desarrollo. Una página web tradicional se diferencia a una aplicación web porque, la primera hace referencia a una página con información estática no susceptible a la manipulación, mientras, que la aplicación es aquella que se ejecuta en la web así manipulando, procesando presentando y transmitiendo los resultados de manera online, siendo el usuario el que se relaciona directamente con el resultado de ese proceso, denominado producto de información.
 
-Los \textit{frameworks frontends} ofrecen la base para crear y, además, permiten ser flexible respecto a los diseños a implementar. Actualmente, se encuentran una multitud de diferentes \textit{frameworks} con los cuales se pueden realizar un mismo trabajo, aunque cada uno dispone de una curva de aprendizaje distinta, así como sus peculiaridades, conformando diferentes ventajas y desventajas [\cite{48,53}].
+Los \textit{frameworks frontends}\nomenclature[framework]{\textbf{Framework}}{Una gran biblioteca con una amplia funcionalidad, que a menudo depende de una gran cantidad de otras bibliotecas.} \nomenclature[frontend]{\textbf{Frontend}}{La parte del sistema a la que el usuario tiene acceso directo, generalmente contiene la interfaz de usuario y la lógica de la aplicación.}ofrecen la base para crear y, además, permiten ser flexible respecto a los diseños a implementar. Actualmente, se encuentran una multitud de diferentes \textit{frameworks} con los cuales se pueden realizar un mismo trabajo, aunque cada uno dispone de una curva de aprendizaje distinta, así como sus peculiaridades, conformando diferentes ventajas y desventajas [\cite{48,53}].
 
 En la figura que se muestra a continuación, se puede visualizar cuáles han sido los \textit{frameworks} más de ``moda'' y cómo han ido variando en los últimos años, según el porcentaje de preguntas obtenidas en el famoso dominio ``Stack Overflow''.
 
@@ -277,7 +279,7 @@ Una de las características, que hace muy cómodo el desarrollo en este \textit{
 
 %Axios es una herramienta familiar en Vue.js porque se usa para mostrar solicitudes AJAX al servicio web. Axios permite crear solicitudes a una URL GET, PUT, POST, DELETE como una API simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada [\cite{46}]. 
 
-La herramienta Axios permite crear solicitudes a una URL GET, PUT, POST, DELETE como una API simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada. Axios es una herramienta familiar en Vue.js [\cite{46}] lo cual es beneficioso para nuestro sistema que necesita establecer comunicación con el \textit{backend} a través del servicio REST API.
+%La herramienta Axios permite crear solicitudes a una URL GET, PUT, POST, DELETE como una API simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada. Axios es una herramienta familiar en Vue.js [\cite{46}] lo cual es beneficioso para nuestro sistema que necesita establecer comunicación con el \textit{backend} a través del servicio REST API.
 %En la devolución de llamada, se devuelven los datos para la instancia del componente. (Gore 2017).
 
 Vue también brinda una capa de enrutamiento que permite organizar mediante el uso de url, las vistas o componentes se mostrarán en la página, esta capa es fundamental dentro de la seguridad de una aplicación web, ya que permite detener accesos indebidos a vistas destinadas a otros tipos de roles.
@@ -381,7 +383,187 @@ Las restricciones impuestas por la arquitectura REST [\cite{56,62}] son las sigu
 \item Código bajo demanda
 \end{itemize}
 
-Una REST API describe un conjunto de recursos y un conjunto de operaciones que se pueden llamar en esos recursos [\cite{56}]. La comunicación de la interfaz de usuario de nuestro sistema con el backend se establece mediante un servicio REST API.
+Una REST API describe un conjunto de recursos y un conjunto de operaciones que se pueden llamar en esos recursos [\cite{56}]. La comunicación de la interfaz de usuario de nuestro sistema con el backend se establece mediante un servicio REST API. Para establecer la comunicación utilizaremos Axios, una herramienta familiar en Vue [\cite{46}], la cual nos permite crear solicitudes a una url GET, PUT, POST, DELETE como una API \nomenclature[API]{\textbf{API}}{Interfaz de programación de aplicaciones, un punto final de, por ejemplo, una base de datos con la que diferentes aplicaciones pueden interactuar y hacer uso de la aplicación.} simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada.
+
+%La herramienta Axios permite crear solicitudes a una URL GET, PUT, POST, DELETE como una API simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada. Axios es una herramienta familiar en Vue.js [\cite{46}] lo cual es beneficioso para nuestro sistema que necesita establecer comunicación con el \textit{backend} a través del servicio REST API.
+
+\section{Antecedentes}
+
+Para lograr el objetivo planteado en este trabajo y responder a las preguntas de investigación, realizamos un estudio sobre el uso de la tecnología blockchain en el sector educativo, específicamente en la emisión de diplomas a los graduados universitarios y las interfaces de usuarios que emplean.
+
+%Blockchain es una tecnología que permite a los usuarios almacenar datos de forma segura porque los datos almacenados en la cadena de bloques serán permanentes y no se podrán eliminar. Los cambios de datos en la cadena de bloques son casi imposibles a menos que haya reglas integradas en el sistema que puedan aceptar cambios en la cadena de bloques bajo ciertas condiciones. Obviamente, este método será adecuado cuando se aplique al custodio de la propiedad de valores como los certificados digitales [\cite{4}].
+
+%El potencial de la tecnología blockchain [\cite{2}], como comentamos anteriormente, ha estimulado el desarrollo de muchas soluciones viables para los problemas de la educación en línea. Los hallazgos de esta investigación sugieren que existen muchas aplicaciones para la tecnología blockchain en la educación en línea.
+
+Actualmente, algunas universidades alrededor del mundo han adoptado varias técnicas para crear sus servicios para emitir y verificar certificados digitales como la Universidad de Johannesburgo (UJ) en Sudáfrica [\cite{80}], la Universidad de Exeter [\cite{76}], y otras más mencionadas en [ \cite{1}]. 
+
+Todos los certificados que emite la Universidad de Johannesburgo (UJ) en Sudáfrica incluyen códigos QR basados en \textit{blockchain}. 
+
+La Universidad de Exeter lanzó un pequeño piloto con su clase de Maestría en Tecnología Financiera. El piloto permitió a los estudiantes poseer su certificación sin depender de terceros. Los estudiantes ahora pueden ser el ``propietario'' de sus certificados y demostrar que la Universidad de Exeter emite el diploma en la \textit{blockchain} [\cite{76}].
+
+%La integración del software de emisión de certificados con la \textit{blockchain} permite un sistema interoperable y sin confianza que combate el fraude.
+
+Implementado en más de 90 instituciones en una docena de países, BCdiploma (\textit{Blockchain Certified diploma}) ofrece un servicio llave en mano para crear y compartir certificados de \textit{blockchain} para todos los documentos académicos: diplomas, transcripciones, habilidades adquiridas, etc. A diferencia de una aplicación de billetera digital tradicional, no se necesita autenticación para acceder al servicio en línea de BCdiploma.[\cite{75}].
+
+%BCdiploma es el primer jugador en ofrecer Open Badges certificados, $100\%$ blockchain , aprobado por IMS Global, para microcertificaciones y cursos modularizados
+%La escuela de negocios ESCP es una escuela líder en administración y negocios [\cite{74}].
+
+Desde enero de 2021, los graduados de Montpellier Business School reciben una versión digital de su diploma, una credencial digital emitida con la solución BCdiploma [\cite{75, 78}].
+
+La escuela de negocios ESCP [\cite{74}] lanzó su servicio de credenciales digitales basado en blockchain en asociación con BCdiploma [\cite{75}]. La asociación con BCdiploma simplificó el acceso a los documentos pues se puede acceder a los diplomas con un solo clic, ya sea desde una computadora o un teléfono inteligente.
+
+La Agencia Universitaria de la Francofonía (AUF), en colaboración con BCdiploma, ofrece una solución de certificación \textit{blockchain} a sus universidades. La oferta exclusiva firmada con BCdiploma permite a la red de universidades miembro de AUF y sus socios emitir certificados en línea multilingües a prueba de manipulaciones con solo unos pocos clics, que se pueden compartir en redes profesionales y currículums. Los graduados reciben un enlace URL único y seguro que pueden usar libremente de por vida [\cite{77}].
+
+%Oscar Castellana, Jefe del Departamento de Administración Estudiantil cuenta que [\cite{78}]: ``La solución de credenciales digitales, BCdiploma, fue fácil de aprender, con un método de implementación estructurado y un entorno de preproducción que permitió tantas pruebas como fuera necesario. Como resultado, mi equipo de 7 administradores de la escuela puede generar las credenciales digitales y enviarlas por correo electrónico a los graduados con solo tres clics… con total autonomía y al día siguiente del jurado de graduación''].
+
+La solución BCdiploma presenta una interfaz simple y sencilla. Los emisores de certificados, sean estos la institución, una universidad o facultad, por ejemplo, pueden cargar sus diplomas con la DApp BCdiploma. El almacenamiento del diploma genera un enlace url único y seguro que la institución puede enviar de forma segura al graduado en cuestión. Los graduados pueden compartir la url por correo electrónico, o en las redes sociales. Con ese enlace es posible la visualización de datos (diplomas multilingües) del graduado, y cualquier tercero puede verificar la autenticidad del documento este. En un formato electrónico seguro, incluye todos los detalles relevantes de la certificación o diploma, tales como:
+
+\begin{itemize}
+\item Año de certificación.
+\item Cualificación / Título.
+\item Información del estudiante – nombre, apellido, fecha de nacimiento, número de cédula.
+\item Dirección de la institución de formación: escuela, colegio, universidad, instituto de educación superior, centro de formación, proveedor de aprendizaje electrónico.
+\end{itemize}
+
+%BCdiploma (Blockchain Certified diploma), líder del mercado en la digitalización de diplomas y micro credenciales, te ofrece una plataforma llave en mano. A diferencia de una aplicación de billetera digital tradicional, no se necesita autenticación para acceder al servicio en línea de BCdiploma.
+
+%BCdiploma ha creado un producto con un enfoque "centrado en los datos" y "centrado en el usuario". Nos estamos liberando de la gestión de “hash de datos” que conduce a una centralización o complejización de los procedimientos de verificación. Esto hace que nuestra solución sea nueva en comparación con las aplicaciones tradicionales de blockchain en el mercado.
+
+%La herramienta BCdiploma es muy fácil de usar y de interactuar con las herramientas de gestión (acepta todos los modelos de datos), y las credenciales digitales de BCdiploma son:
+%
+%un bonito “objeto web” diseñado por el emisor;
+%accesible en un solo clic;
+%verificado por una simple consulta en cadena de las pruebas de autenticidad.
+
+%Visualización de datos (diplomas multilingües) desde un simple enlace URL que puede ser compartido por el graduado
+
+%Para instituciones académicas (EMISOR): Cada nueva institución tiene su identidad verificada al registrarse por terceros validadores. Una vez que se ha verificado su identidad, la institución, una universidad o facultad, por ejemplo, tiene una dirección certificada en la cadena de bloques de Ethereum y puede cargar sus diplomas con la DApp BCdiploma (que opera en la nube) implementada como una solución SaaS. La solución encripta automáticamente los datos de los diplomas enviados y los registra en una transacción de cadena de bloques EVM, Ethereum o Smart Chain, por ejemplo. La clave para descifrar los datos se divide en tres partes: una para la institución, otra para el egresado y una última, denominada “persistencia”, almacenada en un almacén de claves. El almacenamiento del diploma genera un enlace URL único y seguro que la institución puede enviar de forma segura al graduado en cuestión. Finalmente, la aplicación envía un informe de finalización a la institución emisora.
+%Para graduados (ESTUDIANTE): a cada graduado se le asigna un enlace URL único a su diploma. La clave de cifrado se incluye en la URL y permite el acceso a los datos. Los graduados son libres de compartir este enlace URL a su discreción: pueden elegir enviarlo solo a reclutadores y posibles empleadores, o compartirlo en una red social como LinkedIn para probar la autenticidad de su diploma. Si lo desean, los graduados pueden hacer uso de su derecho al olvido para hacer que el diploma sea indescifrable eliminando la clave de persistencia asociada.
+%Para reclutadores (o terceros que consultan el certificado – VERIFICADOR): Disponer de la URL del diploma permite a los reclutadores o posibles empleadores verificar directamente su autenticidad. La visualización del diploma se realiza a través de la app “Reader”, brick de la DApp de BCdiploma. Esto permite verificar la autenticidad del diploma y su validez. En cada lectura, se realizan automáticamente un conjunto de verificaciones, que se pueden comprobar en la cadena de bloques: validez de las autorizaciones del emisor de los datos, no eliminación del título, área de visualización autorizada. Todos los datos a los que se accede se leen en tiempo real en la cadena de bloques: BCdiploma es el único jugador que domina este proceso.
+
+%emisores de certificados envía la url a los graduados
+
+%los graduados comparten la url por correo electrónico, en las redes sociales
+
+%cualquier tercero puede verificar la autenticidad del documento
+
+%Utilizando la tecnología de cadena de bloques de Bitcoin, el Instituto se ha convertido en una de las primeras universidades en emitir credenciales virtuales propiedad de los destinatarios.
+
+%Blockcerts es un estándar abierto para crear, emitir, ver y verificar certificados basados en blockchain. Estos registros digitales están registrados en una cadena de bloques, firmados criptográficamente, a prueba de manipulaciones y compartibles. El objetivo es permitir una ola de innovación que brinde a las personas la capacidad de poseer y compartir sus propios registros oficiales.
+
+%Blockcerts utiliza y fomenta la consolidación en estándares abiertos. Blockcerts está comprometido con la identidad soberana de todos los participantes y permite que el destinatario controle sus reclamos a través de herramientas fáciles de usar, como la billetera de certificados (aplicación móvil). Blockcerts también se compromete con la disponibilidad de credenciales, sin puntos únicos de falla.
+
+La aplicación Blockcerts Wallet fue desarrollada por Learning Machine en conjunto con la Oficina de Registro del MIT [\cite{81}]. Utiliza la tecnología blockchain para brindar a los graduados un fácil acceso a una versión verificable y a prueba de manipulaciones de su diploma que pueden compartir con posibles empleadores [\cite{79}].
+
+%Blockcerts sirve como un middleware para emitir y recuperar certificados en línea. Se puede acceder a los certificados almacenados a través de una billetera, lo que permite a los empleados obtener una versión verificable y a prueba de manipulaciones de su certificado.
+
+%Complete estos pasos antes del día de la graduación para asegurarse de recibir su diploma digital tan pronto como esté disponible.
+
+%Busque una invitación por correo electrónico de nosotros antes de la graduación.
+%Descargue la aplicación Blockcerts Wallet en su teléfono y cree una cuenta gratuita.
+%Se le emitirá una frase de contraseña que le permitirá mantener la propiedad de sus registros basados en blockchain en varios dispositivos.
+%Mantenga su frase de contraseña en un lugar seguro. Si lo pierde, deberá descargar la aplicación nuevamente, obtener una nueva frase de contraseña y comunicarse con nosotros para volver a emitir su diploma.
+%Haga clic en el enlace de la invitación por correo electrónico para generar su clave pública única y agregar MIT como emisor.
+%Cuando se haya emitido su diploma digital, recibirá un correo electrónico del MIT con un archivo de diploma digital codificado adjunto. Guarde este archivo donde quiera que guarde datos importantes.
+%También puede hacer clic en el enlace del correo electrónico para agregar el diploma a su billetera Blockcerts.
+
+%La aplicación se llama Blockcerts Wallet y permite a los estudiantes obtener rápida y fácilmente una versión verificable y a prueba de manipulaciones de su diploma que pueden compartir con empleadores, escuelas, familiares y amigos.
+
+%Blockcerts Wallet resuelve ese problema. 
+
+Una vez que el estudiante descarga la aplicación, genera el par de claves pública y privada y envía la clave pública al MIT, donde se escribe en el registro digital. A continuación, se agrega a la cadena de bloques un hash unidireccional (una cadena de números que se pueden usar para la verificación más adelante). La información del diploma en sí no va a la cadena de bloques, solo la transacción con marca de tiempo que indica que el MIT creó el registro digital. Finalmente, el MIT envía por correo electrónico el diploma digital (un archivo de notación de objetos de JavaScript o JSON) con la clave pública del estudiante inscrita en él. Debido a que la aplicación móvil en el teléfono del estudiante tiene su clave privada única, el estudiante puede probar la propiedad del diploma.
+
+%la Universidad de Johannesburgo (UJ) En Sudáfrica
+
+%“El sistema de certificados digitales de la UJ dio a los graduados acceso a sus certificados digitales y les permitió compartir sus certificados con terceros o posibles empleadores sin costo alguno”, dice el Dr. van Zyl. “Sin embargo, nuestros nuevos certificados basados en blockchain mejorarán aún más la seguridad de nuestros certificados”.
+
+%A partir del 2022, todos los certificados que emite la UJ a sus graduados incluirán códigos QR basados en blockchain. Esto permitirá que cualquiera pueda escanear estos códigos con un teléfono inteligente para verificar que el certificado ha sido emitido legítimamente por UJ y que toda la información es correcta.
+
+Certifaction ofrece una solución fácil y rápida para asegurar los diplomas de los estudiantes en \textit{blockchain} Ethereum, lo cual los hace inmutables y verificables al instante. El Centro de Finanzas Innovadoras de la Universidad de Basilea y la Universidad de St. Gallen son instituciones que implementan directamente la API de Certifaction en su sistema de emisión de diplomas [\cite{82}].
+
+%Certifaction es muy fácil de implementar y trabajar tanto para el emisor como para el verificador. En menos de un minuto, cualquier persona puede comenzar con la certificación de documentos. En cuestión de segundos, un verificador puede arrastrar y soltar un documento para verificar su integridad y origen. No se necesitan conocimientos previos de blockchain.
+
+%El Centro de Finanzas Innovadoras de la Universidad de Basilea es una de esas instituciones que ha decidido emprender la lucha contra el fraude de diplomas y es co-iniciador de Certifaction. Al usar la aplicación web independiente, estaban listos para emitir diplomas protegidos por blockchain al instante.
+
+%La Universidad de St. Gallen también reconoció este problema y esta oportunidad, pero dio un paso más al implementar directamente la API de Certifaction en su sistema de emisión de diplomas.
+
+Con BlockTac [\cite{83}] la institución educativa emite un certificado y lo comunica a BlockTac a través de un canal privado. BlockTac notifica al estudiante y facilita una aplicación de Android o iOS para ver su certificado. El estudiante puede compartir desde la aplicación su certificado con quien desee y cualquier persona o institución puede verificar el certificado sin tener que contactar a la institución acreditadora.
+
+%BlockTac se basa en la tecnología Blockchain para brindar inviolabilidad, inmutabilidad y verificación abierta para todos sus certificados y sellos digitales. Se basa en profesionales experimentados en tecnologías y gestión de Internet.La institución educativa emite un certificado en papel normal (si lo desea) y lo comunica a BlockTac a través de un canal privado. Es su único compromiso. BlockTac notifica al estudiante y facilita una aplicación de Android o iOS para ver su certificado. El estudiante puede compartir desde la aplicación su certificado con quien desee y cualquier persona o institución puede verificar el certificado sin tener que contactar a la institución acreditadora.
+%
+Certif-ID proporciona un sistema integral para emitir certificados digitales en un formato seguro de cadena de bloques que se puede compartir y verificar instantáneamente en cualquier parte del mundo [\cite{84}]. Certif-ID permite crear, emitir y diseñar certificados, y compartirlos en las redes sociales. Es posible realizar la verificación con tan solo un clic y  rastrear todos los certificados emitidos y compartidos.
+
+%brinda una interfaz atractiva e intuitiva con funcionalidades como crear, emitir y diseñar certificados. Permite la verificación con tan solo un clic, compartir los certificados pertenecientes al usuario y rastrear todos los certificados emitidos y compartidos dentro del tablero
+
+Emercoin desarrolló una innovadora plataforma blockchain ``Trusted Diploma'' [\cite{87}] que ayuda a las escuelas a crear y compartir diplomas y otros certificados educativos en una aplicación cifrada. Los registros se almacenan en la \textit{blockchain} y cualquier persona puede verificarlos fácilmente. Flexibilidad, facilidad de uso y disponibilidad son las principales ventajas de esta solución tecnológica.
+
+%Si es representante de una universidad y necesita registrar una institución educativa (crear un registro raíz de la universidad), puede hacerlo en la pestaña Registrar universidad.
+
+%Debe agregarse a la cadena de bloques de Emercoin. Para hacer esto, debe descargar la billetera, ir a la pestaña Administrar nombre, ingresar el nombre del registro (copiando del campo Nombre los datos en el formato dpo:TBU), y los datos del campo Valor en el campos correspondientes. Haga clic en Enviar.
+%
+%Puede verificar el registro de un diploma en Emercoin blockchain a través de la pestaña Verificar diploma.
+%
+%En el campo Nombre y apellido ingrese el nombre y apellido de una persona en el alfabeto latino exactamente de la misma manera que se indica en el diploma, por ejemplo, Rusudan Adamia.
+%
+%En el campo Universidad ingrese el nombre de la universidad, por ejemplo, Universidad de Negocios y Tecnología.
+%
+%En el campo Año de presentación/Año de graduación elija el año de presentación a la universidad o de graduación, por ejemplo, 2017.
+
+TruScholar [\cite{86}], CertifyMe.Online [\cite{85}], Credly [\cite{89}] son también soluciones para crear, emitir y administrar credenciales digitales. Ellas poseen interfaces simples e intuitivas que permiten realizar sus operaciones con unos pocos clics en cuestión de minutos.
+
+%CertifyMe.Online es una solución integral para crear, emitir y administrar credenciales digitales.
+%
+%TruScholar utiliza Hyperledger Fabric e Hyperledger Indy para crear el ecosistema de credenciales y mantener la confidencialidad total.
+%Emisión masiva de certificados en un clic. Comience a crear identidades de estudiantes, credenciales y logros académicos detallados al instante.
+%Emita credenciales seguras y encriptadas con blockchain en cuestión de minutos.
+%Recupere y verifique las credenciales cuando sea necesario sin problemas.
+
+Certika es una plataforma web que permite certificar cualquier documento digital de valor bajo tecnología blockchain [\cite{88}]. Para crear un certificado solo es necesario subir la imagen y llenar los campos solicitados (nombres, descripción, habilidades, criterios, atributos, entre otros). La funcionalidad de emitir certificados en esta plataforma es muy sencilla, se debe descargar un archivo CSV y llenar los campos requeridos, los cuales corresponden a la información de los usuarios receptores. Luego, se sube el archivo y el sistema se encargará de emitir un correo a cada persona. En este módulo se podrá agrupar las distintas emisiones realizadas, adicionalmente editar el nombre asignado a los diferentes grupos de certificados, enviar correos de recordatorio a los usuarios receptores, descargar bases de datos y revocar la emisión en caso de haber cometido algún error.
+
+%Crear un certificado es cuestión de minutos, solo debes cargar la imagen, diligenciar los campos solicitados (nombres, descripción, habilidades, criterios, atributos, entre otros). Además se cuenta con un completo módulo en el que podrás diseñar a la medida cualquier certificado, agregando todo tipo de campo adicional que se requiera.
+%El usuario recibirá una notificación al correo electrónico, mediante la cual podrá acceder a una previsualización del certificado, con la posibilidad de aceptarlo o rechazarlo.
+%Con esta opción podrás llevar un completo control y registro de los certificados emitidos y sus diferentes estados (pendiente, aceptado, rechazado, revocado).
+%Este email se enviará automáticamente a los usuarios cada dos días dependiendo del estado en que se encuentre el certificado, sino ha sido aceptado, sino ha sido creado, sino ha creado la cuenta o si se encuentra pendiente compartirlo. Sin embargo, puedes hacerlo manualmente solo dando click a la opción que requieras.
+
+%Haciendo click en tu certificado en el campo verificar o escaneando el código QR con un dispositivo móvil.
+%Dirigiéndose a nuestra página web en la opción verificar / módulo certificado.
+%Descargando los archivos en los formatos internacionales de ﬁrma blockchain: Chainpoint y OpenTimeStamp.
+%Arrastrando y soltando el archivo metadata en nuestra página web, en la sección verificar / módulo insignias / metadata.
+%Copiando el código del certificado en nuestra página web en la opción verificar / módulo certificado / código.
+%Dando Click al link que redirecciona al libro público de Blockchain.
+%
+%La Empresa o Institución, crea y/o carga las insignias o certificados digitales de sus colaboradores o estudiantes a través de la sección de Administrador en nuestra plataforma. 
+%
+%También puede cargar los documentos que desea encriptar.
+
+%En conjunto, la interfaz debe ser intuitiva para una amplia gama de usuarios.
+
+La plataforma UniLegal, de la Universidad de Ciego de Ávila Máximo Gómez Báez (Unica) le permite a los egresados de esa casa de altos estudios la validación de la copia de sus títulos universitarios, a través de dispositivos móviles o computadoras capaces de conectarse a la red nacional, según el periódico Invasor [\cite{90}]. Aunque esta plataforma no está basada en \textit{blockchain}, queríamos mencionarla como antecedente de una plataforma de emisión y validación de títulos universitarios en nuestro país.
+
+Para su uso, el sitio precisa, en un primer momento, del registro del interesado mediante la introducción de datos como su nombre y apellidos, correo electrónico y número del carné de identidad, este último de gran importancia para garantizar la veracidad de la información aportada. Una vez registrado, el interesado podrá subir a la plataforma una fotocopia del título universitario, a la que se le coloca por detrás toda la información registrada en el original y se confronta con el documento aportado para comprobar su validez. La aplicación genera un código de barras y un QR que, al escanearlo, remite a una página donde aparecen los datos específicos del usuario en cuestión y a la cual puede acceder cualquier persona para verificar que ese documento sea verdadero.
+
+%«UniLegal tiene una primera parte encargada de revisar que la persona verdaderamente es graduada de la Universidad de Ciego de Ávila, mediante la búsqueda en los registros; y otra que confirma a terceros que ese egresado es realmente quien dice ser», describe el especialista.
+
+%Una vez registrado, el interesado podrá subir a la plataforma una fotocopia del título universitario, a la que se le coloca por detrás toda la información registrada en el original y se confronta con el documento aportado para comprobar su validez, indica el rotativo.
+
+%Pero como este era un proceso que se salía del Manual de Procedimientos de la Secretaría, y por la necesidad de asegurar su transparencia, era preciso analizar las vías de hacerlo, de forma tal que no fuera posible la falsificación de documentos o información en el sitio; de ahí que, como refiere Dorta Pina, «para seguridad, la aplicación genera un código de barras y un QR que, al escanearlo, remite a una página donde aparecen los datos específicos del usuario en cuestión y a la cual puede acceder cualquier persona para verificar que ese documento sea verdadero».
+
+%Con más de 400 usuarios registrados hasta la fecha, pertenecientes a las provincias de Artemisa, Mayabeque y casi todas las de la región oriental, durante estos meses quienes han utilizado el servicio no han reportado ningún problema, según asegura el jefe del Departamento de Desarrollo de Software.
+Uno de los aspectos más importantes para la usabilidad de cualquier servicio es la interfaz entre el usuario y el programa. Nuestro propuesta es crear una interfaz de usuario lo más intuitiva posible. Además, debe ser muy simple y eficiente para realizar cualquier tarea, lo cual significa que se debe encontrar un equilibrio entre un diseño limpio y ordenado y una accesibilidad de unos pocos clics para todas las funciones.
+
+Debido a la estructura simple, usaremos íconos para marcar la mayoría de los campos y botones. Esto evita distracciones innecesarias a través del texto y lo hace más fácil para las personas que quizás no hablen el idioma. El diseño también es receptivo para adaptarse a una amplia gama de pantallas.
+
+En las aplicaciones y soluciones previamente mencionadas se utilizan billeteras, códigos QR o enlaces únicos como medio para compartir y comprobar la validación de los certificados universitarios de los graduados. En nuestra solución, solo es necesario el identificador (número del carnet de identidad) del graduado para poder revisar los datos y validez de su diploma. El graduado o empleador no tienen necesidad de descargar o instalar una aplicación móvil para poder usar nuestro servicio.
+
+En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. 
+
+Nuestra plataforma no registrará binarios (copia digital de título, etc.), solo se registrarán datos asociados al certificado. La creación, emisión y validación de títulos tendrán sus propias vistas y solo necesitarán de un clic para realizar dichas acciones, aumentando la velocidad y facilidad de este proceso.
+
+
+
+%Nuestra propuesta se enfoca en brindar un sitio web, a diferencia de las soluciones comentadas anteriormente que brindaban una aplicación móvil para poder usar sus servicios.
+
+%Muchas de las aplicaciones y soluciones previamente mencionadas brindan una billetera para el control de los certificados del graduado, en nuestra solución una billetera no es necesaria, con tan solo el identificador del usuario es posible mostrar su diploma.
 
 %FS 2022-BA-EP-Wisotzki
 
