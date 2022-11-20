@@ -1,1 +1,58 @@
 \chapter{Detalles de Implementación y Experimentos}\label{chapter:implementation}
+%
+%Las pruebas de IU no se realizaron automáticamente. Se utilizó un navegador para probar y construir las características requeridas. Luego, el desarrollador, el autor de esta tesis y el propietario del producto trabajaron juntos para probar las características. La prueba se llevó a cabo en cada revisión de sprint. Si la función superó completamente los requisitos de prueba de aceptación, la función se marcó como completa; de lo contrario, se le dio al desarrollador una lista de errores o comportamientos inesperados para que los corrigiera.
+%
+%Después de cada prueba de aceptación exitosa, se planeó una nueva característica para el siguiente sprint y se le dieron al desarrollador los requisitos de la prueba de aceptación. Si el desarrollador tenía algún problema o pregunta con la función o los requisitos de prueba de aceptación, se lo comunicó al propietario del producto y se tomó una resolución.
+%
+%
+%La Figura 3 muestra la estructura del proyecto y todas las carpetas y archivos se describen a continuación:
+%
+%● dist: esta carpeta se genera cuando se crea la aplicación. Este contiene los archivos que se utilizan para alojar la aplicación en un servidor en vivo.
+%● node\_modules: esta carpeta contiene todas las bibliotecas de node js utilizadas en el proyecto. Esta carpeta se genera cuando las bibliotecas se instalan en el proyecto.
+%● público: esta carpeta contiene los archivos y activos públicos de la aplicación. Esto incluye, entre otros, index.html, el punto de entrada de la aplicación, el logotipo y el icono de la aplicación.
+%● src: esta carpeta contiene toda la lógica y los componentes de la aplicación.
+%
+%activos: esta carpeta incluye los activos estáticos de la aplicación que pueden ser el logotipo de una empresa, imágenes, fuentes, etc.
+%○ componentes: esta carpeta contiene todos los componentes de las aplicaciones. Esta carpeta se puede subdividir en carpetas más pequeñas. La mayor parte del trabajo de la interfaz de usuario se realiza aquí.
+%○ vistas: esta carpeta contiene archivos compuestos por componentes. Un archivo puede tener muchos componentes. Por ejemplo, un componente de encabezado, un componente de cuerpo y un componente de pie de página.
+%○ App.vue: este archivo es el componente raíz donde se anidan todos los demás componentes. Este archivo es responsable de manejar todos los componentes. Generalmente, se le pasa un componente de enrutador. Este archivo también se usa para anular estilos y se puede usar para proporcionar una hoja de estilo de reinicio.
+%○ main.js: este archivo es el punto de entrada para la aplicación. Aquí todas las bibliotecas se inicializan y pasan a Vue. Agrega y representa App.vue a DOM (modelo de objeto de documento).
+%○ router.js: este archivo contiene las URL de la aplicación.
+%○ store.js: este archivo almacena todos los datos persistentes en la aplicación para la sesión dada. Este archivo es utilizado por la biblioteca Vuex que se analiza en la sección 3.2.3
+%
+%● .browserlistrc: este archivo se usa para definir qué navegadores son compatibles con esta aplicación
+%● .eslintrc.js: este archivo se utiliza para controlar la calidad del código. Esto proporciona reglas que deben seguirse para obtener un código consistente. Por ejemplo, use comillas simples en todas partes.
+%● .gitignore: se usa para decirle al sistema de control de versiones qué archivos deben ignorarse.
+%● .babel.config.js: este archivo de configuración se utiliza para compilar el código ES6.
+%● package.json y package-lock.json: estos archivos se utilizan para administrar las dependencias utilizadas en el proyecto.
+%● postcss.config.js: este archivo de configuración se usa para compilar SCSS a CSS.
+%● webpack.config.js: este archivo de configuración se usa para asignar carpetas en el proyecto para importarlas fácilmente. Por ejemplo, si un componente está en la ubicación de src/folderA/folderB/file.vue y se usa en todas partes, se puede definir un alias para acceder a él más fácilmente como @/file.vue
+
+
+%Facilidad de uso El sistema ha sido diseñado para seguir los criterios básicos de WCAG 1.2.[58] Esto se logró principalmente mediante el uso extensivo de Vuetify, donde todos los componentes son compatibles con las funcionalidades requeridas por las WCAG.[59] La aplicación ha sido diseñada para ser simple, intuitiva y fácil de usar, incluso para usuarios con poca competencia en TI o con poca familiaridad con los sistemas de sensores conectados. Las aplicaciones Vue/Nuxt tienen una amplia compatibilidad con navegadores y la aplicación se ha probado para ejecutarse en Google Chrome, Mozilla Firefox, Safari y Microsoft Edge.
+%
+%Documentación, mantenimiento y desarrollo posterior El código base se ha documentado minuciosamente, con descripciones en forma de JSDoc para todos los métodos, funciones y utilidades relevantes, tanto en Frontend como en Backend. Consulte la figura 13 para ver un ejemplo de cómo se usa JSDoc en el código. Además de esto, se ha escrito un documento de documentación del sistema con una descripción general del proyecto, así como una guía para la configuración y las pruebas. El sistema debe estar disponible y listo para un mayor desarrollo por parte del cliente después de la finalización del proyecto. Esto se logra teniendo todo el proyecto alojado en sus repositorios privados, para que sea fácilmente accesible. Además de estar completamente documentado, el sistema se acopla de la manera más flexible y funcional posible. Esto debería facilitar el mantenimiento y el desarrollo posterior.
+%
+%Privacidad y seguridad de datos El sistema está configurado para protección con una función de inicio de sesión habilitada mediante el uso de un token de acceso. Sin embargo, esta medida de seguridad no está completamente implementada. Si bien la funcionalidad de inicio de sesión es relativamente completa, actualmente el token de acceso y otros datos del usuario solo se guardan en una tienda en LocalStorage, lo cual es un riesgo de seguridad. Además de esto, la funcionalidad de autorización de GraphQL/TypeGraphQL no se utiliza completamente en el Backend. Si bien todas las consultas y mutaciones, excepto la operación de inicio de sesión, requieren autorización con un token de acceso válido, actualmente no hay diferenciación entre tokens distintos. Esto significa que, siempre que un usuario tenga un token de acceso válido, tendrá acceso a todas las mutaciones y consultas. Además de esto, pueden acceder a todos los sitios y sensores, así como a otros usuarios, independientemente de si esos sitios y sensores están conectados al usuario. Una medida de seguridad que se implementó es un método simple que verifica las consultas a la base de datos de series temporales en busca de inyecciones de expresiones regulares y elimina los caracteres no deseados.
+
+%A lo largo del proyecto se han realizado distintas pruebas, tanto de validación como 
+%de verificación. 
+%Verificación: ¿Estoy construyendo el producto correctamente?
+%Validación: ¿Estoy construyendo el producto correcto?
+%Como forma de validación de requisitos, se utilizan los prototipos del Apartado 3.4 de 
+%este documento. Se realizan reuniones con distintos entrenadores en la que se 
+%muestran los bocetos realizados, estos validan los requisitos dando su opinión acerca 
+%de ellos. De esta manera se añadirán los cambios aportados por los stakeholders para 
+%que los desarrolladores programen un software validado por estos.
+%La verificación del software trata de asegurar que se implementa correctamente una 
+%función, de acuerdo con la especificación y satisfaciendo los requisitos funcionales y no 
+%funcionales, esta se puede realizar a través de pruebas [49]. Para la verificación de los 
+%componentes se han usado las pruebas unitarias. Estas consisten en probar una parte 
+%del código y verificar que funciona correctamente, la ilustración 35 muestra un ejemplo 
+%de prueba unitaria sobre el controlador y el servicio de autenticación o auth.
+%En cada tarea definida en un sprint se encuentran las pruebas de aceptación, 
+%definidas por el equipo de desarrollo. Estas pruebas tratan de verificar que se cumplen 
+%las expectativas del cliente [50]. Una vez finalizado el sprint, en la reunión Sprint review, 
+%el Product Owner valida que el producto realiza la funcionalidad esperada y cumple con 
+%las expectativas. A su vez, se verifica que la funcionalidad desarrollada funciona 
+%correctamente, sin fallos

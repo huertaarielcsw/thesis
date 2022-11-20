@@ -10,11 +10,31 @@
   \item [{\textbf{Backend}}]\begingroup La parte del sistema que no está contenida o cargada en la aplicación del usuario, generalmente la API, el servidor y las bases de datos\nomeqref {0}
 		\nompageref{3}
 
+ \nomgroup{E}
+
+  \item [{\textbf{Endpoint/punto de acceso}}]\begingroup Nodo de una comunicación en red. En este caso los puntos de acceso de este trabajo son las diferentes rutas ofrecidas por el servidor\nomeqref {0}
+		\nompageref{XI}
+
  \nomgroup{F}
 
   \item [{\textbf{Framework}}]\begingroup Una gran biblioteca con una amplia funcionalidad, que a menudo depende de una gran cantidad de otras bibliotecas.\nomeqref {1.0}
 		\nompageref{16}
   \item [{\textbf{Frontend}}]\begingroup La parte del sistema a la que el usuario tiene acceso directo, generalmente contiene la interfaz de usuario y la lógica de la aplicación.\nomeqref {1.0}
 		\nompageref{16}
+
+ \nomgroup{J}
+
+  \item [{\textbf{JSON}}]\begingroup \textit{JavaScript Object Notation}. Formato de texto sencillo para el intercambio de datos\nomeqref {0}
+		\nompageref{XI}
+
+ \nomgroup{T}
+
+  \item [{\textbf{Token}}]\begingroup Es una cadena de caracteres que contiene información, cifrada por el servidor, de un usuario en concreto.\nomeqref {0}
+		\nompageref{XI}
+
+ \nomgroup{U}
+
+  \item [{\textbf{UML}}]\begingroup Es un lenguaje de modelado de software [\cite{91}]\nomeqref {2.0}
+		\nompageref{25}
 
 \end{thenomenclature}
