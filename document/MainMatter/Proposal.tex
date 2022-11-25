@@ -43,8 +43,8 @@ En el presente capítulo se presenta la solución que se propone para dar respue
 %componentes que integran la biblioteca de interfaz gráfica de usuario y se define el diagrama de 
 %componentes para apoyar la implementación.
 
-\section{Metodologías de desarrollo de software}
-Las metodologías son un conjunto de procedimientos, técnicas, herramientas y ayudas a la documentación para el desarrollo de software. Guían el proceso de desarrollo de software, e imponen una disciplina sobre el desarrollo del mismo con el fin de hacerlo más predecible y eficiente [\cite{91}].
+\section{Metodología de desarrollo de software adoptada}
+Las metodologías son un conjunto de procedimientos, técnicas, herramientas y ayudas a la documentación para el desarrollo de software [\cite{91}]. Guían el proceso de desarrollo de software, e imponen una disciplina sobre el desarrollo del mismo con el fin de hacerlo más predecible y eficiente.
 
 Existen en el mundo diferentes metodologías para llevar a cabo el desarrollo de software. Agrupadas en las conocidas metodologías pesadas o tradicionales y las metodologías ágiles [\cite{92}].
 
@@ -68,37 +68,39 @@ Existen en el mundo diferentes metodologías para llevar a cabo el desarrollo de
 %
 %Dentro de las metodologías de desarrollo de software se encuentran:
 
-\subsection{RUP}
+%\subsection{RUP}
+%
+%RUP (\textit{Rational Unified Proces}s) es una metodología tradicional de desarrollo de software basada en la generación de documentación exhaustiva y seguimiento estricto del plan de proyecto. Es útil cuando el proyecto no es cambiante y donde los requisitos, coste y tiempo son conocidos de una manera precisa. RUP hace uso de diagramas UML \nomenclature[UML]{\textbf{UML}}{Es un lenguaje de modelado de software}, dirigido principalmente por casos de uso. Además, RUP es iterativo e incremental, con incrementos de larga duración[\cite{93}].
+%
+%Las fases del proceso son [\cite{92}]:
+%\begin{itemize}
+%\item Inicio: Da comienzo el proyecto y se acuerda el alcance de este con los clientes, se identifican los posibles riesgos que pueden aparecer y se elabora un plan de negocio para determinar los recursos.
+%\item Elaboración: Se construyen las bases para la construcción de la arquitectura del sistema, mediante diagramas de casos de uso.
+%\item Construcción: Esta fase trata de implementar las distintas funcionalidades del proyecto, realizar las pruebas y observar las evaluaciones de los clientes.
+%\item Transición: El objetivo de esta fase es garantizar que los requisitos definidos anteriormente han sido cumplidos. Cuando los stakeholders están satisfechos debido a que se han alcanzado los objetivos definidos en la primera fase. Finaliza la fase de transición con el lanzamiento de la aplicación.
+%\end{itemize}
 
-RUP (\textit{Rational Unified Proces}s) es una metodología tradicional de desarrollo de software basada en la generación de documentación exhaustiva y seguimiento estricto del plan de proyecto. Es útil cuando el proyecto no es cambiante y donde los requisitos, coste y tiempo son conocidos de una manera precisa. RUP hace uso de diagramas UML \nomenclature[UML]{\textbf{UML}}{Es un lenguaje de modelado de software [\cite{91}]}, dirigido principalmente por casos de uso. Además, RUP es iterativo e incremental, con incrementos de larga duración[\cite{93}].
+%\subsection{XP}
+%La metodología XP (\textit{eXtreme Programming}), es una metodología ágil enfocada en equipos de trabajo pequeños, con requerimientos imprecisos y cambiantes [\cite{93}]. XP se puede separar en distintas fases [\cite{92}]:
+%\begin{itemize}
+%\item Exploración: El cliente expone lo que necesita mediante ``historias de usuario'', requisitos escritos en una o dos frases haciendo uso de un lenguaje común por el cliente. Los desarrolladores hacen una primera estimación de tiempo de cada ''historia de usuario''.
+%\item Planificación: El cliente y los desarrolladores agrupan las historias de usuario por entregas, después el cliente las ordenará según sus prioridades.
+%\item Desarrollo: Las historias de usuario son llevadas a cabo por los desarrolladores, generando un entregable funcional de cada una. El cliente participa activamente durante esta fase, aportando a los desarrolladores los datos necesarios sobre las historias.
+%\item Puesta en producción: En esta fase el cliente decide si la aplicación se pone en producción o faltan entregables.
+%\end{itemize}
+%
+%XP sigue un conjunto de reglas y prácticas, a continuación, se mostrarán las más 
+%destacadas [\cite{92}]:
+%\begin{itemize}
+%\item Programación en pares: XP propone que se programe en pares, dos personas trabajando en el mismo ordenador. Esto minimiza los errores, logrando mejores diseños y obteniendo un código de mejor calidad que cuando se desarrolla individualmente.
+%\item Programación dirigida por pruebas (\textit{Test Driven Development}): XP propone un modelo en el que primero se escriben las pruebas y después el desarrollo.
+%\item Pruebas de aceptación: El cliente debe especificar distintos escenarios para comprobar que una historia ha sido desarrollada correctamente. Una historia no ha finalizado hasta que pase correctamente todas las pruebas de aceptación.
+%\end{itemize}
 
-Las fases del proceso son [\cite{92}]:
-\begin{itemize}
-\item Inicio: Da comienzo el proyecto y se acuerda el alcance de este con los clientes, se identifican los posibles riesgos que pueden aparecer y se elabora un plan de negocio para determinar los recursos.
-\item Elaboración: Se construyen las bases para la construcción de la arquitectura del sistema, mediante diagramas de casos de uso.
-\item Construcción: Esta fase trata de implementar las distintas funcionalidades del proyecto, realizar las pruebas y observar las evaluaciones de los clientes.
-\item Transición: El objetivo de esta fase es garantizar que los requisitos definidos anteriormente han sido cumplidos. Cuando los stakeholders están satisfechos debido a que se han alcanzado los objetivos definidos en la primera fase. Finaliza la fase de transición con el lanzamiento de la aplicación.
-\end{itemize}
+Tras revisar el abanico de posibilidades metodológicas, y dadas las características del proyecto, del equipo de desarrollo y el poco tiempo disponible, se ha decidido adaptar la metodología Scrum.
 
-\subsection{XP}
-La metodología XP (\textit{eXtreme Programming}), es una metodología ágil enfocada en equipos de trabajo pequeños, con requerimientos imprecisos y cambiantes [\cite{93}]. XP se puede separar en distintas fases [\cite{92}]:
-\begin{itemize}
-\item Exploración: El cliente expone lo que necesita mediante ``historias de usuario'', requisitos escritos en una o dos frases haciendo uso de un lenguaje común por el cliente. Los desarrolladores hacen una primera estimación de tiempo de cada ''historia de usuario''.
-\item Planificación: El cliente y los desarrolladores agrupan las historias de usuario por entregas, después el cliente las ordenará según sus prioridades.
-\item Desarrollo: Las historias de usuario son llevadas a cabo por los desarrolladores, generando un entregable funcional de cada una. El cliente participa activamente durante esta fase, aportando a los desarrolladores los datos necesarios sobre las historias.
-\item Puesta en producción: En esta fase el cliente decide si la aplicación se pone en producción o faltan entregables.
-\end{itemize}
-
-XP sigue un conjunto de reglas y prácticas, a continuación, se mostrarán las más 
-destacadas [\cite{92}]:
-\begin{itemize}
-\item Programación en pares: XP propone que se programe en pares, dos personas trabajando en el mismo ordenador. Esto minimiza los errores, logrando mejores diseños y obteniendo un código de mejor calidad que cuando se desarrolla individualmente.
-\item Programación dirigida por pruebas (\textit{Test Driven Development}): XP propone un modelo en el que primero se escriben las pruebas y después el desarrollo.
-\item Pruebas de aceptación: El cliente debe especificar distintos escenarios para comprobar que una historia ha sido desarrollada correctamente. Una historia no ha finalizado hasta que pase correctamente todas las pruebas de aceptación.
-\end{itemize}
-
-\subsection{SCRUM}
-Scrum es una metodología ágil donde se fomenta el trabajo en equipo y entregas continuas con el objetivo de ser altamente productivos. Esta metodología incluye distintos roles [\cite{92}]:
+%\subsection{SCRUM}
+Scrum es una metodología ágil donde se fomenta el trabajo en equipo y entregas continuas con el objetivo de ser altamente productivos [\cite{92}]. Esta metodología incluye distintos roles:
 \begin{itemize}
 \item \textit{Product Owner}: Representa la voz del cliente, deben de entender las necesidades de estos y encargarse de comunicar el objetivo del proyecto, negociar con el equipo de desarrollo las tareas que realizarán y además dar una opinión acerca de los entregables en cada iteración.
 \item \textit{Scrum Master}: Es el encargado del cumplimiento de las reglas de la metodología Scrum, ayudando y fomentando el trabajo en equipo. El \textit{Scrum Master} programa y dirige las reuniones del equipo, asegurando que se cumplen las reglas de estas. Por último, elimina cualquier bloqueo o impedimento que pueda tener el equipo.
@@ -112,15 +114,80 @@ Scrum es una metodología ágil donde se fomenta el trabajo en equipo y entregas
 \label{fig:SCRUM}
 \end{figure}
 
-La Figura \ref{fig:SCRUM} muestra los fundamentos de Scrum. Este tipo de metodología trata de realizar entregas del producto final, fijadas en un acuerdo entre el equipo de desarrollo y el \textit{product owner}, para conseguir un resultado completo con cada iteración. Normalmente las iteraciones son de 2 semanas, aunque puede haber equipos que prefieren 3 o 4 semanas[\cite{92}].
+La Figura \ref{fig:SCRUM} muestra los fundamentos de Scrum. Este tipo de metodología trata de realizar entregas del producto final, fijadas en un acuerdo entre el equipo de desarrollo y el \textit{product owner}, para conseguir un resultado completo con cada iteración. Normalmente las iteraciones son de 2 semanas, aunque puede haber equipos que prefieren 3 o 4 semanas.
 
-El \textit{backlog} es un almacén en el cual se encuentran las tareas a realizar, ordenadas por prioridad. El equipo de desarrollo es el encargado de añadir y realizar las estimaciones de las tareas, siendo el \textit{product owner} el responsable de priorizar estas. Una vez las tareas se encuentran priorizadas de mayor a menor importancia, según la capacidad del equipo de desarrollo, estos proceden a crear el \textit{sprint}. El \textit{sprint} es el período de tiempo determinado para realizar el trabajo acordado para alcanzar los objetivos propuestos. Es muy importante tener bien definida la tarea, junto con las pruebas de aceptación y una estimación en horas o puntos [\cite{92,93}].
+El \textit{backlog} es un almacén en el cual se encuentran las tareas a realizar, ordenadas por prioridad [\cite{93}]. El equipo de desarrollo es el encargado de añadir y realizar las estimaciones de las tareas, siendo el \textit{product owner} el responsable de priorizar estas. Una vez las tareas se encuentran priorizadas de mayor a menor importancia, según la capacidad del equipo de desarrollo, estos proceden a crear el \textit{sprint}. El \textit{sprint} es el período de tiempo determinado para realizar el trabajo acordado para alcanzar los objetivos propuestos. Es muy importante tener bien definida la tarea, junto con las pruebas de aceptación y una estimación en horas o puntos.
 
-Antes de comenzar un \textit{sprint}, se realiza la reunión llamada \textit{sprint planning}, para seleccionar y comunicar qué tareas es capaz de realizar el equipo, las cuales son seleccionadas del inicio del \textit{backlog}. Una vez finalizado el \textit{sprint} el \textit{product owner} realiza una revisión del trabajo entregado por el equipo de desarrollo y una reunión de retrospectiva en la cual todos los integrantes dejan sus impresiones con el objetivo de mejorar como equipo [\cite{93}].
+Antes de comenzar un \textit{sprint}, se realiza la reunión llamada \textit{sprint planning}, para seleccionar y comunicar qué tareas es capaz de realizar el equipo, las cuales son seleccionadas del inicio del \textit{backlog}. Una vez finalizado el \textit{sprint} el \textit{product owner} realiza una revisión del trabajo entregado por el equipo de desarrollo y una reunión de retrospectiva en la cual todos los integrantes dejan sus impresiones con el objetivo de mejorar como equipo.
 
-\subsection{Metodología de desarrollo adoptada}
+Siendo el equipo solamente una persona (el autor de este trabajo), no existe ningún rol, pero se mantiene la creación y el mantenimiento del \textit{backlog}, siguiendo una organización de \textit{sprints}, permitiendo tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente. Si el equipo aumentara en un futuro, se comenzaría a hacer uso de los roles definidos en la metodología.
 
-Tras revisar el abanico de posibilidades metodológicas, y dadas las características del proyecto, del equipo de desarrollo y el poco tiempo disponible, se ha decidido adaptar la metodología SCRUM a las necesidades del proyecto. Siendo el equipo solamente una persona (el autor de este trabajo), no existe ningún rol, pero se mantiene la creación y el mantenimiento del \textit{backlog}, siguiendo una organización de \textit{sprints}, permitiendo tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente. Si el equipo aumentara en un futuro, se comenzaría a hacer uso de los roles definidos en la metodología.
+La fecha final del proyecto será acorde a la fecha límite de entrega de la convocatoria ordinaria del Trabajo de Fin de Grado. Por tanto, se ha establecido la duración de los sprints en 2 semanas, teniendo cada uno una carga de 34h aproximadamente por \textit{sprint}. En la tabla \ref{tab:sprints} puede verse una planificación inicial. Esta planificación es susceptible a cambios, así como la fecha de finalización podría ser cambiada.
+
+%        Para la administración de tareas, se ha utilizado la herramienta Jira, creada por la 
+%empresa Atlassian, que permite realizar una gestión ágil del proyecto. Jira crea 
+%Aplicación web para la gestión de clubes de fútbol
+%48
+%automáticamente el backlog, que es la lista de trabajo donde se encuentran las tareas 
+%encontrándose arriba las más importantes por el propietario del producto [40].
+%Dentro de Jira, se puede crear distintos sprints, explicado anteriormente en el punto 
+%3.4.1, indicando las fechas y las tareas que existen. Además, permite visualizar los 
+%informes del sprint, siendo muy útiles para el equipo de desarrollo y sobre todo para el 
+%Scrum máster.
+%La plataforma no solo permite la creación y el seguimiento de los sprints, también es 
+%posible realizar un seguimiento de los bugs registrados. 
+
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+		\hline \textbf{Sprint} & \textbf{Comienzo} & \textbf{Final}\\ 
+		\hline Sprint 1 & 1/09/2022  & 15/09/2022\\ 
+		\hline Sprint 2 & 15/09/2022 & 29/09/2022\\ 
+		\hline Sprint 3 & 29/09/2022 & 13/10/2022\\ 
+		\hline Sprint 4 & 13/10/2022 & 27/10/2022\\ 
+		\hline Sprint 5 & 27/10/2022 & 10/11/2022\\ 
+		\hline Sprint 6 & 10/09/2022 & 24/10/2022\\ 
+		\hline 
+		\end{tabular}
+		\caption{Planificación inicial de los sprints}
+		\label{tab:sprints}
+	\end{center}
+\end{table}
+
+
+Las historias de usuario se usan, en el contexto de la ingeniería de requisitos ágil, como una herramienta de comunicación que combina las fortalezas de ambos medios: escrito y verbal. Describen, en una o dos frases, una funcionalidad de \textit{software} desde el punto de vista del usuario, con el lenguaje que éste emplearía. El foco está puesto en qué necesidades o problemas soluciona lo que se va a construir
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|c|p{6cm}|}
+		\hline \textbf{H.U} & \textbf{Nombre} & \textbf{Descripción}\\ 
+		\hline 1 & Autentificación & Como usuario gestor quiero poder autenticarme para acceder al sistema. \\
+		\hline 2 & Cerrar sesión & Como usuario gestor quiero poder cerrar la sesión actual. \\
+		\hline 3 & Añadir usuario & Como administrador quiero poder añadir nuevos usuarios al sistema.\\
+		\hline 4 & Lista de usuarios & Como administrador quiero poder ver los usuarios registrados en el sistema\\
+		\hline 5 & Modificar usuario & Como administrador quiero poder modificar los usuarios registrados en el sistema.\\
+		\hline 6 & Eliminar usuario & Como administrador quiero poder eliminar los usuarios registrados en el sistema.\\
+		\hline 7 & Crear certificado & Como gestor quiero poder añadir nuevos certificados.\\
+		\hline 8 & Lista de certificados emitidos & Como gestor quiero poder ver los certificados emitidos.\\
+		\hline 9 & Validar certificados & Como gestor quiero poder validar los certificados\\
+		\hline 10& Revocar certificado & Como gestor quiero poder revocar los certificaados.\\
+		\hline 11& Lista de certificados revocados & Como gestor quiero poder ver los certificados revocados.\\
+		\hline 12& Consultar certificados & Como usuario quiero poder ver los certificados según los parámetros seleccionados\\
+		\hline 
+		\end{tabular}
+		\caption{Descripción de las historias de usuario}
+		\label{tab:backlog}
+	\end{center}
+\end{table}
+
+%\item A partir de un identificador, conocer los títulos que posee la persona asociada al identificador.
+%\item Autenticar usuarios.
+%\item Dado una institución y un rango de fecha listar los diplomas emitidos cumpliendo con la parametrización establecida.
+%\item Dado una institución, tipo de diploma, disciplina (carrera / facultad) y un rango de fecha listar los diplomas emitidos cumpliendo con la parametrización establecida.
+%\item Dado una institución, disciplina (carrera / facultad) y un rango de fecha listar los diplomas revocados y sus motivos.
+%\item Añadir diploma al sistema.
+%\item Revocar diploma, pues un título en determinadas situaciones puede ser revocado.
 
 %Tras revisar el abanico de posibilidades metodológicas, y dadas las características del proyecto y del equipo de desarrollo, se ha decidido adaptar el modelo Iterativo a las necesidades del proyecto. Se utilizaron también algunos aspectos del desarrollo ágil, específicamente de la metodología SCRUM, como trabajar en iteraciones y tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente. Esto también ayudó a lograr un proceso de desarrollo más fluido y educativo.
 
@@ -134,64 +201,64 @@ Tras revisar el abanico de posibilidades metodológicas, y dadas las caracterís
 
 %La mayor parte del trabajo del proyecto se realizó en línea. Esto se debió a varias razones, por ejemplo, el hecho de que todos usaban principalmente computadoras de escritorio para el trabajo y se habían acostumbrado a trabajar desde casa durante el covid 19, y las oficinas del cliente estaban a más de una hora de viaje. Los repositorios Git proporcionados por el cliente y la aplicación Telegram sirvieron como plataforma para la cooperación.
 
-\section{Análisis: Especificación de requisitos del sistema}
-%\subsection{Requerimientos del sistema}
-El Glosario Estándar IEEE de Terminología de Ingeniería de Software define un requisito como condición o capacidad que necesita un usuario para resolver un problema o lograr un objetivo [\cite{95}]. Los requisitos se pueden clasificar en: funcionales y no funcionales.
-
-\subsection{Requisitos funcionales}
-Los requisitos funcionales son capacidades o condiciones que el sistema debe cumplir [cite{91}]. Su meta principal es identificar y documentar las acciones que en realidad debe ejecutar el sistema para que cumpla con los objetivos planteados al inicio del presente trabajo de diploma.
-
-De acuerdo con los objetivos propuestos el sistema debe ser capaz de:
-
-\begin{enumerate}
-\item A partir de un identificador, conocer los títulos que posee la persona asociada al identificador.
-\item Autenticar usuarios.
-\item Dado una institución y un rango de fecha listar los diplomas emitidos cumpliendo con la parametrización establecida.
-\item Dado una institución, tipo de diploma, disciplina (carrera / facultad) y un rango de fecha listar los diplomas emitidos cumpliendo con la parametrización establecida.
-\item Dado una institución, disciplina (carrera / facultad) y un rango de fecha listar los diplomas revocados y sus motivos.
-\item Añadir diploma al sistema.
-\item Revocar diploma, pues un título en determinadas situaciones puede ser revocado.
-\end{enumerate}
-
-\subsection{Requisitos no funcionales}
-
-Los requisitos no funcionales son propiedades o cualidades que el producto debe tener [\cite{91}]. Debe pensarse en estas propiedades como las características que hacen al producto atractivo, usable, rápido o confiable.
-
-\begin{enumerate}
-\item Requisitos de interfaz y usabilidad:
-	\begin{itemize}
-	\item Tener una interfaz intuitiva y fácil de usar sin necesidad de explicaciones detalladas.
-	\item Contar con una barra de navegación superior y lateral, siguiendo el patrón de los diseños comunes en las aplicaciones actuales.
-	\item Adaptar el contenido adecuadamente al tamaño de pantalla pertinente, ya sea ordenador o dispositivo móvil.
-	\item Usar una paleta de colores consistente.
-	\item Utilizar botones que expresen su función, ya sea a través del ícono o el texto que lo identifica.
-	\item Asegurar que el usuario final sepa dónde se encuentra dentro del flujo procedural de la aplicación, manteniendo una retroalimentación eficiente y completa con dicho usuario.
-	\end{itemize}
-\item Requisitos operacionales:
-	\begin{itemize}
-	\item Ser una aplicación multiplataforma, funcional tanto en sistemas operativos distintos como en dispositivos de diferentes tamaños.
-	\end{itemize}
-\item Requisitos de seguridad:
-	\begin{itemize}
-	\item Tener en cuenta la información visible de los distintos usuarios.
-	\end{itemize}
-\item Requisitos de mantenibilidad y portabilidad:
-	\begin{itemize}
-	\item Tener en cuenta el uso de tecnologías persistentes y una visión de futuro para implementar actualizaciones sin problema alguno.
-	\end{itemize}
-\item Requisitos de recursos:
-	\begin{itemize}
-	\item Ser una aplicación ligera en cuanto al tamaño necesario de almacenamiento.
-	\end{itemize}
-\item Requisitos de rendimiento:
-	\begin{itemize}
-	\item La herramienta debe ser rápida y el tiempo de respuesta debe ser el mínimo posible, al igual que la velocidad de procesamiento de la información.
-	\end{itemize}
-\item Requisitos de disponibilidad:
-	\begin{itemize}
-	\item La aplicación no debe dejar de funcionar aunque se provoquen fallos.
-	\end{itemize}
-\end{enumerate}
+%\section{Análisis: Especificación de requisitos del sistema}
+%%\subsection{Requerimientos del sistema}
+%El Glosario Estándar IEEE de Terminología de Ingeniería de Software define un requisito como condición o capacidad que necesita un usuario para resolver un problema o lograr un objetivo [\cite{95}]. Los requisitos se pueden clasificar en: funcionales y no funcionales.
+%
+%\subsection{Requisitos funcionales}
+%Los requisitos funcionales son capacidades o condiciones que el sistema debe cumplir [\cite{91}]. Su meta principal es identificar y documentar las acciones que en realidad debe ejecutar el sistema para que cumpla con los objetivos planteados al inicio del presente trabajo de diploma.
+%
+%De acuerdo con los objetivos propuestos el sistema debe ser capaz de:
+%
+%\begin{enumerate}
+%\item A partir de un identificador, conocer los títulos que posee la persona asociada al identificador.
+%\item Autenticar usuarios.
+%\item Dado una institución y un rango de fecha listar los diplomas emitidos cumpliendo con la parametrización establecida.
+%\item Dado una institución, tipo de diploma, disciplina (carrera / facultad) y un rango de fecha listar los diplomas emitidos cumpliendo con la parametrización establecida.
+%\item Dado una institución, disciplina (carrera / facultad) y un rango de fecha listar los diplomas revocados y sus motivos.
+%\item Añadir diploma al sistema.
+%\item Revocar diploma, pues un título en determinadas situaciones puede ser revocado.
+%\end{enumerate}
+%
+%\subsection{Requisitos no funcionales}
+%
+%Los requisitos no funcionales son propiedades o cualidades que el producto debe tener [\cite{91}]. Debe pensarse en estas propiedades como las características que hacen al producto atractivo, usable, rápido o confiable.
+%
+%\begin{enumerate}
+%\item Requisitos de interfaz y usabilidad:
+%	\begin{itemize}
+%	\item Tener una interfaz intuitiva y fácil de usar sin necesidad de explicaciones detalladas.
+%	\item Contar con una barra de navegación superior y lateral, siguiendo el patrón de los diseños comunes en las aplicaciones actuales.
+%	\item Adaptar el contenido adecuadamente al tamaño de pantalla pertinente, ya sea ordenador o dispositivo móvil.
+%	\item Usar una paleta de colores consistente.
+%	\item Utilizar botones que expresen su función, ya sea a través del ícono o el texto que lo identifica.
+%	\item Asegurar que el usuario final sepa dónde se encuentra dentro del flujo procedural de la aplicación, manteniendo una retroalimentación eficiente y completa con dicho usuario.
+%	\end{itemize}
+%\item Requisitos operacionales:
+%	\begin{itemize}
+%	\item Ser una aplicación multiplataforma, funcional tanto en sistemas operativos distintos como en dispositivos de diferentes tamaños.
+%	\end{itemize}
+%\item Requisitos de seguridad:
+%	\begin{itemize}
+%	\item Tener en cuenta la información visible de los distintos usuarios.
+%	\end{itemize}
+%\item Requisitos de mantenibilidad y portabilidad:
+%	\begin{itemize}
+%	\item Tener en cuenta el uso de tecnologías persistentes y una visión de futuro para implementar actualizaciones sin problema alguno.
+%	\end{itemize}
+%\item Requisitos de recursos:
+%	\begin{itemize}
+%	\item Ser una aplicación ligera en cuanto al tamaño necesario de almacenamiento.
+%	\end{itemize}
+%\item Requisitos de rendimiento:
+%	\begin{itemize}
+%	\item La herramienta debe ser rápida y el tiempo de respuesta debe ser el mínimo posible, al igual que la velocidad de procesamiento de la información.
+%	\end{itemize}
+%\item Requisitos de disponibilidad:
+%	\begin{itemize}
+%	\item La aplicación no debe dejar de funcionar aunque se provoquen fallos.
+%	\end{itemize}
+%\end{enumerate}
 
 %Requisitos no funcionales de Apariencia o Interfaz Externa.
 %El usuario debe tener acceso por varias vías a una determinada funcionalidad.
@@ -225,17 +292,17 @@ Los actores representan entidades que interactúan con el sistema, un actor del 
 
 Se definen dos tipos de usuarios principales que pueden interactuar con la plataforma: \textbf{anónimos} y \textbf{gestores}. El usuario \textbf{anónimo} es un \textbf{usuario público} que puede acceder sin registrarse a las funcionalidades públicas del sistema.
 
-Los \textbf{gestores} serán usuarios registrados en un sistema de terceros. Estos usuarios tendrán acceso a una sección de \textit{back office} que le permitirá realizar tareas de gestión en la plataforma. Además, contarán con un rol definido en dicho sistema de terceros cuyo rol viajará en la respuesta de autenticación del mismo al nodo cliente (borde del backend de la solución a implementar).
+Los \textbf{gestores} serán usuarios registrados en un sistema de terceros. Estos usuarios tendrán acceso a una sección de \textit{back office} que le permitirá realizar tareas de gestión en la plataforma. Además, contarán con un rol definido en dicho sistema de terceros cuyo rol viajará en la respuesta de autenticación del mismo al nodo cliente (borde del \textit{backend} de la solución a implementar).
 
 \subsection{Casos de uso del sistema}
-La forma en que los actores usan el sistema es representada a través de los casos de usos. Estos últimos son artefactos narrativos que describen, bajo la forma de acciones y reacciones, el comportamiento del sistema desde el punto de vista del actor [\cite{91}]. 
+La forma en que los actores utilizan el sistema puede ser representada a través de los casos de usos [\cite{91}]. Estos últimos son artefactos narrativos que describen, bajo la forma de acciones y reacciones, el comportamiento del sistema desde el punto de vista del actor.
 
 %Los casos de usos identificados en el presente trabajo son enunciados a continuación:
 
 \subsubsection{Diagrama de casos de uso del sistema}
-Los diagramas de casos de usos son unos tipos de diagrama dónde poder observar el comportamiento esperado del sistema, desde la visión de los usuarios, sin llegar a un alto nivel de especificación acerca de como se implementan las acciones [\cite{91}]. 
+Los diagramas de casos de usos [\cite{91}] son un tipo de diagrama dónde se puede representar el comportamiento esperado del sistema, desde la visión de los usuarios, sin llegar a un alto nivel de especificación acerca de cómo se implementan las acciones.
 
-Los principales elementos que nos encontramos en este tipo de diagramas son [\cite{91}]:
+Los principales elementos que nos encontramos en este tipo de diagramas son:
 \begin{itemize}
 \item Sistema: Representa con un rectángulo los limites del sistema, los actores se ubican fuera de la figura.
 \item Caso de uso: Representado con un óvalo y un texto identificativo, identifican una determinada acción.
@@ -339,12 +406,12 @@ A continuación se exponen los casos de uso de alto nivel, para lograr entender 
 \end{table}
 
 \section{Diseño del sistema}
-Tras el apartado de análisis, en el que se ha establecido \textbf{qué} es lo que se quiere que incluya la aplicación, se va a desarrollar el apartado del diseño, en el que se explica \textbf{cómo} se quieren llevar a cabo los requisitos.
+Tras el apartado de análisis, en el que se ha establecido cuales son los elementos que se desean incluir en el sistema, se desarrolla a continuación el apartado, en el que se explica cómo se quieren llevar a cabo los requisitos.
 
 \subsection{Arquitectura del sistema}
-La arquitectura de un \textit{software} se encarga de entender cómo debe organizarse el sistema y cómo tiene que diseñarse la estructura global de ese sistema. Es el enlace crucial entre el diseño y la ingeniería de requisitos, ya que identifica los principales componentes estructurales en un sistema y la relación entre ellos. La salida del proceso de diseño arquitectónico consiste en un modelo arquitectónico que describe la  forma en que se organiza el sistema como un conjunto de componentes en comunicación. La arquitectura de \textit{software} es importante porque afecta el desempeño y la potencia, así como la capacidad de distribución y mantenimiento de un sistema [\cite{91}].
+La arquitectura de un \textit{software} se encarga de entender cómo debe organizarse el sistema y cómo tiene que diseñarse la estructura global del mismo [\cite{91}]. Constituye el enlace crucial entre el diseño y la ingeniería de requisitos, ya que identifica los principales componentes estructurales en un sistema y la relación entre ellos. La salida del proceso de diseño arquitectónico consiste en un modelo arquitectónico que describe la  forma en que se organiza el sistema como un conjunto de componentes en comunicación. La arquitectura de \textit{software} representa un elemento fundamental pues afecta el desempeño del sistema, así como su capacidad de distribución y mantenimiento.
 
-Según (Pressman 2010), la arquitectura de un sistema puede basarse en un patrón o un estilo arquitectónico particular. Un patrón arquitectónico es una descripción de una organización del sistema, captan la esencia de una arquitectura usada en diferentes sistemas de software.
+Según [\cite{99}], la arquitectura de un sistema puede basarse en un patrón o un estilo arquitectónico particular. Un patrón arquitectónico es una descripción de una organización del sistema, captan la esencia de una arquitectura usada en diferentes sistemas de \textit{software}.
 
 %Para empezar la sección de diseño, se va a exponer la arquitectura del sistema que se va a
 %implementar, destacando dos aspectos relevantes, el patrón de diseño Modelo Vista VistaModelo (MVVM) y la denominada arquitectura backendless
@@ -411,10 +478,9 @@ La arquitectura es necesaria para comprender el sistema, organizar el desarrollo
 
 \subsubsection{Patrón MVVM}
 
-El patrón Modelo Vista Vista Modelo o en inglés Model View ViewModel (MVVM) se diferencia del clásico Modelo Vista Controlador (MVC). En el
-MVC, es el controlador (el componente encargado de toda la lógica de la aplicación que enlaza la vista con el modelo) quien debe actualizar manualmente los cambios producidos en el modelo o en la vista de manera independiente, mientras que en el patrón MVVM, estos cambios se actualizan automáticamente gracias al componente VistaModelo. Es decir, si se produce un cambio en la vista, los datos son actualizados de forma automática en la parte del modelo, y viceversa [\cite{45}].
+El patrón Modelo Vista Vista Modelo o en inglés Model View ViewModel (MVVM) se diferencia del clásico Modelo Vista Controlador (MVC) [\cite{45}]. En el MVC, es el controlador (el componente encargado de toda la lógica de la aplicación que enlaza la vista con el modelo) quien debe actualizar manualmente los cambios producidos en el modelo o en la vista de manera independiente, mientras que en el patrón MVVM, estos cambios se actualizan automáticamente gracias al componente VistaModelo. Es decir, si se produce un cambio en la vista, los datos son actualizados de forma automática en la parte del modelo, y viceversa.
 
-Por ejemplo, el entorno de desarrollo Vue está centrado en el componente Vista-Modelo del patrón MVVM, que se encarga del trabajo realizado por el controlador en el diseño MVC, pero enlazando los datos entre la vista y el modelo de forma reactiva, simple y flexible. [\cite{49,47}]
+Por ejemplo, el entorno de desarrollo Vue está centrado en el componente Vista-Modelo del patrón MVVM [\cite{49,47}], que se encarga del trabajo realizado por el controlador en el diseño MVC, pero enlazando los datos entre la vista y el modelo de forma reactiva, simple y flexible.
 
 \begin{figure}[htbp]
 \centering
@@ -484,11 +550,11 @@ El objetivo principal de una implementación de MVVM es separar la lógica de la
 Los patrones GRASP (Patrones Generales de Software para Asignación de Responsabilidades) describen los principios fundamentales de diseño de objetos para la asignación de responsabilidades. Las responsabilidades  están relacionadas con las obligaciones de un objeto en cuanto a su comportamiento [\cite{97}]. Entre los patrones GRASP empleados en la solución encontramos:
 
 \begin{itemize}
-\item Bajo Acoplamiento: El acoplamiento es una medida de la fuerza con que una clase está conectada a otras clases, con que las conoce y recurre a ellas. El bajo acoplamiento soporta un diseño de clases más independientes, que reducen el impacto de cambios, y permite que sean más reutilizables [\cite{97}].
+\item Bajo Acoplamiento: El acoplamiento es una medida de la fuerza con que una clase está conectada a otras clases, con que las conoce y recurre a ellas. El bajo acoplamiento soporta un diseño de clases más independientes, que reducen el impacto de cambios, y permite que sean más reutilizables.
 
 La arquitectura de software basada en componentes permite un bajo acoplamiento entre sus componentes. Estos pueden ser creados, modificados o eliminados en cualquier momento, lo que proporciona que la dependencia entre ellos sea baja.
 
-\item Alta Cohesión: La cohesión es una medida de la fuerza con la que se relacionan las clases y el grado de focalización de las responsabilidades de un elemento. Cada elemento del diseño debe realizar una labor única dentro del sistema, no desempeñada por el resto de los elementos, y auto-identificable. Una clase con baja cohesión realiza muchas labores no relacionadas o realiza demasiado trabajo [\cite{97}].
+\item Alta Cohesión: La cohesión es una medida de la fuerza con la que se relacionan las clases y el grado de focalización de las responsabilidades de un elemento. Cada elemento del diseño debe realizar una labor única dentro del sistema, no desempeñada por el resto de los elementos, y auto-identificable. Una clase con baja cohesión realiza muchas labores no relacionadas o realiza demasiado trabajo.
 
 La arquitectura de software basada en componentes permite la organización del trabajo en cuanto a la estructura del proyecto y la asignación de responsabilidades con una alta cohesión. Cada componente realiza solo las funcionalidades para las cuales fueron creados, colaborando entre ellos para cumplir con el resto de las funcionalidades, generando un bajo acoplamiento y fomentando la reutilización. Esto hace posible que el sistema sea flexible a cambios sustanciales con efecto mínimo
 \end{itemize}
@@ -497,13 +563,13 @@ La arquitectura de software basada en componentes permite la organización del t
 Los patrones GoF (Patrones de la ``pandilla de los cuatros'') son los más utilizados en la implementación de \textit{software} [\cite{97}]. Los patrones GoF utilizados en la propuesta de solución son los siguientes:
 
 \begin{itemize}
-\item Singleton (Instancia Única): Su propósito es asegurar que una clase tenga una única instancia y proporcionar un punto de acceso global a dicha instancia [\cite{97}].
+\item Singleton (Instancia Única): Su propósito es asegurar que una clase tenga una única instancia y proporcionar un punto de acceso global a dicha instancia.
 
 En la solución se ve presente al instanciar el hilo principal de la aplicación, la clase encargada de la autenticación de usuarios y la clase encargada de la comunicación, garantizando un único punto de acceso y evitando la replicación de hilos y proceso.
 
-\item Observer (Observador): Este patrón define una dependencia de uno-a-muchos entre objetos, de manera que cuando un objeto cambie de estado se notifique y actualicen automáticamente todos los objetos que dependen de él [\cite{97}].
+\item Observer (Observador): Este patrón define una dependencia de uno-a-muchos entre objetos, de manera que cuando un objeto cambie de estado se notifique y actualicen automáticamente todos los objetos que dependen de él.
 
-Los servicios de gestión de estado de Vue utilizan el patrón de observador, permitiendo al cliente almacenar el estado local de una manera funcional [\cite{52}]. El patrón se utiliza como soporte para que el sistema pueda comunicarse con una API externa accediendo a los datos brindados por el paquete de servicios (Pinia).  En esta solución permite mantener consistencia entre objetos relacionados sin aumentar el acoplamiento entre clases.
+Los servicios de gestión de estado de Vue utilizan el patrón de observador, permitiendo al cliente almacenar el estado local de una manera funcional [\cite{52}]. El patrón se utiliza como soporte para que el sistema pueda comunicarse con una API externa accediendo a los datos brindados por el paquete de servicios (Pinia). En esta solución permite mantener consistencia entre objetos relacionados sin aumentar el acoplamiento entre clases.
 
 \end{itemize}
 %A continuación se presenta los patrones de diseño GoF que fueron seleccionados para utilizar como 
@@ -668,7 +734,7 @@ Como habíamos mencionado previamente en la definición de actores del sistema, 
 
 %JSON Web Token es una forma alternativa de autorizar usuarios a la forma tradicional de usar sesiones. Tradicionalmente, los identificadores de sesión se almacenan en el servidor y se transmiten a la \textit{cookie} del cliente. Cuando el cliente realiza una solicitud al servidor, la identificación de la sesión del cliente se pasa a través del campo de encabezado en la solicitud HTTP al servidor. Luego, el servidor compara la identificación de la sesión recibida del cliente con la almacenada en el servidor. Si coinciden, la solicitud se resuelve; si no, la solicitud se rechaza.
 
-La autentificación de portador (también llamada autenticación de token) es un esquema de autentificación HTTP que involucra tokens de seguridad llamados \textit{Bearer tokens}. El nombre ``Autenticación de portador'' puede entenderse como ``dar acceso al portador de este token''. El \textit{Bearer token} es una cadena críptica, generalmente generada por el servidor en respuesta a una solicitud de inicio de sesión [\cite{98}].
+La autentificación de portador (también llamada autenticación de token) es un esquema de autentificación HTTP que involucra tokens de seguridad llamados \textit{Bearer tokens} [\cite{98}]. El nombre ``Autenticación de portador'' puede entenderse como ``dar acceso al portador de este token''. El \textit{Bearer token} es una cadena críptica, generalmente generada por el servidor en respuesta a una solicitud de inicio de sesión.
 
 Tanto en el servidor, como en el sitio web, nos centraremos en la seguridad. Entre otras cosas: el servidor creará y verificará tokens de identificación (\textit{Bearer token}) para cada usuario, y nuestra interfaz los usará para saber quien está identificado en cada momento y los permisos asociados a ellos; todas las contraseñas de los usuarios se guardarán en formato hash usando la función bcrypt; y, por último, todos los datos recibidos por el servidor se validarán para evitar usos incorrectos.
 
@@ -704,6 +770,13 @@ Un modelo de despliegue consiste en una representación estructural de la arquit
 \label{fig:deploy}
 \end{figure}
 
+%Como ya hemos indicado en el apartado anterior, Vue es el framework elegido para la 
+%parte del servidor Web. Este framework se apoya en NodeJs, que es un entorno de 
+%ejecución de JavaScript orientado a eventos asíncronos, y que será la base para la 
+%construcción del módulo Front-End. A su vez, para la creación de los servicios REST 
+%desde el componente de la interfaz web, se utiliza Axios, un cliente HTTP basado en 
+%promesas para Javascript.
+%Estas llamadas serán recibidas por el Back-End, 
 
 %A continuación, se muestra el diagrama de despliegue 
 %propuesto para el Portafirmas Digital. El mismo, muestra la disposición física de los nodos que componen 

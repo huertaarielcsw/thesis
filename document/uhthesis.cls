@@ -15,7 +15,7 @@
 \RequirePackage{lmodern}
 
 \RequirePackage[spanish,es-ucroman]{babel}
-\RequirePackage[refpage, intoc, spanish]{nomencl}
+\RequirePackage[norefpage, intoc, spanish]{nomencl}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
 \RequirePackage[nottoc,notlof,notlot]{tocbibind}
@@ -26,6 +26,7 @@
 	citestyle=numeric,
  	hyperref=true,
 	backref=true,
+	sorting=none,
 	backend=biber
 	]{biblatex}
 \RequirePackage[linktocpage,breaklinks,colorlinks,%

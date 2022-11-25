@@ -1,54 +1,60 @@
 \chapter{Estado del Arte}\label{chapter:state-of-the-art}
 
-En este primer capítulo nombrado Estado del Arte, se pretende explicar el estado actual de las tecnologías en las que se basa el tema central de este proyecto. Explicando de forma clara y concisa todo lo que engloba las interfaces de usuarios actualmente, pasando por alguna anotación histórica para poder comprender su evolución. Además, presentaremos la información obtenida tras una pequeña investigación sobre distintos \textit{front-ends} que posean características similares al que en este documento presentamos.
+En este primer capítulo nombrado Estado del Arte, se pretende explicar el estado actual de las tecnologías en las que se basa el tema central de este proyecto. Explicando de forma clara y concisa todo lo que engloba las interfaces de usuarios actualmente, pasando por alguna anotación histórica para poder comprender su evolución. Además, presentaremos la información obtenida tras una pequeña investigación sobre distintas interfaces de usuario que posean características similares al que en este documento presentamos.
 
 \section{Interfaz de Usuario}
 
-Los tiempos en que solo los científicos y los desarrolladores de \textit{software} podían usar los ordenadores han quedado muy atrás. Hoy en día, casi todo el mundo puede manejar un PC o una tableta, a menudo incluso sin necesitar conocimientos especializados previos. Esto fue posible gracias al desarrollo de las interfaces gráficas de usuario, un tipo de interfaz de usuario.
+Los tiempos en que solo los científicos y los desarrolladores de \textit{software} podían usar los ordenadores han quedado muy atrás. Hoy en día, casi todo el mundo puede manejar un PC o una tableta, a menudo incluso sin necesitar conocimientos especializados previos. Esto fue posible gracias al desarrollo de las interfaces gráficas, un tipo de interfaz de usuario.
 
 \subsection{Orígenes}
 
-Las interfaces de usuario existen desde el surgimiento de las computadoras, incluso mucho antes de que se estableciera el campo de la interacción humano-computadora. A lo largo de los años, han aparecido algunos artículos sobre la historia de la interacción humano-computadora y las interfaces de usuario, centrándose principalmente en la era de la interfaz gráfica y los primeros visionarios como Bush, Engelbart y Kay [\cite{5,6,7,8}].
+Las interfaces de usuario existen desde el surgimiento de las computadoras, incluso mucho antes de que se estableciera el campo de la interacción humano-computadora. A lo largo de los años, han aparecido algunos artículos sobre la historia de la interacción humano-computadora y las interfaces de usuario [\cite{5,7}], centrándose principalmente en la era de la interfaz gráfica y los primeros visionarios como Bush, Engelbart y Kay.
 
-En las primeras computadoras, la interfaz de usuario consistía en la entrada de una tarjeta perforada o un medio equivalente y, aparte de esta consola operativa, los humanos no tenían interacción con estas primeras computadoras en tiempo real[\cite{6,8}].
+%En las primeras computadoras, la interfaz de usuario consistía en la entrada de una tarjeta perforada o un medio equivalente y, aparte de esta consola operativa, los humanos no tenían interacción con estas primeras computadoras en tiempo real. %[\cite{6,8}].
+Todo comenzó con la computación por lotes (\textit{Batch computing}) cuando la potencia informática no superaba la de las microondas modernas. La interfaz de usuario de las computadoras \textit{Batch} consistía en la entrada de una tarjeta perforada o un medio equivalente y, aparte de esta consola operativa, los humanos no tenían interacción en tiempo real con estas computadoras.
 
-Las interfaces de usuario complicadas se consideraron un gasto innecesario porque el \textit{software} fue diseñado para utilizar el procesador al máximo. Esto comenzó a cambiar cuando se introdujeron las interfaces de línea de comandos[\cite{7}], las cuales redujeron en gran medida la latencia a segundos en lugar de días u horas porque la interfaz de usuario era una serie de transacciones de solicitud y respuesta que permitía al usuario cambiar de opinión sobre las transacciones en respuesta a datos en tiempo real de transacciones anteriores.
+Las interfaces de usuario complejas se consideraron un gasto innecesario porque el \textit{software} era diseñado para utilizar el procesador al máximo. Esto comenzó a cambiar cuando se introdujeron las interfaces de línea de comandos, las cuales redujeron en gran medida la latencia a segundos en lugar de días u horas. Ahora los operadores o usuarios podían cambiar de opinión sobre las transacciones en respuesta a datos en tiempo real.
 
-La siguiente progresión clave de la interfaz de usuario fue la introducción de terminales de visualización de video[\cite{7}]. Hacer que sus entradas de comando aparecieran en una pantalla y poder modificarlas de manera inversa fue mucho más rápido que tenerlas impresas. También tenía sentido desde el punto de vista económico al eliminar la necesidad de tinta y materiales de impresión.
+%Lo primero que existió como interfaz de computadores, luego de las tarjetas perforadas en la época en que los computadores de IBM ocupaban una habitación completa, era lo que se conoce como CLI (Command Line Interface) o Interfaz de líneas de comando. Este tipo de interfaz funcionaba como un sistema de comunicación basado en líneas de código que se escribían por medio de un teclado a una pantalla.
+
+%La siguiente progresión clave de la interfaz de usuario fue la introducción de terminales de visualización de video[\cite{7}]. Hacer que sus entradas de comando aparecieran en una pantalla y poder modificarlas de manera inversa fue mucho más rápido que tenerlas impresas. También tenía sentido desde el punto de vista económico al eliminar la necesidad de tinta y materiales de impresión.
 
 %Finalmente, llegó la GUI, originada principalmente en el Centro de Investigación de Palo Alto (PARC) de Xerox, adoptada y mejorada por Apple y estandarizada efectivamente por Microsoft en sus sistemas operativos Windows.
 
-Luego, en los años 70, los primeros conceptos de interfaz gráfica de usuario se desarrollaron en la empresa Xerox [\cite{5,8}]. Su propósito principal era permitir manejar ordenadores con el ratón y el teclado en lugar de solo con instrucciones en formato de texto. Xerox Alto fue el primer PC con una interfaz gráfica[\cite{7}].
+Luego, en los años 70, los primeros conceptos de interfaz gráfica de usuario se desarrollaron en la empresa Xerox [\cite{5,7}]. Su propósito principal era permitir manejar ordenadores con el ratón y el teclado en lugar de solo con instrucciones de comandos a maneras de textos.
 
-Posteriormente, la llegada de los primeros productos Apple y Microsoft trajo consigo un importante salto adelante en esta materia, tanto así que hoy en día es impensable la interacción con un sistema informático sin este tipo de herramientas virtuales (o naturales) a nuestra disposición[\cite{7,5}].
+Posteriormente, la llegada de los primeros productos Apple y Microsoft en los años 80 y 90 [\cite{5,7}], trajo consigo un importante salto adelante en esta materia, tanto así que hoy en día es impensable la interacción con un sistema informático sin este tipo de herramientas virtuales (o naturales) a nuestra disposición.
 
 \subsection{Concepto y características}
+Para Moran [\cite{23}], la \textbf{interfaz de usuario} (UI por sus siglas en inglés) consiste en todo lo que el usuario entra en contacto mientras usa el sistema, física, perceptivamente y conceptualmente. La visión conceptual del usuario de la interfaz se desarrolla a partir del comportamiento total del sistema, por lo que la interfaz es más que un componente adicional de una aplicación.
 
-Para Moran [\cite{23}], la \textbf{interfaz de usuario} (UI por sus siglas en inglés) consiste en todo lo que el usuario entra en contacto mientras usa el sistema, física, perceptivamente y conceptualmente. La visión conceptual del usuario de la interfaz se desarrolla a partir del comportamiento total del sistema, por lo que la interfaz es más que un componente adicional de una aplicación. Los modelos generalmente aceptados de la interfaz de usuario [\cite{24, 25, 26}] se basan en el modelo de lenguaje de interacción humano-computadora [\cite{28}]. La interacción humano-computadora se considera una forma de comunicación entre dos partes que tienen capacidades de envío y recepción bastante diferentes. Por ejemplo, la computadora tradicionalmente se ha limitado a mostrar mensajes y símbolos en una pantalla. Al mismo tiempo, la computadora también tiene una capacidad bastante limitada para recibir e interpretar información. Por lo tanto, normalmente se requiere que el usuario humano especifique información para la computadora usando teclas en un teclado o clics del mouse.
+%Los modelos generalmente aceptados de la interfaz de usuario se basan en el modelo de lenguaje de interacción humano-computadora [\cite{28}]. La interacción humano-computadora se considera una forma de comunicación entre dos partes que tienen capacidades de envío y recepción bastante diferentes. Por ejemplo, la computadora tradicionalmente se ha limitado a mostrar mensajes y símbolos en una pantalla. Al mismo tiempo, la computadora también tiene una capacidad bastante limitada para recibir e interpretar información. Por lo tanto, normalmente se requiere que el usuario humano especifique información para la computadora usando teclas en un teclado o clics del mouse.
+
+%[\cite{24, 25, 26}]
 
 %La \textbf{interfaz de usuario} (UI por sus siglas en inglés) es el espacio donde se producen las interacciones entre seres humanos y máquinas. El objetivo de esta interacción es permitir el funcionamiento y control más efectivo de la máquina desde la interacción con el humano [\cite{}].
 
 %La tecnología informática permite a las personas interactuar con enormes cantidades de datos utilizando un gran número de funciones. Los comandos de control del usuario y las respuestas de la computadora constituyen una interfaz de usuario, un intercambio de signos gráficos, acústicos y táctiles. En las primeras computadoras interactivas, la interfaz de usuario era la entrada y salida de texto relativamente simple, pero a menudo incómoda. En las interfaces gráficas de usuario actuales, la comunicación se enriquece con computadoras más poderosas, nuevos dispositivos de entrada y salida y software sofisticado. Las interfaces de usuario del mañana se pueden vislumbrar en proyectos de investigación en los que las interfaces de usuario son entornos circundantes que entienden las solicitudes y gestos hablados, y presentan imágenes animadas tridimensionales, videos y agentes autónomos que actúan en nombre del usuario.
 
-El propósito de la interfaz de usuario es facilitar la comunicación entre el usuario y la computadora al envolver el \textit{hardware} y el software, particularmente la semántica de las aplicaciones, en un diálogo. Este diálogo oculta la estructura de los dispositivos de entrada/salida, los sistemas operativos, las redes y las aplicaciones, y permite que el usuario cambie de aplicación rápidamente, sin las trabas de los mecanismos técnicos. Independientemente de cómo evolucione el \textit{hardware} y el software de soporte, la interfaz de usuario permanece incorporada en estos aspectos esenciales: una o más metáforas o ideas subyacentes, la organización conceptual de datos y funciones, técnicas de navegación, características de apariencia y secuencias de interacción [\cite{26}].
+%El propósito de la interfaz de usuario es facilitar la comunicación entre el usuario y la computadora al envolver el \textit{hardware} y el software, particularmente la semántica de las aplicaciones, en un diálogo. Este diálogo oculta la estructura de los dispositivos de entrada/salida, los sistemas operativos, las redes y las aplicaciones, y permite que el usuario cambie de aplicación rápidamente, sin las trabas de los mecanismos técnicos. Independientemente de cómo evolucione el \textit{hardware} y el software de soporte, la interfaz de usuario permanece incorporada en estos aspectos esenciales: una o más metáforas o ideas subyacentes, la organización conceptual de datos y funciones, técnicas de navegación, características de apariencia y secuencias de interacción [\cite{26}].
 
-La interfaz de usuario se crea en capas de interacción que apelan a los sentidos humanos (vista, tacto, audición y más). Incluyen tanto dispositivos de entrada como teclado, mouse, micrófono, pantalla táctil, escáner de huellas dactilares y cámara, como dispositivos de salida como monitores, parlantes e impresoras. Los dispositivos que interactúan con múltiples sentidos se denominan ``interfaces de usuario multimedia''. Por ejemplo, la interfaz de usuario cotidiana usa una combinación de entrada táctil (teclado y mouse) y una salida visual y auditiva (monitor y parlantes).
+La interfaz de usuario se crea en capas de interacción que apelan a los sentidos humanos (vista, tacto, audición y más). Incluyen tanto dispositivos de entrada como teclado, mouse, micrófono, pantalla táctil, escáner de huellas dactilares y cámara, como dispositivos de salida como monitores, parlantes e impresoras. Los dispositivos que interactúan con múltiples sentidos se denominan interfaces de usuario multimedia [\cite{24}]. Por ejemplo, la interfaz de usuario cotidiana usa una combinación de entrada táctil (teclado y mouse) y una salida visual y auditiva (monitor y parlantes).
 
-Las interfaces de usuario abarcan tres niveles diferentes de interacción entre humano y máquina, que son:
+%Las interfaces de usuario abarcan tres niveles diferentes de interacción entre humano y máquina, que son:
 
-\begin{itemize}
-\item Interfaces de hardware: se refieren únicamente a los componentes físicos y electrónicos del sistema que permiten al usuario introducir y extraer información al sistema. Tal es el caso de teclados, ratones (mouse), pantallas táctiles y/o visualizadoras, etc.
-\item Interfaces de software, se refieren al funcionamiento específico de los programas informáticos y de la información virtual que ``ocurre'' o ``tiene lugar'' dentro del computador. Tal es el caso de las aplicaciones que empleamos a diario en nuestro trabajo con computadores.
-\item Interfaces de software-hardware: se dedican a establecer un puente entre máquina y usuario, para ``traducir'' las instrucciones humanas al lenguaje del sistema y permitirle llevarlas a cabo exactamente, y al mismo tiempo ``traducir'' las respuestas del sistema del código binario a un lenguaje reconocible por el usuario.
-\end{itemize}
+%\begin{itemize}
+%\item Interfaces de hardware: se refieren únicamente a los componentes físicos y electrónicos del sistema que permiten al usuario introducir y extraer información al sistema. Tal es el caso de teclados, ratones (mouse), pantallas táctiles y/o visualizadoras, etc.
+%\item Interfaces de software, se refieren al funcionamiento específico de los programas informáticos y de la información virtual que ``ocurre'' o ``tiene lugar'' dentro del computador. Tal es el caso de las aplicaciones que empleamos a diario en nuestro trabajo con computadores.
+%\item Interfaces de software-hardware: se dedican a establecer un puente entre máquina y usuario, para ``traducir'' las instrucciones humanas al lenguaje del sistema y permitirle llevarlas a cabo exactamente, y al mismo tiempo ``traducir'' las respuestas del sistema del código binario a un lenguaje reconocible por el usuario.
+%\end{itemize}
 
-Al mismo tiempo, de acuerdo a su manera de interactuar con el usuario, las interfaces pueden clasificarse en:
-
-\begin{itemize}
-\item Interfaces de línea de comando (CLI, por sus siglas en inglés), cuando consisten en secuencias de caracteres alfanuméricos, es decir, texto únicamente. Por ejemplo, el MS-DOS.
-\item Interfaces gráficas de usuario (GUI, por sus siglas en inglés), cuando reproducen un entorno visual simulado (virtual) cuya lógica permite la comunicación con el usuario. Por ejemplo, Microsoft Windows.
-\item Interfaces naturales de usuario (NUI, por sus siglas en inglés), cuando emplean dinámicas “naturales” del ser humano, como el habla o el tacto (mediante pantallas táctiles) para comunicarse directamente con el usuario. Por ejemplo, los programas de IA de servicio personal (como Siri, de Apple).
-\end{itemize}
+%Al mismo tiempo, de acuerdo a su manera de interactuar con el usuario, las interfaces pueden clasificarse en:
+%
+%\begin{itemize}
+%\item Interfaces de línea de comando (CLI, por sus siglas en inglés), cuando consisten en secuencias de caracteres alfanuméricos, es decir, texto únicamente. Por ejemplo, el MS-DOS.
+%\item Interfaces gráficas de usuario (GUI, por sus siglas en inglés), cuando reproducen un entorno visual simulado (virtual) cuya lógica permite la comunicación con el usuario. Por ejemplo, Microsoft Windows.
+%\item Interfaces naturales de usuario (NUI, por sus siglas en inglés), cuando emplean dinámicas ``naturales'' del ser humano, como el habla o el tacto (mediante pantallas táctiles) para comunicarse directamente con el usuario. Por ejemplo, los programas de IA de servicio personal (como Siri, de Apple).
+%\end{itemize}
 
 %Otros tipos de interfaces de usuario pueden incluir:
 
@@ -61,51 +67,56 @@ Al mismo tiempo, de acuerdo a su manera de interactuar con el usuario, las inter
 %\item Interfaz de usuario de voz: interacciones entre humanos y máquinas mediante comandos auditivos. Los ejemplos incluyen dispositivos de asistente virtual, hablar a texto y GPS.
 %\end{itemize}
 
-La interfaz de usuario es importante para cumplir con las expectativas del usuario y respaldar la funcionalidad efectiva de su sitio.  En términos de visibilidad, su diseño y precisión tienen una importancia primordial para representar la cantidad exacta de información para el usuario previsto. Cada decisión menor tomada para el diseño de la interfaz de usuario puede contribuir al software tanto positiva como negativamente.
+La interfaz de usuario es importante para cumplir con las expectativas del usuario y respaldar la funcionalidad efectiva del sitio web. En términos de visibilidad, su diseño y precisión tienen una importancia primordial para representar la cantidad exacta de información para el usuario previsto. Cada decisión tomada para el diseño de la interfaz de usuario puede contribuir al \textit{software} tanto positiva como negativamente.
 
 %Una interfaz de usuario bien ejecutada facilita la interacción efectiva entre el usuario y el programa, la aplicación o la máquina a través de imágenes contrastantes, diseño limpio y capacidad de respuesta.
 
 %La interfaz de usuario (UI) juega un papel vital en el software. En términos de visibilidad, su diseño y precisión tienen una importancia primordial para representar la cantidad exacta de información para el usuario previsto. Cada decisión menor tomada para el diseño de la interfaz de usuario puede contribuir al software tanto positiva como negativamente.
 
-Más específicamente, estos son los elementos generales más importantes de una gran interfaz de usuario:
+%Más específicamente, estos son los elementos generales más importantes de una gran interfaz de usuario:
 
 %\subsection{Elementos generales de la interfaz de usuario}
-
+Los elementos generales más importantes de una gran interfaz de usuario son los siguientes [\cite{26}]:
 %Estos son los elementos generales más importantes de una gran interfaz de usuario:
 \begin{itemize}
-\item Arquitectura de la información (IA por sus siglas en inglés): La funcionalidad de un sitio se construye de acuerdo a la IA. Es importante estructurar y organizar el contenido de su sitio web de forma lógica para ayudar a los usuarios a navegar por el sitio con el mínimo esfuerzo. Los componentes de IA incluyen tres tipos principales de estructuras organizativas: jerárquica (nivel de importancia), secuencial (orden lógico de pasos) y matricial (en la que el usuario elige la organización del contenido que ve).
+\item Arquitectura de la información (IA por sus siglas en inglés): La funcionalidad de un sitio se construye de acuerdo a la IA. Es importante estructurar y organizar el contenido de su sitio web de forma lógica para ayudar a los usuarios a navegar por el sitio con el mínimo esfuerzo. 
+%Los componentes de IA incluyen tres tipos principales de estructuras organizativas: jerárquica (nivel de importancia), secuencial (orden lógico de pasos) y matricial (en la que el usuario elige la organización del contenido que ve).
 Ejemplo: elementos de navegación (botones, pestañas, iconos), etiquetas (terminología), funciones de búsqueda (barra de búsqueda) y sistemas de organización (categorías).
 \item Diseño interactivo (ID por sus siglas en inglés): los elementos de ID tienen como objetivo convertir a los lectores pasivos en participantes activos al presentar instancias de entrada del usuario. Tener en cuenta al usuario al crear la interfaz de usuario ayudará a mejorar la interactividad y la ejecución de comportamientos específicos que satisfagan las necesidades del usuario. Además, las interfaces de usuario interactivas diseñadas de manera eficiente pueden ``aprender'' a anticipar y solucionar cualquier problema que pueda surgir antes de que afecte negativamente la experiencia del usuario.
 Ejemplo: funciones para compartir en redes sociales, conmutadores, botones.
-\item Diseño visual: no se puede subestimar la importancia del valor estético de su sitio. El diseño efectivo utiliza elementos de color, contraste, fuente, video y fotografía para atraer a los visitantes y facilitarles la lectura y trabajar con el contenido, en lugar de alrededor de él, para crear un flujo de funcionalidad lógico e intuitivo.
+\item Diseño visual: no se puede subestimar la importancia del valor estético de un sitio. El diseño efectivo utiliza elementos de color, contraste, fuente, video y fotografía para atraer a los visitantes y facilitarles la lectura y trabajar con el contenido, en lugar de alrededor de él, para crear un flujo de funcionalidad lógico e intuitivo.
 Ejemplo: Contraste, color, espacio en blanco, tipografía, optimización móvil.
 \end{itemize}
 
-\subsection{Interfaz de usuario vs experiencia de usuario}
-
-La experiencia de usuario (o \textit{User eXperience}, UX) es la comunicación a través de interfaces, interacción y experiencia que los usuarios tienen con un productos y servicios de la organización [\cite{44}].
-
-A menudo se habla de la interfaz de usuario junto con la experiencia del usuario, que puede incluir la apariencia estética del dispositivo, el tiempo de respuesta y el contenido que se presenta al usuario dentro del contexto de la interfaz de usuario. Ambos términos se incluyen en el concepto de interacción humano-computadora (HCI), que es el campo de estudio que se centra en la creación de tecnología informática y la interacción entre humanos y todas las formas de diseño de tecnología informática[\cite{28}].
-
-Las principales diferencias entre UX y UI son:
-
-\begin{itemize}
-\item La UX gira en torno al propósito y la funcionalidad del producto, mientras que la UI se centra en la calidad de la interacción del usuario con el producto.
-\item La UX involucra componentes como la investigación de mercado y la identificación de las necesidades del usuario, mientras que la UI tiene componentes de diseño más artísticos relacionados con la apariencia de la experiencia del usuario.
-\item La UX se enfoca en la gestión general de proyectos desde la ideación hasta el desarrollo y la entrega, mientras que la UI se enfoca más específicamente en el diseño del producto terminado.
-\end{itemize}
+%\subsection{Interfaz de usuario vs experiencia de usuario}
+%
+%La experiencia de usuario (o \textit{User eXperience}, UX) es la comunicación a través de interfaces, interacción y experiencia que los usuarios tienen con un productos y servicios de la organización [\cite{44}].
+%
+%A menudo se habla de la interfaz de usuario junto con la experiencia del usuario, que puede incluir la apariencia estética del dispositivo, el tiempo de respuesta y el contenido que se presenta al usuario dentro del contexto de la interfaz de usuario. Ambos términos se incluyen en el concepto de interacción humano-computadora (HCI), que es el campo de estudio que se centra en la creación de tecnología informática y la interacción entre humanos y todas las formas de diseño de tecnología informática[\cite{28}].
+%
+%Las principales diferencias entre UX y UI son:
+%
+%\begin{itemize}
+%\item La UX gira en torno al propósito y la funcionalidad del producto, mientras que la UI se centra en la calidad de la interacción del usuario con el producto.
+%\item La UX involucra componentes como la investigación de mercado y la identificación de las necesidades del usuario, mientras que la UI tiene componentes de diseño más artísticos relacionados con la apariencia de la experiencia del usuario.
+%\item La UX se enfoca en la gestión general de proyectos desde la ideación hasta el desarrollo y la entrega, mientras que la UI se enfoca más específicamente en el diseño del producto terminado.
+%\end{itemize}
 
 \section{Dise\~no de Interfaz de Usuario}
 
-El diseño de interfaz de usuario o ingeniería de la interfaz es el resultado de definir la forma, función, utilidad, ergonomía, imagen de marca y otros aspectos que afectan a la apariencia externa de las interfaces de usuario en sistemas de todo tipo (computadoras de uso general, sistemas de control, dispositivos de comunicación móviles, software de sistemas, software de aplicaciones, sitios web, etc). El objetivo final del diseño de la interfaz de usuario es hacer que la interacción entre el usuario y el sistema del que es interfaz sea tan simple y eficiente como sea posible, en términos de cumplimiento de los objetivos del usuario.
+El diseño de interfaz de usuario o ingeniería de la interfaz es el resultado de definir la forma, función, utilidad, ergonomía, imagen de marca y otros aspectos que afectan a la apariencia externa de las interfaces de usuario en sistemas de todo tipo (computadoras de uso general, sistemas de control, dispositivos de comunicación móviles, \textit{software} de sistemas, \textit{software} de aplicaciones, sitios web, u otros). El objetivo final del diseño de la interfaz de usuario es hacer que la interacción entre el usuario y el sistema sea tan simple y eficiente como sea posible, en función del cumplimiento de los objetivos del usuario.
 
 %El objetivo del diseño de una interfaz es producir una interfaz que sea fácil de usar (explicarse por sí misma), eficiente y agradable para que al operar la máquina dé el resultado deseado.
 
 %En general, el objetivo del diseño de la interfaz de usuario es producir una interfaz de usuario que haga que sea fácil, eficiente y agradable (fácil de usar) para operar una máquina de la manera que produce el resultado deseado (es decir, la máxima usabilidad).
 
-En la literatura científica [\cite{35}] sobre el tema en cuestión aparecen principios que regulan los aspectos que deben caracterizar la Interfaz de Usuario como resultado, es decir asociada al producto, sistema de objetos interactivos y visuales que permiten la comunicación entre los usuarios con el sistema informático.
+%En la literatura científica [\cite{35,36,37}] se encuentran principios que regu
 
-Hay ocho características consideradas al hacer un buen diseño de interfaz de usuario:
+%sobre el tema en cuestión aparecen principios que regulan los aspectos que deben caracterizar la interfaz de usuario como resultado, es decir asociada al producto, sistema de objetos interactivos y visuales que permiten la comunicación entre los usuarios con el sistema informático.
+
+Para el buen diseño de nuestra interfaz de usuario serán consideradas las siguientes características encontradas en la literatura [\cite{35,36,37}]:
+
+%Hay ocho características consideradas al hacer un buen diseño de interfaz de usuario:
 \begin{enumerate}
 \item Estética: Un buen diseño de interfaz debe ser atractivo. Significa que el uso de esa interfaz es agradable. El diseño debe incluir características interesantes y fáciles de usar con el atractivo visual.
 \item Claridad: es la característica más importante del diseño de la interfaz de usuario. El objetivo principal del diseño de la interfaz de usuario es permitir que el usuario interactúe con el sistema comunicándose con él. La interfaz debe evitar la ambigüedad al dejar todo claro a través del lenguaje, la fluidez, la jerarquía y las metáforas de los elementos visuales.
@@ -115,6 +126,13 @@ Hay ocho características consideradas al hacer un buen diseño de interfaz de u
 \item Familiaridad: Incluso si una persona utiliza una interfaz por primera vez, ciertos elementos aún pueden ser familiares. Las metáforas de la vida real se pueden utilizar para comunicar el significado.
 \item Perdón: A veces, el usuario comete errores al usar el software o el sitio web. Manejar el error es un indicador importante de la calidad del software. Un buen diseño de interfaz debería permitir al usuario restaurar los elementos eliminados, lo que en un momento u otro se puede hacer sin querer. La interfaz indulgente es una que puede salvar a los usuarios de errores costosos.
 \item Capacidad de respuesta (\textit{responsive} en inglés): Una buena interfaz no debe sentirse lenta. Esto significa que la interfaz debe proporcionar buenos comentarios al usuario sobre lo que está sucediendo y si la entrada del usuario se está procesando correctamente.
+\item Usabilidad: La usabilidad ha sido definida por la ISO como el grado con que un producto o sistema puede ser usado por usuarios específicos para alcanzar objetivos específicos con efectividad, eficiencia y satisfacción en un contexto de uso dado [\cite{33}]. La dificultad o facilidad que experimenten los usuarios al interactuar con las aplicaciones determinará su éxito o fracaso.
+%asociada a la facilidad de uso, la misma se garantiza a través del uso de técnicas de navegación, selección de objetos visuales, diseño de legibilidad, ergonomía, uso de la tipografía, formatos de ficheros adecuados y otros elementos que propician comodidad ante la interacción con la interfaz.
+\item Accesibilidad: El nivel con que una aplicación web puede ser usada, visitada o accedida por todas las personas independientemente de sus capacidades físicos o técnicas, tema que toma gran importancia para las personas que poseen alguna discapacidad.
+
+%La usabilidad ha sido definida por la ISO como el grado con que un producto o sistema puede ser usado por usuarios específicos para alcanzar objetivos específicos con efectividad, eficiencia y satisfacción en un contexto de uso dado [\cite{33}]. La dificultad o facilidad que experimenten los usuarios al interactuar con las aplicaciones determinará su éxito o fracaso [\cite{34}].
+%el nivel en que logra transmitir a través de los objetos de la interfaz las diferentes funciones, opciones, componentes, tareas, datos e información contentiva.
+
 \end{enumerate}
 
 %En la literatura científica sobre el tema en cuestión aparecen principios que regulan los aspectos que deben caracterizar la Interfaz de Usuario como resultado, es decir asociada al producto, sistema de objetos interactivos y visuales que permiten la comunicación entre los usuarios con el sistema informático. Es muy poco frecuente encontrar reglas, sistemas de principios que normen el proceso de diseño de interfaces con un enfoque integrador, sustentado en la ingeniería de software y en el carácter multidisciplinar y complejo que posee el mismo. 
@@ -151,73 +169,92 @@ El proceso de análisis y diseño de una interfaz de usuario es iterativo y pued
 \item Validación de la interfaz: esta fase se centra en probar la interfaz. La interfaz debería ser tal que debería poder realizar tareas correctamente y debería poder manejar una variedad de tareas. Debe cumplir con todos los requisitos del usuario. Debe ser fácil de usar y fácil de aprender. Los usuarios deben aceptar la interfaz como útil en su trabajo.
 \end{enumerate}
 
-Las pruebas determinan la efectividad de una aplicación de interfaz de usuario que debe probarse y expone qué tan fácil o difícil es usar la interfaz de usuario para la audiencia más amplia posible. Los dos principales tipos de pruebas son los siguientes:
+%Las pruebas determinan la efectividad de una aplicación de interfaz de usuario que debe probarse y expone qué tan fácil o difícil es usar la interfaz de usuario para la audiencia más amplia posible. Los dos principales tipos de pruebas son los siguientes:
+%
+%\begin{enumerate}
+%\item Pruebas de usabilidad: evalúan un producto estudiando cómo los usuarios reales realmente usan el sistema. Proporciona una recuperación significativa solo cuando está bien integrado en todo el ciclo de vida del proyecto.
+%\item Pruebas de accesibilidad: acceden a la aplicación de prueba con tecnologías accesibles y herramientas de prueba automatizadas.
+%\end{enumerate}
+%
+%La usabilidad como disciplina constituye un factor determinante de la calidad, cuyo reto es entender cómo los usuarios ven la aplicación web. Por otro lado, la accesibilidad es el grado con que una aplicación web puede ser usada, visitada o accedida por todas las personas independientemente de sus capacidades físicos o técnicas, tema que toma gran importancia para las personas que poseen alguna discapacidad. Ambas disciplinas se encuentran estrechamente relacionadas.
 
-\begin{enumerate}
-\item Pruebas de usabilidad: evalúan un producto estudiando cómo los usuarios reales realmente usan el sistema. Proporciona una recuperación significativa solo cuando está bien integrado en todo el ciclo de vida del proyecto.
-\item Pruebas de accesibilidad: acceden a la aplicación de prueba con tecnologías accesibles y herramientas de prueba automatizadas.
-\end{enumerate}
+%\section{Usabilidad}
+%
+%En los últimos años, el desarrollo de sistemas interactivos usables y útiles a la vez ha cobrado vital importancia [\cite{1,32}]. Las interfaces de usuario juegan un papel clave en el desarrollo de estos sistemas dado que son las encargadas de  permitir el acceso a los mismos. La usabilidad es un factor clave para el desarrollo de las UI. La usabilidad ha sido definida por la ISO como el grado con que un producto o sistema puede ser usado por usuarios específicos para alcanzar objetivos específicos con efectividad, eficiencia y satisfacción en un contexto de uso dado [\cite{33}]. La dificultad o facilidad que experimenten los usuarios al interactuar con las aplicaciones determinará su éxito o fracaso [\cite{34}]. 
+%
+%Es importante darse cuenta de que la usabilidad no es una propiedad única y unidimensional de una interfaz de usuario. La usabilidad tiene múltiples componentes y se asocia tradicionalmente con estos cinco atributos [\cite{36}]:
+%
+%\begin{itemize}
+%\item Facilidad de aprendizaje: el sistema debe ser fácil de aprender para que el usuario pueda comenzar a trabajar rápidamente con el sistema.
+%\item Eficiencia: El sistema debe ser eficiente de usar, de modo que una vez que el usuario haya aprendido el sistema, sea posible un alto nivel de productividad.
+%\item Memorización: el sistema debe ser fácil de recordar, de modo que el usuario ocasional pueda volver al sistema después de un período de no haberlo utilizado, sin tener que aprender todo de nuevo.
+%\item Errores: El sistema debe tener una tasa de error baja, para que los usuarios cometan pocos errores durante el uso del sistema, y para que si cometen errores, puedan recuperarse fácilmente de ellos. Además, no deben ocurrir errores catastróficos.
+%\item Satisfacción: El sistema debe ser agradable de usar, de modo que los usuarios estén subjetivamente satisfechos al utilizarlo.
+%\end{itemize}
+%
+%La usabilidad normalmente se mide haciendo que una cantidad de usuarios de prueba (seleccionados para ser lo más representativos posible de los usuarios previstos) usen el sistema para realizar un conjunto de tareas preespecificado, aunque también se puede medir haciendo que los usuarios reales en el campo realicen las tareas que están haciendo de todos modos. En cualquier caso, un punto importante es que la usabilidad se mide en relación con ciertos usuarios y ciertas tareas.
+%
+%La usabilidad tiene gran importancia, algunos de sus beneficios son:
+%
+%\begin{itemize}
+%\item Una reducción de los costes de producción: los costes y tiempos de desarrollo totales pueden ser reducidos evitando el sobrediseño y reduciendo el número de cambios posteriores requeridos en el producto.
+%\item Reducción de los costes de mantenimiento y apoyo: los sistemas que son fáciles de usar requieren menos entrenamiento, menos soporte para el usuario y menos mantenimiento.
+%\item Reducción de los costes de uso: los sistemas que mejor se ajustan a las necesidades del usuario mejoran la productividad y la calidad de las acciones y las decisiones. Los sistemas más fáciles de utilizar reducen el esfuerzo (estrés) y permiten a los trabajadores manejar una variedad más amplia de tareas. Los sistemas difíciles de usar disminuyen la salud, bienestar y motivación y pueden incrementar el absentismo. Tales sistemas suponen pérdidas en los tiempos de uso y no son explotados en su totalidad en la medida en que el usuario pierde interés en el uso de las características avanzadas del sistema, que en algunos casos podrían no utilizarse nunca.
+%\item Mejora en la calidad del producto: el diseño centrado en el usuario resulta en productos de mayor calidad de uso, más competitivos en un mercado que demanda productos de fácil uso.
+%\end{itemize}
 
-La usabilidad como disciplina constituye un factor determinante de la calidad, cuyo reto es entender cómo los usuarios ven la aplicación web. Por otro lado, la accesibilidad es el grado con que una aplicación web puede ser usada, visitada o accedida por todas las personas independientemente de sus capacidades físicos o técnicas, tema que toma gran importancia para las personas que poseen alguna discapacidad. Ambas disciplinas se encuentran estrechamente relacionadas.
+%\section{Accesibilidad}
+%
+%En la sociedad de la información, las personas acceden a servicios y productos a través de interfaces de usuario. Sin embargo, no todas las personas pueden acceder a ellos, debido a que existen barreras de accesibilidad. Ya no es el caso de que las personas con discapacidad sean los únicos usuarios afectados por las barreras de accesibilidad. De hecho, hoy en día[\cite{39}], numerosos usuarios experimentan problemas a la hora de utilizar la Web, los teléfonos móviles, etc., debido a diferentes tipos de discapacidades, limitaciones funcionales, limitaciones tecnológicas o factores ambientales.
+%
+%La accesibilidad aplicada al contenido de Internet se denomina accesibilidad Web. En la Web, el W3C ha desarrollado directrices o pautas específicas para permitir y asegurar este tipo de accesiblidad. El grupo de trabajo dentro del W3C encargado de promoverla es el WAI (\textit{Web Accessibility Initiative}), elaborando para ello unas Pautas de Accesibilidad al contenido Web 1.0, WCAG [\cite{42}].
+%
+%Si bien el acceso a las personas con discapacidad es el enfoque principal de la accesibilidad Web, también beneficia a las personas sin discapacidad. Por ejemplo, un principio clave de la accesibilidad web es diseñar sitios web que sean flexibles para satisfacer las diferentes necesidades de los usuarios. Esta flexibilidad también aumenta la facilidad de uso general y permite que las personas sin discapacidad utilicen los sitios web de acuerdo con sus preferencias, como usar el navegador que deseen y usar atajos de teclado.
+%
+%Cuando se desarrolla o rediseña un sitio web, la evaluación de la accesibilidad de forma temprana y a lo largo del desarrollo permite encontrar al principio problemas de accesibilidad, cuando es más fácil resolverlos. Técnicas sencillas, como es cambiar la configuración en un buscador, pueden determinar si una página web cumple algunas de las pautas de accesibilidad. Una evaluación exhaustiva, para determinar el cumplimiento de las pautas, es mucho más compleja. 
+%
+%Hay herramientas de evaluación que ayudan a realizar evaluaciones de accesibilidad. No obstante, ninguna herramienta en sí misma puede determinar si un sitio cumple o no las pautas de accesibilidad. Para determinar si un sitio web es accesible, es necesaria la evaluación humana [\cite{43}].
+%
+%La accesibilidad de la información basada en la Web se puede mejorar de dos formas principales: mediante el uso de tecnología de acceso y mediante la adopción de buenas prácticas en el diseño de interfaces. Ambos tienen la misma importancia: la provisión de equipos de asistencia (tecnología adaptativa, habilitadora o de acceso) permitirá que un usuario con discapacidad visual acceda a la información en pantalla que recibe la salida de una manera adecuada a sus necesidades. Sin embargo, además de esto, la información proporcionada en pantalla debe presentarse de forma que pueda ser interpretada por cualquier tipo de tecnología de acceso. Esto es lo que se conoce como “diseño web accesible”, “diseño para todos” o “diseño universal”. La necesidad de un enfoque universal ha sido impulsada por la creciente complejidad del diseño y la entrega de información basada en la Web, pasando de una interfaz predominantemente basada en texto a una interfaz multimedia dinámica que ofrece formas visuales, de audio e interactivas. para acceder y utilizar la información proporcionada [\cite{43}].
 
-\section{Usabilidad}
+\section{Aplicaciones Web}
+Con la aparición de la Web se hizo posible que cualquier persona pudiera ofrecer información particularizada a los demás y encontrar documentos interactivos sobre cualquier tema, relacionados unos con otros mediante enlaces que permitían saltar de página en página alrededor del mundo.
 
-En los últimos años, el desarrollo de sistemas interactivos usables y útiles a la vez ha cobrado vital importancia [\cite{1,32}]. Las interfaces de usuario juegan un papel clave en el desarrollo de estos sistemas dado que son las encargadas de  permitir el acceso a los mismos. La usabilidad es un factor clave para el desarrollo de las UI. La usabilidad ha sido definida por la ISO como el grado con que un producto o sistema puede ser usado por usuarios específicos para alcanzar objetivos específicos con efectividad, eficiencia y satisfacción en un contexto de uso dado [\cite{33}]. La dificultad o facilidad que experimenten los usuarios al interactuar con las aplicaciones determinará su éxito o fracaso [\cite{34}]. 
+Las páginas Web supusieron la aparición de las interfaces Web, interfaces gráficas de usuario con unos elementos comunes de presentación y navegación que pronto se convirtieron en estándares de facto. Este tipo de interfaces sirven de intermediarias entre usuarios genéricos, no acostumbrados generalmente al uso de aplicaciones informáticas, y unos sistemas de información y procesos transaccionales que se ejecutan en un segundo plano, permitiendo la localización de la información deseada, el entendimiento claro de las funcionalidades ofrecidas, la realización práctica de tareas específicas por parte de los usuarios y la navegación intuitiva por las diferentes páginas que forman el sitio Web.
 
-Es importante darse cuenta de que la usabilidad no es una propiedad única y unidimensional de una interfaz de usuario. La usabilidad tiene múltiples componentes y se asocia tradicionalmente con estos cinco atributos [\cite{36}]:
+Una aplicación Web es un \textit{software} basado en tecnologías y estándares de W3C que provee recursos específicos tales como contenidos y servicios a través de una interfaz de usuario a la que puede accederse utilizando un navegador Web [\cite{100}]. Intenta portar las clásicas aplicaciones de escritorio hacia entornos Web, que son utilizadas a través de los distintos navegadores, agregando portabilidad y capacidad de acceder desde diferentes dispositivos.
+%World Wide Web Consortium. Consorcio internacional de compañías y organizaciones involucradas en el desarrollo de Inte rnet y en especial de la WWW. Su propósito es desarrollar estándares y “poner orden” en Internet
 
-\begin{itemize}
-\item Facilidad de aprendizaje: el sistema debe ser fácil de aprender para que el usuario pueda comenzar a trabajar rápidamente con el sistema.
-\item Eficiencia: El sistema debe ser eficiente de usar, de modo que una vez que el usuario haya aprendido el sistema, sea posible un alto nivel de productividad.
-\item Memorización: el sistema debe ser fácil de recordar, de modo que el usuario ocasional pueda volver al sistema después de un período de no haberlo utilizado, sin tener que aprender todo de nuevo.
-\item Errores: El sistema debe tener una tasa de error baja, para que los usuarios cometan pocos errores durante el uso del sistema, y para que si cometen errores, puedan recuperarse fácilmente de ellos. Además, no deben ocurrir errores catastróficos.
-\item Satisfacción: El sistema debe ser agradable de usar, de modo que los usuarios estén subjetivamente satisfechos al utilizarlo; les gusta.
-\end{itemize}
+Una de las ventajas más significativas de las aplicaciones Web, es su forma de instalación y distribución, ya que normalmente instalar una aplicación Web consiste en configurar los componentes del lado del servidor en la red y no necesariamente una instalación o configuración en el lado del cliente. Son independientes de las tecnologías de \textit{hardware} y \textit{software} (sistema operativo) que se utilicen.
 
-La usabilidad normalmente se mide haciendo que una cantidad de usuarios de prueba (seleccionados para ser lo más representativos posible de los usuarios previstos) usen el sistema para realizar un conjunto de tareas preespecificado, aunque también se puede medir haciendo que los usuarios reales en el campo realicen las tareas que están haciendo de todos modos. En cualquier caso, un punto importante es que la usabilidad se mide en relación con ciertos usuarios y ciertas tareas.
+%Una empresa podría realizar un proceso de migración y todo quedar funcionando correctamente.
 
-La usabilidad tiene gran importancia, algunos de sus beneficios son:
+El diseño de las aplicaciones Web ha evolucionado con el tiempo hacia un esquema general perfectamente definido, ofreciendo unas interfaces bien diseñadas, con un conjunto de componentes gráficos y funcionales similares que hacen posible que sea cual sea el usuario que accede a una aplicación Web, la comunicación entre ellos sea posible y efectiva.
 
-\begin{itemize}
-\item Una reducción de los costes de producción: los costes y tiempos de desarrollo totales pueden ser reducidos evitando el sobrediseño y reduciendo el número de cambios posteriores requeridos en el producto.
-\item Reducción de los costes de mantenimiento y apoyo: los sistemas que son fáciles de usar requieren menos entrenamiento, menos soporte para el usuario y menos mantenimiento.
-\item Reducción de los costes de uso: los sistemas que mejor se ajustan a las necesidades del usuario mejoran la productividad y la calidad de las acciones y las decisiones. Los sistemas más fáciles de utilizar reducen el esfuerzo (estrés) y permiten a los trabajadores manejar una variedad más amplia de tareas. Los sistemas difíciles de usar disminuyen la salud, bienestar y motivación y pueden incrementar el absentismo. Tales sistemas suponen pérdidas en los tiempos de uso y no son explotados en su totalidad en la medida en que el usuario pierde interés en el uso de las características avanzadas del sistema, que en algunos casos podrían no utilizarse nunca.
-\item Mejora en la calidad del producto: el diseño centrado en el usuario resulta en productos de mayor calidad de uso, más competitivos en un mercado que demanda productos de fácil uso.
-\end{itemize}
+\subsection{Aplicaciones Web tradicionales}
+Lo que se considera una aplicación Web tradicional en el contexto de esta tesis es una aplicación Web que carga cada página del servidor por separado. Cuando un usuario genera un evento de navegación a una página posterior, un navegador obtiene la página de un servidor y recarga completamente la aplicación Web. A menudo, estas aplicaciones son estáticas o se procesan en el servidor y consisten principalmente en HTML y CSS. En estos casos, JavaScript generalmente se usa para manipulaciones más pequeñas del DOM y para agregar un aspecto dinámico a una página estática.
 
-\section{Accesibilidad}
+Debido a que solo se obtienen del servidor los datos de la página activa, y también a que la cantidad relativamente baja de código JavaScript hace que la aplicación sea menos exigente en los dispositivos cliente, se puede decir que, en general, estas aplicaciones web funcionan mejor y tienen tamaño de paquete más pequeño.
 
-En la sociedad de la información, las personas acceden a servicios y productos a través de interfaces de usuario. Sin embargo, no todas las personas pueden acceder a ellos, debido a que existen barreras de accesibilidad. Ya no es el caso de que las personas con discapacidad sean los únicos usuarios afectados por las barreras de accesibilidad. De hecho, hoy en día[\cite{39}], numerosos usuarios experimentan problemas a la hora de utilizar la Web, los teléfonos móviles, etc., debido a diferentes tipos de discapacidades, limitaciones funcionales, limitaciones tecnológicas o factores ambientales.
+Por otro lado, en comparación con las aplicaciones de una sola página, la experiencia de usuario de las aplicaciones Web tradicionales suele ser inferior. Actualizar la página en cada evento de navegación es molesto y rompe la inmersión del usuario en la aplicación. Las aplicaciones Web tradicionales ya no pueden seguir el ritmo de la tendencia de mover aplicaciones complejas de escritorio a navegadores Web.
 
-%Para abordar el acceso en este mundo ubicuo, debemos comenzar a pensar en la accesibilidad ubicua y, para algunos, en las interfaces de usuario conectables. La capacidad de "invocar" cualquier tecnología de asistencia o características especiales que se necesiten directamente desde la red para usar en cualquier pantalla que esté cerca, puede ser el medio de acceso más efectivo. Esto es particularmente cierto para las personas que no pueden pagar sus propias tecnologías de la información modernas, sino que confían en las tecnologías que encuentran en los entornos en los que se mueven. Esta capacidad de tener funciones de acceso integradas directamente en la infraestructura que todos usan puede ayudar a nivelar el juego. y, de hecho, significaría que las personas con discapacidad podrían acceder y utilizar las mismas tecnologías principales en los mismos entornos junto con todos los demás.
+\subsection{SPA}
+Una aplicación de una sola página (SPA, por sus siglas en inglés) es un enfoque más moderno para crear una aplicación Web [\cite{101}]. Al contrario del enfoque tradicional, comienza cargando toda la aplicación desde un servidor a la vez. Los SPA generalmente se sirven como un solo archivo HTML, que contiene solo una estructura HTML básica, importando la aplicación incluida en el archivo JavaScript. El código JavaScript genera el código HTML y CSS directamente en el navegador.
 
-%La accesibilidad se ha convertido en un tema candente en el diseño web, a pesar de que siempre ha sido parte de la visión original. En un sentido amplio, la accesibilidad simplemente significa garantizar que se pueda acceder a una página determinada en la Web. La accesibilidad no tiene que ver con la discapacidad; más bien, se trata de que las personas accedan a la información compartida que la visión de la Web ha puesto de manifiesto.
+Luego, la aplicación maneja el enrutamiento y la carga de páginas en el lado del cliente, al transformar el DOM en función de la ruta actualmente activa y el estado de la aplicación. Permite interacciones, transiciones, animaciones e interacciones de usuario más rápidas, lo que hace que la aplicación Web parezca nativa.
 
-%También se ha dicho mucho sobre cómo la accesibilidad se relaciona con los estándares web y viceversa. Siendo realistas, la accesibilidad se basa en aspectos de los estándares web relacionados, pero de hecho se ha convertido en una ciencia, un arte y una práctica propia. Es una especialidad profunda y muy problemática, ya que lo que podría hacer que una página fuera accesible para una persona posiblemente podría volverla inaccesible para otra.
+Debido a las características del presente trabajo, se ha optado por implementar una SPA para el desarrollo de nuestra interfaz de usuario, proporcionando así una experiencia fluida al usuario. %trabajarlo
 
-%En informática, la accesibilidad incluye ayudas como las tipografías de alto contraste o gran tamaño, magnificadores de pantalla, lectores y revisores de pantalla, programas de reconocimiento de voz, teclados adaptados, y otros dispositivos apuntadores y de entrada de información.
+\subsection{PWA}
+A diferencia de los tipos anteriores de aplicaciones Web, el término aplicación Web progresiva (PWA, por sus siglas en inglés) es inclusivo. Significa que las aplicaciones pueden ser tanto SPA como PWA al mismo tiempo.
 
-La accesibilidad aplicada al contenido de Internet se denomina accesibilidad Web. En la Web, el W3C ha desarrollado directrices o pautas específicas para permitir y asegurar este tipo de accesiblidad. El grupo de trabajo dentro del W3C encargado de promoverla es el WAI (\textit{Web Accessibility Initiative}), elaborando para ello unas Pautas de Accesibilidad al contenido Web 1.0, WCAG [\cite{42}].
+La principal característica de este tipo de aplicaciones es la posibilidad de, tras acceder a la URL de la aplicación por primera vez, añadirla a la pantalla de inicio del dispositivo, y así poder ejecutarla como una app nativa [\cite{102}]. Esto supone una gran diferencia con respecto a las aplicaciones Web convencionales, puesto que, mientras que para acceder a una página web clásica debes entrar a través de su URL y descargar el contenido de esta cada vez que se visita, para usar una PWA solo basta con acceder una primera vez y, tras añadirla a la pantalla de inicio, se descarga en el dispositivo todo el contenido de la aplicación, tanto el estático (ficheros HTML, CSS, JavaScript, imágenes, etc), como el dinámico, que se almacena mediante memoria caché. Por lo tanto, esto hace que la aplicación se pueda ejecutar offline, eso sí, sin actualizar el contenido dinámico hasta que no se disponga nuevamente de conexión.
 
-%Para algunas personas con discapacidades más graves o múltiples, es posible que se necesite una tecnología de interfaz especial que no podría proporcionarse de manera ubicua. Por ejemplo, las personas sordas o ciegas pueden necesitar una pantalla táctil personal. Las personas con discapacidades físicas graves pueden necesitar un transductor de entrada especializado. La capacidad de utilizar estas interfaces alternativas como extensiones naturales de las características ubicuas e integradas permitirá que estas personas también accedan a la Web ya su información. Y la combinación de estos módulos de interfaz personal con software ubicuo y constantemente actualizado puede permitir que estas interfaces especiales funcionen con más y más nuevos tipos de información a medida que evoluciona, aumentando la vida útil de las interfaces y, por lo tanto, reduciendo el costo.
-
-Si bien el acceso a las personas con discapacidad es el enfoque principal de la accesibilidad Web, también beneficia a las personas sin discapacidad. Por ejemplo, un principio clave de la accesibilidad web es diseñar sitios web que sean flexibles para satisfacer las diferentes necesidades de los usuarios. Esta flexibilidad también aumenta la facilidad de uso general y permite que las personas sin discapacidad utilicen los sitios web de acuerdo con sus preferencias, como usar el navegador que deseen y usar atajos de teclado.
-
-Cuando se desarrolla o rediseña un sitio web, la evaluación de la accesibilidad de forma temprana y a lo largo del desarrollo permite encontrar al principio problemas de accesibilidad, cuando es más fácil resolverlos. Técnicas sencillas, como es cambiar la configuración en un buscador, pueden determinar si una página web cumple algunas de las pautas de accesibilidad. Una evaluación exhaustiva, para determinar el cumplimiento de las pautas, es mucho más compleja. 
-
-Hay herramientas de evaluación que ayudan a realizar evaluaciones de accesibilidad. No obstante, ninguna herramienta en sí misma puede determinar si un sitio cumple o no las pautas de accesibilidad. Para determinar si un sitio web es accesible, es necesaria la evaluación humana [\cite{43}].
-
-La accesibilidad de la información basada en la Web se puede mejorar de dos formas principales: mediante el uso de tecnología de acceso y mediante la adopción de buenas prácticas en el diseño de interfaces. Ambos tienen la misma importancia: la provisión de equipos de asistencia (tecnología adaptativa, habilitadora o de acceso) permitirá que un usuario con discapacidad visual acceda a la información en pantalla que recibe la salida de una manera adecuada a sus necesidades. Sin embargo, además de esto, la información proporcionada en pantalla debe presentarse de forma que pueda ser interpretada por cualquier tipo de tecnología de acceso. Esto es lo que se conoce como “diseño web accesible”, “diseño para todos” o “diseño universal”. La necesidad de un enfoque universal ha sido impulsada por la creciente complejidad del diseño y la entrega de información basada en la Web, pasando de una interfaz predominantemente basada en texto a una interfaz multimedia dinámica que ofrece formas visuales, de audio e interactivas. para acceder y utilizar la información proporcionada [\cite{43}].
-
-%Desde un punto de vista técnico, la accesibilidad web es importante para garantizar la interoperabilidad entre diferentes aplicaciones y permitir que los usuarios accedan a la Web utilizando su formato preferido. Esto podría ser a través de tecnología de asistencia para interactuar directamente con el sitio o para descargar información en un formato alternativo.
-
-%Cualquier prueba de accesibilidad debe verse como un proceso que combina herramientas de software automatizadas con juicio humano. No hay ninguna herramienta que pueda ejecutar en su sitio web (o página web, para el caso) para afirmar que es accesible y/o cumple con las disposiciones de la Sección 508 o las Pautas de accesibilidad al contenido web (WCAG)[\cite{43}].
-
-%La interfaz elegida para casi todos los servicios de bibliotecas digitales es la World Wide Web. Aunque se están produciendo cambios significativos en las tecnologías web, la interfaz gráfica de usuario (GUI) se ha convertido rápidamente en la dominante y es probable que siga siéndolo. Desde una perspectiva de accesibilidad, esto ha permitido al menos que se desarrollen enfoques estándar para tratar de garantizar que todos los usuarios puedan acceder a todos los servicios. El sitio web de la biblioteca proporcionará información sobre los horarios de apertura, los servicios ofrecidos y los datos de contacto. También puede ofrecer acceso al catálogo, revistas en línea, resúmenes y páginas de contenido, además de proporcionar acceso en línea a los detalles del prestatario y servicios de renovación y reserva. La provisión de artículos de revistas de texto completo y el desarrollo de la provisión de libros electrónicos brindarán mayores oportunidades para acceder a los servicios de la biblioteca de forma remota. Esto mejorará aún más con la implementación continua de la legislación de derechos de autor que permite que se produzcan formatos alternativos diseñados para personas con discapacidades visuales o de otro tipo a partir de archivos digitales.
+Desde un punto de vista técnico, las PWA están compuestas, como mínimo, por un manifiesto JSON (JavaScript Object Notation) con metadatos, y con el denominado \textit{service worker}, un archivo JavaScript que se encarga de manejar todo lo necesario para el funcionamiento \textit{offline} de la aplicación.
 
 \section{Tecnologías empleadas}
 
-Las herramientas de interfaz de usuario han recibido varios nombres a lo largo de los años, siendo el más popular Sistemas de gestión de interfaz de usuario (UIMS). Sin embargo, muchas personas sienten que el término UIMS debe usarse solo para herramientas que manejan la secuencia de operaciones (lo que sucede después de cada evento del usuario), por lo que otros términos como \textit{Toolkits}, Entornos de desarrollo de interfaz de usuario (\textit{User Interface Development Environments}), Constructores de interfaz (\textit{Interface Builders}) y Marcos de aplicación (\textit{Application Frameworks}) también han sido usados [\cite{31}].
+Las herramientas de interfaz de usuario han recibido varios nombres a lo largo de los años, siendo el más popular Sistemas de gestión de interfaz de usuario (UIMS, por sus siglas en inglés) [\cite{31}]. Sin embargo, muchas personas sienten que el término UIMS debe usarse solo para herramientas que manejan la secuencia de operaciones (lo que sucede después de cada evento del usuario), por lo que otros términos como \textit{Toolkits}, Entornos de desarrollo de interfaz de usuario (\textit{User Interface Development Environments}), Constructores de interfaz (\textit{Interface Builders}) y Marcos de aplicación (\textit{Application Frameworks}) también han sido usados.
 
 Se han diseñado muchos tipos de herramientas para ayudar a crear software de interfaz de usuario, y estos se pueden clasificar por los estilos de las interfaces que crean y las técnicas utilizadas por el diseñador de la interfaz de usuario para crear el software.
 
@@ -235,9 +272,9 @@ Se han diseñado muchos tipos de herramientas para ayudar a crear software de in
 
 %La construcción de un front end es una tarea delicada dentro de la creación de un proyecto, debido a que no solo puede regirse a los gustos del desarrollador o del cliente, sino también debe regirse a las capacidades técnicas que nos brindan determinadas herramientas de desarrollo. Una página web tradicional se diferencia a una aplicación web porque, la primera hace referencia a una página con información estática no susceptible a la manipulación, mientras, que la aplicación es aquella que se ejecuta en la web así manipulando, procesando presentando y transmitiendo los resultados de manera online, siendo el usuario el que se relaciona directamente con el resultado de ese proceso, denominado producto de información.
 
-Los \textit{frameworks frontends}\nomenclature[framework]{\textbf{Framework}}{Una gran biblioteca con una amplia funcionalidad, que a menudo depende de una gran cantidad de otras bibliotecas.} \nomenclature[frontend]{\textbf{Frontend}}{La parte del sistema a la que el usuario tiene acceso directo, generalmente contiene la interfaz de usuario y la lógica de la aplicación.}ofrecen la base para crear y, además, permiten ser flexible respecto a los diseños a implementar. Actualmente, se encuentran una multitud de diferentes \textit{frameworks} con los cuales se pueden realizar un mismo trabajo, aunque cada uno dispone de una curva de aprendizaje distinta, así como sus peculiaridades, conformando diferentes ventajas y desventajas [\cite{48,53}].
+Los \textit{frameworks frontends}\nomenclature[framework]{\textbf{Framework}}{Una gran biblioteca con una amplia funcionalidad, que a menudo depende de una gran cantidad de otras bibliotecas.} \nomenclature[frontend]{\textbf{Frontend}}{La parte del sistema a la que el usuario tiene acceso directo, generalmente contiene la interfaz de usuario y la lógica de la aplicación.}ofrecen un marco de trabajo para crear interfaces de usuarios generalmente de tipo WEB, y además permiten ser flexible respecto a los diseños a implementar. Actualmente, se encuentran una multitud de diferentes \textit{frameworks} con los cuales se pueden realizar el mismo trabajo [\cite{48,53}], aunque cada uno dispone de una curva de aprendizaje distinta, así como sus peculiaridades, conformando diferentes ventajas y desventajas.
 
-En la figura que se muestra a continuación, se puede visualizar cuáles han sido los \textit{frameworks} más de ``moda'' y cómo han ido variando en los últimos años, según el porcentaje de preguntas obtenidas en el famoso dominio ``Stack Overflow''.
+En la Figura \ref{fig:espiral}, se puede visualizar cuáles han sido los \textit{frameworks} más populares y cómo han ido variando en los últimos años, según el porcentaje de preguntas obtenidas en el famoso dominio ``Stack Overflow''.
 
 \begin{figure}[htp]
 \centering
@@ -246,23 +283,23 @@ En la figura que se muestra a continuación, se puede visualizar cuáles han sid
 \label{fig:stackoverflow}
 \end{figure}
 
-En la figura anterior, también se observa que, actualmente, los frameworks más usados son React y Angular, sin embargo, Vue se va haciendo un hueco cada vez mayor en la comunidad de interfaces de usuario.
+En la figura anterior, también se observa que actualmente, los frameworks más usados son React y Angular, sin embargo, Vue se va haciendo un espacio cada vez mayor en la comunidad de interfaces de usuario.
 
 %El desarrollo frontend es un campo que cambia constantemente debido a la gran cantidad de herramientas que se ponen a disposición cada año. Uno de los marcos más populares que se utilizan para crear una experiencia de usuario fluida es el marco Vue. Partiendo del conocido Angular.js, Vue.js es un proyecto independiente de código abierto que está dejando su huella en la comunidad de interfaces de usuario. %51
 
 \subsection{Vue}
 %Vue es un framework progresivo JavaScript, esto quiere decir que las principales características, como pueden ser el renderizado y el sistema de componentes, se encuentran ubicadas en una pequeña biblioteca, aunque es posible añadir todas las funcionalidades que se vayan requiriendo según el tipo de proyecto. Algunas de esas características que pueden ser añadidas, que ya traen de partida otros frameworks, son el routing, en el lado del cliente, o manejo de estados mediante vuex o pinia. Esta filosofía permite incluir en la aplicación solo las funcionalidades requeridas.
-Vue es un \textit{framework} de JavaScript para construir interfaces de usuario. Se basa en HTML, CSS y JavaScript estándar y proporciona un modelo de programación declarativo y basado en componentes que lo ayuda a desarrollar interfaces de usuario de manera eficiente, ya sean simples o complejas [\cite{47}].
+Vue es un \textit{framework} de JavaScript para construir interfaces de usuario [\cite{47}]. Se basa en HTML, CSS y JavaScript estándar y proporciona un modelo de programación declarativo y basado en componentes que lo ayuda a desarrollar interfaces de usuario de manera eficiente, ya sean simples o complejas.
 
 %El principal objetivo que nos encontramos con Vue es la creación de interfaces de usuarios, es por eso por lo que la palabra Vue, es como se denomina a la capa de presentación del modelo MVC (modelo-vista-controlador). El enfoque MVC redujo el uso de recursos de memoria, el tiempo de navegación y la recuperación de datos mediante la reutilización de componentes y la carga parcial del sitio web, obteniendo flexibilidad y comunicación con otras aplicaciones y hardware
 
-Vue es conocido por tener una curva de aprendizaje poco profunda y una implementación progresiva [\cite{49}]. El término framework progresivo por sí mismo es una ventaja, Vue es un \textit{framework} que se puede a aplicar a cualquier proyecto que tenga implementado otras tecnología. También se puede crear proyectos desde cero pensados en escalar su tamaño y sus funcionalidades, como es el caso del sistema que ocupa el tema de esta tesis.
+Vue es conocido por tener una curva de aprendizaje poco profunda y una implementación progresiva [\cite{49}]. El término \textit{framework} progresivo por sí mismo es una ventaja, pues se puede a aplicar a cualquier proyecto que tenga implementado otros tipos de tecnologías. También se puede crear proyectos desde cero pensados en escalar su tamaño y sus funcionalidades, como es el caso del sistema que ocupa el tema de esta tesis.
 
 %El manejo de sus componentes, archivos y ficheros, la organización que brinda el entorno de desarrollo para el desarrollador front-end es muy limpia y clara.
 
-El DOM Virtual representa la gran ventaja que Vue cuenta por encima de otro framework [\cite{52}], esta tecnología traída desde React, permite a Vue, no perder tiempo ni rendimiento al cargar todo el árbol de nodos o componentes.
+El DOM Virtual representa la gran ventaja que Vue presenta por encima de otros \textit{framework} [\cite{52}], esta tecnología traída desde React, permite a Vue, no perder tiempo ni rendimiento al cargar todo el árbol de nodos o componentes.
 
-Una de las características, que hace muy cómodo el desarrollo en este \textit{framework}, es que permite dividir las aplicaciones en distintos bloques funcionales independientes llamados componentes, esto se suele denominar arquitectura de componentes. Esta arquitectura permite generar aplicaciones a base de la reutilización de estos componentes, evitando tener código redundante. Además las considerables bibliotecas de componentes de Vue facilitan la reutilización de código, mejoran la productividad del desarrollador y aceleran el proceso de desarrollo.
+Una de las características, que hace muy cómodo el desarrollo en este \textit{framework}, es que permite dividir las aplicaciones en distintos bloques funcionales independientes llamados componentes, esto se suele denominar arquitectura de componentes. Esta arquitectura permite generar aplicaciones a base de la reutilización de estos componentes, evitando tener código redundante. Además, las considerables bibliotecas de componentes de Vue facilitan la reutilización de código, mejoran la productividad del desarrollador y aceleran el proceso de desarrollo.
 
 %Otra de las virtudes de Vue es la capacidad de que las interfaces sean reactivas. Esto significa que se actualiza el HTML y CSS cuando se modifican datos de la aplicación sin que los programadores tengan que realizar una propagación de los cambios de datos de manera manual.
 
@@ -282,12 +319,12 @@ Una de las características, que hace muy cómodo el desarrollo en este \textit{
 %La herramienta Axios permite crear solicitudes a una URL GET, PUT, POST, DELETE como una API simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada. Axios es una herramienta familiar en Vue.js [\cite{46}] lo cual es beneficioso para nuestro sistema que necesita establecer comunicación con el \textit{backend} a través del servicio REST API.
 %En la devolución de llamada, se devuelven los datos para la instancia del componente. (Gore 2017).
 
-Vue también brinda una capa de enrutamiento que permite organizar mediante el uso de url, las vistas o componentes se mostrarán en la página, esta capa es fundamental dentro de la seguridad de una aplicación web, ya que permite detener accesos indebidos a vistas destinadas a otros tipos de roles.
+Vue también brinda una capa de enrutamiento que permite organizar mediante el uso de URL, las vistas o componentes se mostrarán en la página, esta capa es fundamental dentro de la seguridad de una aplicación web, ya que permite detener accesos indebidos a vistas destinadas a otros tipos de roles.
 Esta capa es muy útil para nuestro sistema que cuenta con distintos roles y permisos para acceder a los datos.
 
 %Aunque Vue está dirigido a aplicaciones de una sola página , también brinda una capa de enrutamiento que permite de mejor manera organizar el contenido en la aplicación. La capa de enrutamiento es aquella, que nos permite organizar mediante el uso de url’s, las vistas o componentes que mostraremos en la página, esta capa es fundamental dentro de la seguridad de una aplicación web, ya que permite detener accesos indebidos a vistas destinadas a otros tipos de roles. peryu
 
-La administración de estado en concepto amplio se refiere a la manera en la que Vue manipula los datos entre componentes estén o no relacionados, generando una especie de almacén donde los componentes podrán acceder para recuperar sus datos [\cite{52}]. 
+La administración de estado en concepto amplio se refiere a la manera en la que Vue manipula los datos entre componentes estén o no relacionados, generando una especie de almacén donde los componentes podrán acceder para recuperar sus datos [\cite{52}].
 %La administración de estado en conceptos amplio se refiere a la manera en la que VueJS manipulara los datos entre componentes estén o no relacionados, generando una especie de almacén donde los componentes podrán acceder para recuperar sus datos con respecto a la definición [Vuex busca ayudarnos a lograr una mejor administración del estado imponiendo una tienda centralizada, esencialmente a una sola fuente] (Halliday, 2018).peryu
 
 La persistencia de datos es otra ventaja importante que implementa Vue. Esta función permite que los datos se guarden en el navegador, para que puedan ser usados por los componentes dentro de la vista creada por Vue [\cite{50}]. Añadir la persistencia de datos a nuestro sistema permite optimizar el flujo de las peticiones entre \textit{backend} y \textit{frontend}.
@@ -315,17 +352,17 @@ La persistencia de datos es otra ventaja importante que implementa Vue. Esta fun
 
 %En cuanto al nivel de presentación se ha elegido el lenguaje Typescript junto con la versión 3 del framework VueJS. VueJS es un framework de javascript que nos permite crear interfaces de manera rápida, escalable y sencilla. Permite desarrollar software de distintas formas, una de ellas es la reactiva, renderizando vistas cuando ocurre un evento, como su rival React. El núcleo de VueJS es muy ligero, convirtiéndolo en un framework muy versátil [35]. En este proyecto se ha trabajado mediante API de composición, lanzada en la versión 3 de Vue, que se centra en funciones de composición, las cuales favorecen la reusabilidad de la lógica entre componentes. Una pieza muy importante es el uso de setup, donde se escribe el código de inicialización del componente a modo de constructor y a su vez se declara el estado reactivo exponiéndolo a la plantilla [36, 14].
 
-Con todo lo expuesto anteriormente, se puede comprobar que Vue es una tecnología que trae beneficios en función de las propiedades deseadas para la interfaz a implementar, pues es liviano, curva de aprendizaje relativamente plana y relativamente fácil de integrar con tecnologías heredadas o una aplicación sin un marco específico. Por estas razones fue el marco de trabajo seleccionado para la solución del problema del presente trabajo.
+Con todo lo expuesto anteriormente, se puede comprobar que Vue es una tecnología que trae beneficios en función de las propiedades deseadas para la interfaz a implementar, pues es liviano, su curva de aprendizaje relativamente plana y relativamente fácil de integrar con tecnologías heredadas o una aplicación sin un marco específico. Además, Vue proporciona bibliotecas y soporte integral de herramientas para construir SPA modernos. Por estas razones fue el marco de trabajo seleccionado para la implementación de nuestra interfaz de usuario Web.
 
 \subsection{Pinia}
 
 %Hoy en día es necesario hacer uso de alguna librería que nos permita gestionar el estado, almacén de datos compartido por los componentes de la aplicación. La versión 3 de VueJS nos facilita Pinia, librería que gestiona el estado haciendo uso de un store [37]. Un store es un almacén centralizado para mantener los datos que están disponibles, se ha generado uno por cada módulo favoreciendo a la división del código.
 
-Pinia es un nuevo sistema de gestión de estado para Vue [\cite{57}]. Esta es una gran herramienta para cuando se desea compartir datos entre componentes en la aplicación. Una de las razones para usar una herramienta como Pinia (o Vuex para el caso) es que lanzar eventos y escuchar estos eventos en la aplicación puede volverse bastante desordenado y desestructurado. Los sistemas de gestión de estados como Pinia (Vuex, Redux, etc.) pueden ayudar a solucionar esto.
+Pinia es un nuevo sistema de gestión de estado para Vue [\cite{57}]. Como se decía anteriormente esta es una gran herramienta para cuando se desea compartir datos entre componentes en la aplicación. Una de las razones para usar una herramienta como Pinia (o Vuex como alternativa) reside en lo desordenado y desestructurado que puede volverse la emisión y escucha de eventos en la aplicación. Los sistemas de gestión de estados como Pinia (Vuex, Redux, etc.) pueden ayudar a solucionar esto.
 
-Una gran ventaja de Pinia es su diseño modular, a diferencia de Vuex que proporciona solo una tienda la cual puede tener múltiples módulos dentro de ella, en Pinia se pueden crear varias tiendas que pueden ser importadas directamente a los componentes donde son necesarias[\cite{57}]. Esto permite una mejor división del código y simplifica el desarrollo lo cual es beneficioso para el sistema del presente trabajo.
+Una ventaja particular de Pinia es su diseño modular, a diferencia de Vuex que proporciona solo un almacén de datos (\textit{store}) la cual puede tener múltiples módulos dentro de ella, en Pinia se pueden crear varios \textit{stores} que pueden ser importadas directamente a los componentes donde son necesarias[\cite{57}]. Esto permite una mejor división del código abogando por el alto acoplamiento y la alta cohesión simplificando el desarrollo.
 
-Pinia tiene soporte integrado para Typescript [\cite{57}], lo cual permite integrar de forma nativa definiciones de tipo dentro de las acciones de Pinia y obtener documentación automática sobre los argumentos que toman las acciones. Además, la seguridad de tipos agrega muchos beneficios a nuestra aplicación, como la prevención de posibles errores de tiempo de ejecución.
+Pinia tiene soporte integrado para Typescript [\cite{57}] a diferencia de Vuex, lo cual permite integrar de forma nativa definiciones de tipo dentro de las acciones de Pinia y obtener documentación automática sobre los argumentos que toman las acciones. Además, la seguridad de tipos agrega muchos beneficios a nuestra aplicación, como la prevención de posibles errores de tiempo de ejecución.
 
 Por las razones anteriormente expresadas fue seleccionado Pinia como el sistema de gestión de estados de la aplicación Vue que sera implementada para dar solución al problema de este trabajo.
 
@@ -350,49 +387,49 @@ Por las razones anteriormente expresadas fue seleccionado Pinia como el sistema 
 %2.1.3 JavaScript
 %JavaScript es un lenguaje de secuencias de comandos de alto nivel que nos permite agregar funcionalidad a nuestra aplicación web. Muchos de los marcos utilizados en este proyecto se basan en JavaScript y, dado que es compatible con todos los navegadores web, se convirtió en una opción óptima para nosotros. La versión de JavaScript utilizada en este proyecto fue ECMAScript 2020.
 
-\subsection{Typescript}
+%\subsection{Typescript}
+%
+%TypeScript (TS) es un lenguaje de programación desarrollado por Microsoft. TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS), porque dota al lenguaje de varias características adicionales como el sistema de tipos, el cual nos permite escribir código con menos errores, más sencillo, coherente y fácil de probar [\cite{58, 59}]. 
+%
+%Los lenguajes de programación tipificados estáticamente están mejor documentados porque el tipado estático en sí mismo actúa como una documentación [\cite{58,60,61}].Esto es una ventaja porque brinda mayor facilidad para otras personas trabajar con nuestro sistema, el cual requiere de posteriores cambios o arreglos a medida que su uso aumente. 
+%
+%La compatibilidad con TypeScript de Pinia y Vue fueron un factor decisivo para la elección de este lenguaje, además de los ya mencionados beneficios que trae consigo su empleo.
+%%Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido [\cite{58, 59}].
+%
+%
+%%TypeScript agrega escritura estática a JavaScript. [\cite{58, 59}]
+%
+%%Se informó que los lenguajes de programación tipificados estáticamente están mejor documentados porque el tipado estático en sí mismo actúa como una documentación.[\cite{58}]
+%
+%%En septiembre del 2020 se liberó lo que conocemos como Vue 3. Todas las novedades de esta nueva versión han relanzado el framework como uno de los más provechosos, obteniendo los desarrolladores una mayor agilidad en su uso. En esta versión todo el framework ha sido implementado bajo TypeScript, el cual ahora se incorpora por defecto en Vue. Esto facilita la reutilización de código y una detección temprana de errores.
+%
+%%TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS). Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido. Algunas ventajas que presenta este lenguaje son las siguientes:
+%
+%%• Permite usar tipos: esto trae varias ventajas, permite detectar algunos errores en tiempo de diseño sin llegar a la ejecución como pasa con JavaScript, es más fácil entender el código de un vistazo, si se trabaja con algun editor que admita TypeScript se puede detectar errores mientras escribe el código.
+%%• Es un lenguaje Orientado a Objetos y se pueden usar las características de este: herencia, interfaces, errores tipográficos genéricos, lo que permite un código más ordenado y limpio.
+%%• Al ser un superconjunto de JavaScript, amplía todas sus funcionalidades, por lo que es compatible con las bibliotecas de JavaScript existentes.
+%
+%%TypeScript (TS) es un lenguaje increíblemente bien elaborado que respeta y amplía sus raíces de JavaScript. El sistema de tipos parece más expresivo y menos rígido que el de los lenguajes más estáticos y tipificados léxicamente como C$\#$ o Java. Es posible codificar tipos complejos, incluso recursivos, en TypeScript, y se ha demostrado que la sintaxis de definición de tipo es en sí misma Turing-completa. Por estas razones este lenguaje fue seleccionado para la solución del problema de este trabajo.
+%
+%%Los tipos TS, como cualquier lenguaje escrito, dejan claras sus intenciones, lo que hace que sea mucho más fácil para otras personas trabajar con su código.
 
-TypeScript (TS) es un lenguaje de programación desarrollado por Microsoft. TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS), porque dota al lenguaje de varias características adicionales como el sistema de tipos, el cual nos permite escribir código con menos errores, más sencillo, coherente y fácil de probar [\cite{58, 59}]. 
-
-Los lenguajes de programación tipificados estáticamente están mejor documentados porque el tipado estático en sí mismo actúa como una documentación [\cite{58,60,61}].Esto es una ventaja porque brinda mayor facilidad para otras personas trabajar con nuestro sistema, el cual requiere de posteriores cambios o arreglos a medida que su uso aumente. 
-
-La compatibilidad con TypeScript de Pinia y Vue fueron un factor decisivo para la elección de este lenguaje, además de los ya mencionados beneficios que trae consigo su empleo.
-%Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido [\cite{58, 59}].
-
-
-%TypeScript agrega escritura estática a JavaScript. [\cite{58, 59}]
-
-%Se informó que los lenguajes de programación tipificados estáticamente están mejor documentados porque el tipado estático en sí mismo actúa como una documentación.[\cite{58}]
-
-%En septiembre del 2020 se liberó lo que conocemos como Vue 3. Todas las novedades de esta nueva versión han relanzado el framework como uno de los más provechosos, obteniendo los desarrolladores una mayor agilidad en su uso. En esta versión todo el framework ha sido implementado bajo TypeScript, el cual ahora se incorpora por defecto en Vue. Esto facilita la reutilización de código y una detección temprana de errores.
-
-%TypeScript (TS) es un lenguaje de programación construido a un nivel superior de JavaScript (JS). Esto quiere decir que TypeScript dota al lenguaje de varias características adicionales que hacen que podamos escribir código con menos errores, más sencillo, coherente y fácil de probar, en definitiva, más limpio y sólido. Algunas ventajas que presenta este lenguaje son las siguientes:
-
-%• Permite usar tipos: esto trae varias ventajas, permite detectar algunos errores en tiempo de diseño sin llegar a la ejecución como pasa con JavaScript, es más fácil entender el código de un vistazo, si se trabaja con algun editor que admita TypeScript se puede detectar errores mientras escribe el código.
-%• Es un lenguaje Orientado a Objetos y se pueden usar las características de este: herencia, interfaces, errores tipográficos genéricos, lo que permite un código más ordenado y limpio.
-%• Al ser un superconjunto de JavaScript, amplía todas sus funcionalidades, por lo que es compatible con las bibliotecas de JavaScript existentes.
-
-%TypeScript (TS) es un lenguaje increíblemente bien elaborado que respeta y amplía sus raíces de JavaScript. El sistema de tipos parece más expresivo y menos rígido que el de los lenguajes más estáticos y tipificados léxicamente como C$\#$ o Java. Es posible codificar tipos complejos, incluso recursivos, en TypeScript, y se ha demostrado que la sintaxis de definición de tipo es en sí misma Turing-completa. Por estas razones este lenguaje fue seleccionado para la solución del problema de este trabajo.
-
-%Los tipos TS, como cualquier lenguaje escrito, dejan claras sus intenciones, lo que hace que sea mucho más fácil para otras personas trabajar con su código.
-
-\section{REST API}
+\section{REST API}\label{sec:RESTApi}
 
 %La arquitectura orientada a servicios (SOA) se usa generalmente al desarrollar soluciones de software empresarial. Esto brinda flexibilidad para desarrollar diferentes módulos comerciales como servicios allí al brindar escalabilidad y confiabilidad. Entonces la aplicación se acopla débilmente. SOAP y REST son dos enfoques famosos de los servicios web. SOAP (Protocolo simple de acceso a objetos) es un protocolo, mientras que REST (Transferencia de estado representacional) es un estilo arquitectónico en el que se accede a los servicios en forma de Recursos y, en general, se implementan a través de comunicaciones web a través del protocolo HTTP estándar. Los lenguajes de modelado se utilizan para expresar conocimiento/información sobre el sistema que vamos a desarrollar. Para el servicio REST Varios lenguajes/marcos de modelado están presentes en los mundos de la API REST. RAML, Swagger y API Blueprint ahora se usan ampliamente en el desarrollo de API REST.
 
-REST significa transferencia de estado representacional. Este término fue acuñado por primera vez por Roy Fielding[\cite{62}]. REST se refiere al estilo arquitectónico. El estilo arquitectónico REST describe seis restricciones. Estas restricciones, aplicadas a la arquitectura, fueron comunicadas originalmente por Roy Fielding en su tesis doctoral y definen la base del estilo \textit{RESTful}. 
+REST significa transferencia de estado representacional. Este término fue acuñado por primera vez por Roy Fielding[\cite{62}]. REST se refiere a un estilo arquitectónico relacionado a la manera en que pueden interactuar distintos componentes de un sistema. El estilo arquitectónico REST describe seis restricciones, las cuales aplicadas a la arquitectura, fueron comunicadas originalmente por Roy Fielding en su tesis doctoral y definen la base del estilo \textit{RESTful}. 
 
-Las restricciones impuestas por la arquitectura REST [\cite{56,62}] son las siguientes:
-\begin{itemize}
-\item Interfaz uniforme
-\item Sin estado
-\item Almacenable en caché
-\item Cliente-servidor
-\item Sistema en capas
-\item Código bajo demanda
-\end{itemize}
+%Las restricciones impuestas por la arquitectura REST [\cite{56,62}] son las siguientes:
+%\begin{itemize}
+%\item Interfaz uniforme
+%\item Sin estado
+%\item Almacenable en caché
+%\item Cliente-servidor
+%\item Sistema en capas
+%\item Código bajo demanda
+%\end{itemize}
 
-Una REST API describe un conjunto de recursos y un conjunto de operaciones que se pueden llamar en esos recursos [\cite{56}]. La comunicación de la interfaz de usuario de nuestro sistema con el backend se establece mediante un servicio REST API. Para establecer la comunicación utilizaremos Axios, una herramienta familiar en Vue [\cite{46}], la cual nos permite crear solicitudes a una url GET, PUT, POST, DELETE como una API \nomenclature[API]{\textbf{API}}{Interfaz de programación de aplicaciones, un punto final de, por ejemplo, una base de datos con la que diferentes aplicaciones pueden interactuar y hacer uso de la aplicación.} simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada.
+Una REST API describe un conjunto de recursos y un conjunto de operaciones que se pueden invocar en esos recursos [\cite{56}]. La comunicación de la interfaz de usuario de nuestro sistema con el \textit{backend} se establece mediante un servicio REST API. Para establecer la comunicación utilizaremos la biblioteca Axios, una herramienta familiar en Vue [\cite{46}], la cual nos permite crear solicitudes de tipo GET, PUT, POST, DELETE a una URL como una API \nomenclature[API]{\textbf{API}}{Interfaz de programación de aplicaciones, un punto final de, por ejemplo, una base de datos con la que diferentes aplicaciones pueden interactuar y hacer uso de la aplicación.} simple, estas peticiones se manejan como ``promesas'' de JavaScript para mejorar la recuperación de respuestas del servidor a dichas peticiones de la aplicación cliente.
 
 %La herramienta Axios permite crear solicitudes a una URL GET, PUT, POST, DELETE como una API simple, y además posee una biblioteca basada en promesas para recuperar la respuesta con la devolución de llamada. Axios es una herramienta familiar en Vue.js [\cite{46}] lo cual es beneficioso para nuestro sistema que necesita establecer comunicación con el \textit{backend} a través del servicio REST API.
 
@@ -404,35 +441,41 @@ Para lograr el objetivo planteado en este trabajo y responder a las preguntas de
 
 %El potencial de la tecnología blockchain [\cite{2}], como comentamos anteriormente, ha estimulado el desarrollo de muchas soluciones viables para los problemas de la educación en línea. Los hallazgos de esta investigación sugieren que existen muchas aplicaciones para la tecnología blockchain en la educación en línea.
 
+\subsection{Certificados digitales en universidades}
 Actualmente, algunas universidades alrededor del mundo han adoptado varias técnicas para crear sus servicios para emitir y verificar certificados digitales como la Universidad de Johannesburgo (UJ) en Sudáfrica [\cite{80}], la Universidad de Exeter [\cite{76}], y otras más mencionadas en [ \cite{1}]. 
 
 Todos los certificados que emite la Universidad de Johannesburgo (UJ) en Sudáfrica incluyen códigos QR basados en \textit{blockchain}. 
 
-La Universidad de Exeter lanzó un pequeño piloto con su clase de Maestría en Tecnología Financiera. El piloto permitió a los estudiantes poseer su certificación sin depender de terceros. Los estudiantes ahora pueden ser el ``propietario'' de sus certificados y demostrar que la Universidad de Exeter emite el diploma en la \textit{blockchain} [\cite{76}].
+La Universidad de Exeter lanzó un pequeño piloto con su clase de Maestría en Tecnología Financiera [\cite{76}]. El piloto permitió a los estudiantes poseer su certificación sin depender de terceros. Los estudiantes ahora pueden ``propietarios'' de sus certificados y demostrar que la Universidad de Exeter emite el diploma en la \textit{blockchain}.
 
 %La integración del software de emisión de certificados con la \textit{blockchain} permite un sistema interoperable y sin confianza que combate el fraude.
 
-Implementado en más de 90 instituciones en una docena de países, BCdiploma (\textit{Blockchain Certified diploma}) ofrece un servicio llave en mano para crear y compartir certificados de \textit{blockchain} para todos los documentos académicos: diplomas, transcripciones, habilidades adquiridas, etc. A diferencia de una aplicación de billetera digital tradicional, no se necesita autenticación para acceder al servicio en línea de BCdiploma.[\cite{75}].
+\subsection{BCdiploma}
+Implementado en más de 90 instituciones en una docena de países, BCdiploma (\textit{Blockchain Certified diploma}) [\cite{75}] ofrece un servicio llave en mano para crear y compartir certificados de \textit{blockchain} para todos los documentos académicos: diplomas, transcripciones, habilidades adquiridas, entre otros. 
+
+%A diferencia de una aplicación de billetera digital tradicional, no se necesita autenticación para acceder al servicio en línea de BCdiploma.[\cite{75}].
 
 %BCdiploma es el primer jugador en ofrecer Open Badges certificados, $100\%$ blockchain , aprobado por IMS Global, para microcertificaciones y cursos modularizados
 %La escuela de negocios ESCP es una escuela líder en administración y negocios [\cite{74}].
 
-Desde enero de 2021, los graduados de Montpellier Business School reciben una versión digital de su diploma, una credencial digital emitida con la solución BCdiploma [\cite{75, 78}].
+Desde enero de 2021 [\cite{75, 78}], los graduados de Montpellier Business School reciben una versión digital de su diploma, una credencial digital emitida con la solución BCdiploma.
 
-La escuela de negocios ESCP [\cite{74}] lanzó su servicio de credenciales digitales basado en blockchain en asociación con BCdiploma [\cite{75}]. La asociación con BCdiploma simplificó el acceso a los documentos pues se puede acceder a los diplomas con un solo clic, ya sea desde una computadora o un teléfono inteligente.
+La escuela de negocios ESCP (Escuela Superior de Comercio de París) [\cite{74}] lanzó su servicio de credenciales digitales basado en blockchain en asociación con BCdiploma [\cite{75}]. La asociación con BCdiploma simplificó el acceso a los documentos, pues se puede acceder a los diplomas con pocas interacciones, ya sea desde una computadora o un teléfono inteligente.
 
-La Agencia Universitaria de la Francofonía (AUF), en colaboración con BCdiploma, ofrece una solución de certificación \textit{blockchain} a sus universidades. La oferta exclusiva firmada con BCdiploma permite a la red de universidades miembro de AUF y sus socios emitir certificados en línea multilingües a prueba de manipulaciones con solo unos pocos clics, que se pueden compartir en redes profesionales y currículums. Los graduados reciben un enlace URL único y seguro que pueden usar libremente de por vida [\cite{77}].
+La Agencia Universitaria de la Francofonía (AUF), en colaboración con BCdiploma, ofrece una solución de certificación \textit{blockchain} a sus universidades [\cite{77}]. La oferta exclusiva firmada con BCdiploma permite a la red de universidades miembro de AUF y sus socios emitir certificados en línea multilingües a prueba de manipulaciones con solo unos pocos clics, que se pueden compartir en redes profesionales y currículums. Los graduados reciben un enlace URL único y seguro que pueden usar libremente de por vida.
 
 %Oscar Castellana, Jefe del Departamento de Administración Estudiantil cuenta que [\cite{78}]: ``La solución de credenciales digitales, BCdiploma, fue fácil de aprender, con un método de implementación estructurado y un entorno de preproducción que permitió tantas pruebas como fuera necesario. Como resultado, mi equipo de 7 administradores de la escuela puede generar las credenciales digitales y enviarlas por correo electrónico a los graduados con solo tres clics… con total autonomía y al día siguiente del jurado de graduación''].
 
-La solución BCdiploma presenta una interfaz simple y sencilla. Los emisores de certificados, sean estos la institución, una universidad o facultad, por ejemplo, pueden cargar sus diplomas con la DApp BCdiploma. El almacenamiento del diploma genera un enlace url único y seguro que la institución puede enviar de forma segura al graduado en cuestión. Los graduados pueden compartir la url por correo electrónico, o en las redes sociales. Con ese enlace es posible la visualización de datos (diplomas multilingües) del graduado, y cualquier tercero puede verificar la autenticidad del documento este. En un formato electrónico seguro, incluye todos los detalles relevantes de la certificación o diploma, tales como:
+La solución BCdiploma presenta una interfaz simple y sencilla. Los emisores de certificados, sean estos la institución, una universidad o facultad, por ejemplo, pueden cargar sus diplomas con la DApp BCdiploma. El almacenamiento del diploma genera un enlace url único y seguro que la institución puede enviar de forma segura al graduado en cuestión. Los graduados pueden compartir la url por correo electrónico, o en las redes sociales. Con ese enlace es posible la visualización de datos (diplomas multilingües) del graduado, y cualquier tercero puede verificar la autenticidad del documento este. 
 
-\begin{itemize}
-\item Año de certificación.
-\item Cualificación / Título.
-\item Información del estudiante – nombre, apellido, fecha de nacimiento, número de cédula.
-\item Dirección de la institución de formación: escuela, colegio, universidad, instituto de educación superior, centro de formación, proveedor de aprendizaje electrónico.
-\end{itemize}
+%En un formato electrónico seguro, incluye todos los detalles relevantes de la certificación o diploma, tales como:
+%
+%\begin{itemize}
+%\item Año de certificación.
+%\item Cualificación / Título.
+%\item Información del estudiante – nombre, apellido, fecha de nacimiento, número de cédula.
+%\item Dirección de la institución de formación: escuela, colegio, universidad, instituto de educación superior, centro de formación, proveedor de aprendizaje electrónico.
+%\end{itemize}
 
 %BCdiploma (Blockchain Certified diploma), líder del mercado en la digitalización de diplomas y micro credenciales, te ofrece una plataforma llave en mano. A diferencia de una aplicación de billetera digital tradicional, no se necesita autenticación para acceder al servicio en línea de BCdiploma.
 
@@ -458,11 +501,12 @@ La solución BCdiploma presenta una interfaz simple y sencilla. Los emisores de 
 
 %Utilizando la tecnología de cadena de bloques de Bitcoin, el Instituto se ha convertido en una de las primeras universidades en emitir credenciales virtuales propiedad de los destinatarios.
 
+\subsection{Blockcerts}
 %Blockcerts es un estándar abierto para crear, emitir, ver y verificar certificados basados en blockchain. Estos registros digitales están registrados en una cadena de bloques, firmados criptográficamente, a prueba de manipulaciones y compartibles. El objetivo es permitir una ola de innovación que brinde a las personas la capacidad de poseer y compartir sus propios registros oficiales.
 
 %Blockcerts utiliza y fomenta la consolidación en estándares abiertos. Blockcerts está comprometido con la identidad soberana de todos los participantes y permite que el destinatario controle sus reclamos a través de herramientas fáciles de usar, como la billetera de certificados (aplicación móvil). Blockcerts también se compromete con la disponibilidad de credenciales, sin puntos únicos de falla.
 
-La aplicación Blockcerts Wallet fue desarrollada por Learning Machine en conjunto con la Oficina de Registro del MIT [\cite{81}]. Utiliza la tecnología blockchain para brindar a los graduados un fácil acceso a una versión verificable y a prueba de manipulaciones de su diploma que pueden compartir con posibles empleadores [\cite{79}].
+La aplicación Blockcerts Wallet fue desarrollada por Learning Machine en conjunto con la Oficina de Registro del MIT [\cite{81, 79}]. Utiliza la tecnología blockchain para brindar a los graduados un fácil acceso a una versión verificable y a prueba de manipulaciones de su diploma que pueden compartir con posibles empleadores. % [\cite{79}].
 
 %Blockcerts sirve como un middleware para emitir y recuperar certificados en línea. Se puede acceder a los certificados almacenados a través de una billetera, lo que permite a los empleados obtener una versión verificable y a prueba de manipulaciones de su certificado.
 
@@ -480,7 +524,7 @@ La aplicación Blockcerts Wallet fue desarrollada por Learning Machine en conjun
 
 %Blockcerts Wallet resuelve ese problema. 
 
-Una vez que el estudiante descarga la aplicación, genera el par de claves pública y privada y envía la clave pública al MIT, donde se escribe en el registro digital. A continuación, se agrega a la cadena de bloques un hash unidireccional (una cadena de números que se pueden usar para la verificación más adelante). La información del diploma en sí no va a la cadena de bloques, solo la transacción con marca de tiempo que indica que el MIT creó el registro digital. Finalmente, el MIT envía por correo electrónico el diploma digital (un archivo de notación de objetos de JavaScript o JSON) con la clave pública del estudiante inscrita en él. Debido a que la aplicación móvil en el teléfono del estudiante tiene su clave privada única, el estudiante puede probar la propiedad del diploma.
+Una vez que el estudiante descarga la aplicación móvil, genera el par de claves pública y privada y envía la clave pública al MIT, donde se escribe en el registro digital. A continuación, se agrega a la cadena de bloques un hash unidireccional (una cadena de números que se pueden usar para la verificación posteriormente). La información del diploma no se guarda en la cadena de bloques, solo la transacción con marca de tiempo que indica que el MIT creó el registro digital. Finalmente, el MIT envía por correo electrónico el diploma digital (un archivo de notación de objetos de JavaScript o JSON) con la clave pública del estudiante inscrita en el archivo. Debido a que la aplicación móvil en el teléfono del estudiante tiene su clave privada única, el estudiante puede probar la propiedad del diploma.
 
 %la Universidad de Johannesburgo (UJ) En Sudáfrica
 
@@ -488,7 +532,8 @@ Una vez que el estudiante descarga la aplicación, genera el par de claves públ
 
 %A partir del 2022, todos los certificados que emite la UJ a sus graduados incluirán códigos QR basados en blockchain. Esto permitirá que cualquiera pueda escanear estos códigos con un teléfono inteligente para verificar que el certificado ha sido emitido legítimamente por UJ y que toda la información es correcta.
 
-Certifaction ofrece una solución fácil y rápida para asegurar los diplomas de los estudiantes en \textit{blockchain} Ethereum, lo cual los hace inmutables y verificables al instante. El Centro de Finanzas Innovadoras de la Universidad de Basilea y la Universidad de St. Gallen son instituciones que implementan directamente la API de Certifaction en su sistema de emisión de diplomas [\cite{82}].
+\subsection{Certifaction}
+El sistema de nombre Certifaction ofrece una solución fácil y rápida para asegurar los diplomas de los estudiantes en \textit{blockchain} Ethereum, lo cual los hace inmutables y verificables al instante. El Centro de Finanzas Innovadoras de la Universidad de Basilea y la Universidad de St. Gallen son instituciones que implementan directamente la API de Certifaction en su sistema de emisión de diplomas [\cite{82}].
 
 %Certifaction es muy fácil de implementar y trabajar tanto para el emisor como para el verificador. En menos de un minuto, cualquier persona puede comenzar con la certificación de documentos. En cuestión de segundos, un verificador puede arrastrar y soltar un documento para verificar su integridad y origen. No se necesitan conocimientos previos de blockchain.
 
@@ -496,14 +541,16 @@ Certifaction ofrece una solución fácil y rápida para asegurar los diplomas de
 
 %La Universidad de St. Gallen también reconoció este problema y esta oportunidad, pero dio un paso más al implementar directamente la API de Certifaction en su sistema de emisión de diplomas.
 
+\subsection{BlockTac}
 Con BlockTac [\cite{83}] la institución educativa emite un certificado y lo comunica a BlockTac a través de un canal privado. BlockTac notifica al estudiante y facilita una aplicación de Android o iOS para ver su certificado. El estudiante puede compartir desde la aplicación su certificado con quien desee y cualquier persona o institución puede verificar el certificado sin tener que contactar a la institución acreditadora.
 
 %BlockTac se basa en la tecnología Blockchain para brindar inviolabilidad, inmutabilidad y verificación abierta para todos sus certificados y sellos digitales. Se basa en profesionales experimentados en tecnologías y gestión de Internet.La institución educativa emite un certificado en papel normal (si lo desea) y lo comunica a BlockTac a través de un canal privado. Es su único compromiso. BlockTac notifica al estudiante y facilita una aplicación de Android o iOS para ver su certificado. El estudiante puede compartir desde la aplicación su certificado con quien desee y cualquier persona o institución puede verificar el certificado sin tener que contactar a la institución acreditadora.
 %
+\subsection{Certif-ID}
 Certif-ID proporciona un sistema integral para emitir certificados digitales en un formato seguro de cadena de bloques que se puede compartir y verificar instantáneamente en cualquier parte del mundo [\cite{84}]. Certif-ID permite crear, emitir y diseñar certificados, y compartirlos en las redes sociales. Es posible realizar la verificación con tan solo un clic y  rastrear todos los certificados emitidos y compartidos.
 
 %brinda una interfaz atractiva e intuitiva con funcionalidades como crear, emitir y diseñar certificados. Permite la verificación con tan solo un clic, compartir los certificados pertenecientes al usuario y rastrear todos los certificados emitidos y compartidos dentro del tablero
-
+\subsection{Emercoin}
 Emercoin desarrolló una innovadora plataforma blockchain ``Trusted Diploma'' [\cite{87}] que ayuda a las escuelas a crear y compartir diplomas y otros certificados educativos en una aplicación cifrada. Los registros se almacenan en la \textit{blockchain} y cualquier persona puede verificarlos fácilmente. Flexibilidad, facilidad de uso y disponibilidad son las principales ventajas de esta solución tecnológica.
 
 %Si es representante de una universidad y necesita registrar una institución educativa (crear un registro raíz de la universidad), puede hacerlo en la pestaña Registrar universidad.
@@ -527,6 +574,7 @@ TruScholar [\cite{86}], CertifyMe.Online [\cite{85}], Credly [\cite{89}] son tam
 %Emita credenciales seguras y encriptadas con blockchain en cuestión de minutos.
 %Recupere y verifique las credenciales cuando sea necesario sin problemas.
 
+\subsection{Certika}
 Certika es una plataforma web que permite certificar cualquier documento digital de valor bajo tecnología blockchain [\cite{88}]. Para crear un certificado solo es necesario subir la imagen y llenar los campos solicitados (nombres, descripción, habilidades, criterios, atributos, entre otros). La funcionalidad de emitir certificados en esta plataforma es muy sencilla, se debe descargar un archivo CSV y llenar los campos requeridos, los cuales corresponden a la información de los usuarios receptores. Luego, se sube el archivo y el sistema se encargará de emitir un correo a cada persona. En este módulo se podrá agrupar las distintas emisiones realizadas, adicionalmente editar el nombre asignado a los diferentes grupos de certificados, enviar correos de recordatorio a los usuarios receptores, descargar bases de datos y revocar la emisión en caso de haber cometido algún error.
 
 %Crear un certificado es cuestión de minutos, solo debes cargar la imagen, diligenciar los campos solicitados (nombres, descripción, habilidades, criterios, atributos, entre otros). Además se cuenta con un completo módulo en el que podrás diseñar a la medida cualquier certificado, agregando todo tipo de campo adicional que se requiera.
@@ -547,6 +595,7 @@ Certika es una plataforma web que permite certificar cualquier documento digital
 
 %En conjunto, la interfaz debe ser intuitiva para una amplia gama de usuarios.
 
+\subsection{Universidad de Ciego de Ávila}
 La plataforma UniLegal, de la Universidad de Ciego de Ávila Máximo Gómez Báez (Unica) le permite a los egresados de esa casa de altos estudios la validación de la copia de sus títulos universitarios, a través de dispositivos móviles o computadoras capaces de conectarse a la red nacional, según el periódico Invasor [\cite{90}]. Aunque esta plataforma no está basada en \textit{blockchain}, queríamos mencionarla como antecedente de una plataforma de emisión y validación de títulos universitarios en nuestro país.
 
 Para su uso, el sitio precisa, en un primer momento, del registro del interesado mediante la introducción de datos como su nombre y apellidos, correo electrónico y número del carné de identidad, este último de gran importancia para garantizar la veracidad de la información aportada. Una vez registrado, el interesado podrá subir a la plataforma una fotocopia del título universitario, a la que se le coloca por detrás toda la información registrada en el original y se confronta con el documento aportado para comprobar su validez. La aplicación genera un código de barras y un QR que, al escanearlo, remite a una página donde aparecen los datos específicos del usuario en cuestión y a la cual puede acceder cualquier persona para verificar que ese documento sea verdadero.
@@ -559,17 +608,18 @@ Para su uso, el sitio precisa, en un primer momento, del registro del interesado
 
 %Con más de 400 usuarios registrados hasta la fecha, pertenecientes a las provincias de Artemisa, Mayabeque y casi todas las de la región oriental, durante estos meses quienes han utilizado el servicio no han reportado ningún problema, según asegura el jefe del Departamento de Desarrollo de Software.
 
-A pesar de la variedad de soluciones presentadas, solo una pertenecía a Cuba. El tema de investigación de este trabajo surge a petición del Instituto de Criptografía de la Universidad de La Habana con el objetivo inicial de crear un sistema de gestión de los títulos académicos emitidos por la misma universidad. La propuesta presentada por este trabajo no solo es innovadora por brindar los elementos de seguridad, validez y confianza que trae consigo el uso de la blockchain, sino también, por brindar un medio de interacción elegante, simple y eficiente para trabajar con este servicio.
+\subsection{Nuestra propuesta}
+A pesar de la variedad de soluciones presentadas, solo una pertenecía a nuestro país. El tema de investigación de este trabajo surge a petición del Instituto de Criptografía de la Universidad de La Habana con el objetivo inicial de crear un sistema de gestión de los títulos académicos emitidos por la misma universidad. La propuesta presentada por este trabajo no solo es innovadora por brindar los elementos de seguridad, validez y confianza que trae consigo el uso de la blockchain, sino también, por brindar un medio de interacción elegante, simple y eficiente para trabajar con este servicio. Además, esta investigación puede ser un inicio para crear un consorcio de instituciones académicas para la validación y emisión de certificaciones.
 
-Uno de los aspectos más importantes para la usabilidad de cualquier servicio es la interfaz entre el usuario y el programa. Nuestro propuesta es crear una interfaz de usuario lo más intuitiva posible. Además, debe ser muy simple y eficiente para realizar cualquier tarea, lo cual significa que se debe encontrar un equilibrio entre un diseño limpio y ordenado y una accesibilidad de unos pocos clics para todas las funciones.
+Uno de los aspectos más importantes para la usabilidad de cualquier servicio es la interfaz entre el usuario y el programa. Nuestra propuesta es crear una interfaz de usuario lo más intuitiva posible. Además, debe ser muy simple y eficiente para realizar cualquier tarea, lo cual significa que se debe encontrar un equilibrio entre un diseño limpio y ordenado y una accesibilidad de unos pocos clics para todas las funciones.
 
 Debido a la estructura simple, usaremos íconos para marcar la mayoría de los campos y botones. Esto evita distracciones innecesarias a través del texto y lo hace más fácil para las personas que quizás no hablen el idioma. El diseño también es receptivo para adaptarse a una amplia gama de pantallas.
 
-En las aplicaciones y soluciones previamente mencionadas se utilizan billeteras, códigos QR o enlaces únicos como medio para compartir y comprobar la validación de los certificados universitarios de los graduados. En nuestra solución, solo es necesario el identificador (número del carné de identidad) del graduado para poder revisar los datos y validez de su diploma. El graduado o empleador no tienen necesidad de descargar o instalar una aplicación móvil para poder usar nuestro servicio.
+En las aplicaciones y soluciones previamente mencionadas se utilizan billeteras, o enlaces únicos como medio para compartir y comprobar la validación de los certificados universitarios de los graduados. En nuestra solución, solo es necesario el identificador (número del carné de identidad) del graduado para poder revisar los datos y validez de su diploma. El graduado o empleador no tienen necesidad de descargar o instalar una aplicación móvil para poder usar nuestro servicio.
 
-En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. 
-
-Nuestra plataforma no registrará binarios (copia digital de título, etc.), solo se registrarán datos asociados al certificado. La creación, emisión y validación de títulos tendrán sus propias vistas y solo necesitarán de un clic para realizar dichas acciones, aumentando la velocidad y facilidad de este proceso.
+%En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. 
+%
+%Nuestra plataforma no registrará binarios (copia digital de título, etc.), solo se registrarán datos asociados al certificado. La creación, emisión y validación de títulos tendrán sus propias vistas y solo necesitarán de un clic para realizar dichas acciones, aumentando la velocidad y facilidad de este proceso.
 
 %Nuestra propuesta se enfoca en brindar un sitio web, a diferencia de las soluciones comentadas anteriormente que brindaban una aplicación móvil para poder usar sus servicios.
 

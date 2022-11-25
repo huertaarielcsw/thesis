@@ -8,7 +8,7 @@
  \nomgroup{B}
 
   \item [{\textbf{Backend}}]\begingroup La parte del sistema que no está contenida o cargada en la aplicación del usuario, generalmente la API, el servidor y las bases de datos\nomeqref {0}
-		\nompageref{3}
+		\nompageref{4}
 
  \nomgroup{E}
 
@@ -29,12 +29,12 @@
 
  \nomgroup{T}
 
-  \item [{\textbf{Token}}]\begingroup Es una cadena de caracteres que contiene información, cifrada por el servidor, de un usuario en concreto.\nomeqref {0}
+  \item [{\textbf{Token}}]\begingroup Es una cadena de caracteres que contiene información, cifrada por el servidor, de un usuario en concreto\nomeqref {0}
 		\nompageref{XI}
 
  \nomgroup{U}
 
-  \item [{\textbf{UML}}]\begingroup Es un lenguaje de modelado de software [\cite{91}]\nomeqref {2.0}
+  \item [{\textbf{UML}}]\begingroup Es un lenguaje de modelado de software\nomeqref {2.0}
 		\nompageref{25}
 
 \end{thenomenclature}

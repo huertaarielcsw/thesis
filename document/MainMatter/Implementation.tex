@@ -1,58 +1,294 @@
 \chapter{Detalles de Implementación y Experimentos}\label{chapter:implementation}
-%
-%Las pruebas de IU no se realizaron automáticamente. Se utilizó un navegador para probar y construir las características requeridas. Luego, el desarrollador, el autor de esta tesis y el propietario del producto trabajaron juntos para probar las características. La prueba se llevó a cabo en cada revisión de sprint. Si la función superó completamente los requisitos de prueba de aceptación, la función se marcó como completa; de lo contrario, se le dio al desarrollador una lista de errores o comportamientos inesperados para que los corrigiera.
-%
-%Después de cada prueba de aceptación exitosa, se planeó una nueva característica para el siguiente sprint y se le dieron al desarrollador los requisitos de la prueba de aceptación. Si el desarrollador tenía algún problema o pregunta con la función o los requisitos de prueba de aceptación, se lo comunicó al propietario del producto y se tomó una resolución.
-%
-%
+La etapa de implementación del \textit{software} es el proceso de convertir una especificación del sistema en un sistema ejecutable. Esta fase comprende la materialización, en forma de código, de todos los artefactos, descripciones y arquitectura propuestos en la etapa de análisis y diseño; con el objetivo de conformar el producto final requerido por el cliente [\cite{91}].
+
+Una vez desarrollado el \textit{software}, el mismo debe ser sometido a una serie de pruebas que muestren que el sistema se ajusta a su especificación y que cumple con las expectativas del usuario. Según [\cite{91}], esta etapa es conocida como la validación e implica una serie de procesos de comprobación, como las inspecciones y revisiones. Por lo que el presente capítulo tiene como objetivo documentar los resultados de las fases de implementación del sistema y de la estrategia de pruebas desarrollada, y validar la solución propuesta.
+
+%El desarrollo de las vistas del nivel de presentación está compuesto por 
+%componentes, piezas de código con un comportamiento específico que unidos crean 
+%aplicaciones web [46], si estos se abstraen correctamente pueden ser reutilizables, 
+%reduciendo el desarrollo repetitivo [47]
+
+\section{Implementación}
+Para el desarrollo de la aplicación web se ha utilizado un gran número de librerías y recursos externos para facilitar el desarrollo [\cite{47}]. Por ello no se van a explicar todos, sino los de más relevancia acorde a las secciones en las que se ha estructurado el proyecto, que son las que tienen que ver con el \textit{framework} Vue.
+%En este apartado se comentan algunas de las partes de la implementación realizada para el desarrollo del prototipo con Vue 3.
+
+%\section{Estructura del código}
+%El código de nuestra aplicación sigue la estructura de proyecto predeterminada de Vue y la guía de estilo oficial [\cite{47}] (Figura 4.2).
+
+%Como estamos construyendo un SPA, \textit{index.html} es el sitio de inicio y también el único archivo \textit{.html} en el directorio. Su cuerpo contiene un solo elemento <div id=``app'' </div>, donde se montará el componente raíz \textit{App.vue}. La Figura 4.3 muestra el árbol de componentes Vue de \textit{App.vue}.
+
 %La Figura 3 muestra la estructura del proyecto y todas las carpetas y archivos se describen a continuación:
+
+En la ilustración 31 se muestra la estructura por carpetas y archivos usados para el desarrollo del nivel de presentación. La carpeta ``src'' almacena todos los archivos con el código para la creación de la aplicación; el resto de las carpetas y ficheros son configuraciones del proyecto, muy importantes para el desarrollo de este, pero no se van a explicar. Dentro de esta encontramos las distintas carpetas y archivos:
+
+\begin{itemize}
+\item \textbf{assets}: esta carpeta incluye los activos estáticos de la aplicación que pueden ser el logotipo de una empresa, imágenes, fuentes, entre otros.
+\item \textbf{components}: esta carpeta contiene todos los componentes de la aplicación.
+\item \textbf{directives}: esta carpeta contiene todas las directivas de la aplicación.
+\item \textbf{layouts}: contiene los componentes que se encargan del diseño visual de la interfaz.
+\item \textbf{router}: contiene todas las rutas que muestran las vistas.
+\item \textbf{services}: contiene todos los servicios y definiciones de la aplicación.
+\item \textbf{stores}: contiene todos los \textit{stores} creados mediante la biblioteca Pinia.
+\item \textbf{views}: contiene todas las vistas de la aplicación.
+\item \textbf{App.vue}: este archivo es el componente raíz donde se anidan todos los demás componentes. Este archivo es responsable de manejar todos los componentes.
+\item \textbf{main.ts}: archivo encargado de cargar la aplicación. En él se adjuntan las librerías principales, como Pinia y el archivo principal (App.vue).
+\end{itemize}
+
+\subsection{Componentes}
+Cada \textit{framework} tiene su propia manera de definir los componentes y realizar su propia interpretación de estos. En Vue.js se pueden definir de varias formas, una de ellas  es la llamada componentes de un solo archivo o en inglés \textit{Single File Components}. Estos componentes nos permiten, como su nombre indica, encapsular el código CSS, HTML y Javascript en un único archivo.
+
+Esto es un modo muy útil de definir los componentes puesto que cuando la aplicación escale en tamaño nos será más fácil encontrar el código deseado y reduciremos en gran medida el tamaño en archivos del proyecto.
+
+Para la aplicación, usamos una plantilla personalizada por el cliente, en la cual existían componentes ya definidos para los principales elementos de una página Web como la barra de navegación, los botones, campos de entrada de datos, entre otros.
+
+%En esta sección, daremos una breve descripción del componente CourseCard.vue. A continuación se muestra el código de la sección HTML del archivo CourseCard.vue:
+
+%La biblioteca que provee de las herramientas para la definición de componentes en Vue es la base.
+\subsection{Router}
+El \textit{router} es una pieza fundamental de las SPA y por lo tanto es una pieza que no puede faltar en ningún \textit{framework} completo. Un \textit{router} es el elemento \textit{software} encargado de relacionar una URL a una vista, de manera que cuando se escriba una URL en el navegador, automáticamente se visualizara la vista relacionada. Además, un router debe proveer de diferentes herramientas para poder enviar datos dinámicos a las vistas y para establecer un sistema de permisos.
+
+Vue viene con una biblioteca integrada que maneja el enrutamiento. Al crear un proyecto Vue, se genera automáticamente una carpeta de \textit{router} con un archivo index.ts con una configuración de ruta completa. Para definir nuevas rutas, simplemente podemos agregar un objeto al arreglo de rutas. El objeto consta de tres atributos:
+
+\begin{itemize}
+\item ruta: La URL para acceder a la ruta.
+\item nombre: El nombre de la ruta. Utilizado como referencia a la ruta en ciertas funciones.
+\item componente: El archivo que representa esta ruta.
+\end{itemize}
+
+En el campo del componente, podemos especificar el nombre del archivo directamente en el atributo del componente o pasarlo a una función que implemente \textit{lazy-loading}. La función extrae el código de la ruta del paquete ts y crea un fragmento separado para él. Este fragmento de código solo se carga cuando un usuario ingresa a la ruta. Es fácil de implementar y mejora significativamente el rendimiento de la aplicación.
+
+El fragmento de código \ref{lst:router} muestra el \textit{router} de nuestra aplicación, donde además de las rutas básicas relacionadas con el inicio de sesión y la página inicial, añadimos las rutas relacionadas a los usuarios y los certificados. 
+
+\begin{lstlisting}[language=C,caption={Configuración de las rutas}, label={lst:router}]
+const router = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes:  [
+        {
+            path:      RoutePaths.login,
+            name:      RoutePathNames.login,
+            component: () => import('../views/auth/ViewLogin.vue'),
+            meta:      { layout: LayBasePage }
+        },
+        {
+            path:      RoutePaths.dashboard,
+            name:      RoutePathNames.dashboard,
+            component: () => import('../views/ViewDashboard.vue'),
+            meta:      { layout: LayBaseDashboard }
+        },
+        {
+            path:      RoutePaths.profile,
+            name:      RoutePathNames.profile,
+            component: () => import('../views/auth/ViewProfile.vue'),
+            meta:      { layout: LayBaseDashboard , reqAuth: true,}
+        },
+        ...UsersRoutes,
+        ...CertificatesRoutes
+    ]
+})
+\end{lstlisting}
+
+La biblioteca de Vue-router tiene funciones que nos permiten tener más control sobre las rutas. Tomemos esta función como un ejemplo:
+
+\begin{lstlisting}[language=C,caption={Función para controlar el acceso a rutas}, label={lst:routerAccess}]
+// GUARD - authentication checker | axios hook
+router.beforeEach(( to, _, next ) => {
+
+    const store = useAuthStore() 
+
+    if (store === undefined) next()
+    else if (to.meta.reqAuth && !store.isLoggedIn) {
+        next(RoutePaths.login)
+    }
+    else if (to.name === RoutePathNames.login && store.isLoggedIn) {            
+        ApiAuth.setAccessToken(store.authTk)                                    
+        next(RoutePaths.dashboard)
+    }
+    else {
+        next()                                                                  
+    }
+})
+\end{lstlisting}
+
+La función router.beforeEach se ejecuta antes de cada navegación. Nos gustaría comprobar si el usuario está autenticado al navegar por la aplicación.
+Escribimos una declaración if que verifica si el usuario está intentando navegar a una ruta que requiere autenticación y si el usuario está autenticado. Si el usuario no está autenticado, lo redirigimos a la página de inicio de sesión y, si lo está, continuamos y lo dejamos navegar a la ruta deseada.
+
+%El enrutamiento maneja lo que muestra el SPA cuando un usuario visita una determinada ruta de URL. https://my#app/home y https://my-app/users/2 son ejemplos de rutas de URL que la herramienta de enrutamiento de un SPA manejaría de manera diferente. La aplicación detecta qué ruta de URL se proporciona y presenta la página según la vista que corresponde a la ruta actual. Por ejemplo, https://my#app/home representará la vista de inicio y https://my-app/users/2 representará una vista que muestra al usuario con id 2. A menudo, se supone que ciertas rutas no deben mostrarse. para todo el mundo. Por ejemplo, es posible que algunas rutas solo estén disponibles para los usuarios que hayan iniciado sesión en la aplicación. Esta protección de rutas a menudo se puede implementar con herramientas de enrutamiento SPA.
+\subsection{Store}
+%Administrar estados es una parte importante de una aplicación de una sola página. Cuando se trata de SPA, un estado podría describirse como una estructura de datos que contiene información sobre la aplicación. Los estados se pueden dividir en estados de interfaz de usuario y estados globales. Los estados de la interfaz de usuario describen los aspectos visuales de la aplicación, mientras que los estados globales son datos que deben almacenarse y existir entre diferentes partes de la aplicación y que pueden restaurarse cuando la aplicación se reinicia.
 %
-%● dist: esta carpeta se genera cuando se crea la aplicación. Este contiene los archivos que se utilizan para alojar la aplicación en un servidor en vivo.
-%● node\_modules: esta carpeta contiene todas las bibliotecas de node js utilizadas en el proyecto. Esta carpeta se genera cuando las bibliotecas se instalan en el proyecto.
-%● público: esta carpeta contiene los archivos y activos públicos de la aplicación. Esto incluye, entre otros, index.html, el punto de entrada de la aplicación, el logotipo y el icono de la aplicación.
-%● src: esta carpeta contiene toda la lógica y los componentes de la aplicación.
-%
-%activos: esta carpeta incluye los activos estáticos de la aplicación que pueden ser el logotipo de una empresa, imágenes, fuentes, etc.
-%○ componentes: esta carpeta contiene todos los componentes de las aplicaciones. Esta carpeta se puede subdividir en carpetas más pequeñas. La mayor parte del trabajo de la interfaz de usuario se realiza aquí.
-%○ vistas: esta carpeta contiene archivos compuestos por componentes. Un archivo puede tener muchos componentes. Por ejemplo, un componente de encabezado, un componente de cuerpo y un componente de pie de página.
-%○ App.vue: este archivo es el componente raíz donde se anidan todos los demás componentes. Este archivo es responsable de manejar todos los componentes. Generalmente, se le pasa un componente de enrutador. Este archivo también se usa para anular estilos y se puede usar para proporcionar una hoja de estilo de reinicio.
-%○ main.js: este archivo es el punto de entrada para la aplicación. Aquí todas las bibliotecas se inicializan y pasan a Vue. Agrega y representa App.vue a DOM (modelo de objeto de documento).
-%○ router.js: este archivo contiene las URL de la aplicación.
-%○ store.js: este archivo almacena todos los datos persistentes en la aplicación para la sesión dada. Este archivo es utilizado por la biblioteca Vuex que se analiza en la sección 3.2.3
-%
-%● .browserlistrc: este archivo se usa para definir qué navegadores son compatibles con esta aplicación
-%● .eslintrc.js: este archivo se utiliza para controlar la calidad del código. Esto proporciona reglas que deben seguirse para obtener un código consistente. Por ejemplo, use comillas simples en todas partes.
-%● .gitignore: se usa para decirle al sistema de control de versiones qué archivos deben ignorarse.
-%● .babel.config.js: este archivo de configuración se utiliza para compilar el código ES6.
-%● package.json y package-lock.json: estos archivos se utilizan para administrar las dependencias utilizadas en el proyecto.
-%● postcss.config.js: este archivo de configuración se usa para compilar SCSS a CSS.
-%● webpack.config.js: este archivo de configuración se usa para asignar carpetas en el proyecto para importarlas fácilmente. Por ejemplo, si un componente está en la ubicación de src/folderA/folderB/file.vue y se usa en todas partes, se puede definir un alias para acceder a él más fácilmente como @/file.vue
+%Pinia se usó para manejar los estados globales en Vue.
+
+La incorporación de una \textit{store} viene dado por la necesidad de hacer una mejor gestión de los datos de forma centralizada en aplicaciones reactivas orientadas a componentes. En una aplicación orientada a componentes cada uno de ellos suele necesitar unos datos y los gestiona internamente. Cuando se añade interacción entre los mismo la complejidad crece enormemente. Esto es debido a la gran cantidad de componentes que puede haber en una aplicación conectados formando un árbol de conexiones por las que se moverán los datos de unos componentes a otros.
+
+Una \textit{store} es como un almacén de datos global a la aplicación en el cual los componentes podrán añadir y obtener estos de forma organizada, haciendo uso de una serie de herramientas que facilitan esta serie de interacciones de forma ordenada para que se pueda realizar un seguimiento de los cambios en los datos.
+
+Cuando se trata de SPA, un estado podría describirse como una estructura de datos que contiene información sobre la aplicación. Pinia se utiliza para guardar el estado de los componentes; tiene una \textit{store} raíz y permite crear cualquier cantidad de \textit{stores} individuales. Para nuestra aplicación, vamos a usar solamente tres \textit{stores}:
+
+\begin{itemize}
+\item auth: para el control de la autentificación y autorización.
+\item users: para gestionar los usuarios del sistema.
+\item certificates: para gestionar los certificados del sistema.
+\end{itemize}
+
+La \textit{store} de Pinia contiene el estado y dos tipos de métodos: captadores y acciones.
+\begin{itemize}
+\item Los captadores (\textit{getters}) son funciones sincrónicas que se utilizan para recuperar datos del estado.
+\item Las acciones (\textit{actions}) son funciones que también pueden ser asíncronas y que se utilizan para actualizar el estado.
+\item El estado (state) se define como una función que devuelve el estado inicial.
+\end{itemize}
 
 
-%Facilidad de uso El sistema ha sido diseñado para seguir los criterios básicos de WCAG 1.2.[58] Esto se logró principalmente mediante el uso extensivo de Vuetify, donde todos los componentes son compatibles con las funcionalidades requeridas por las WCAG.[59] La aplicación ha sido diseñada para ser simple, intuitiva y fácil de usar, incluso para usuarios con poca competencia en TI o con poca familiaridad con los sistemas de sensores conectados. Las aplicaciones Vue/Nuxt tienen una amplia compatibilidad con navegadores y la aplicación se ha probado para ejecutarse en Google Chrome, Mozilla Firefox, Safari y Microsoft Edge.
-%
-%Documentación, mantenimiento y desarrollo posterior El código base se ha documentado minuciosamente, con descripciones en forma de JSDoc para todos los métodos, funciones y utilidades relevantes, tanto en Frontend como en Backend. Consulte la figura 13 para ver un ejemplo de cómo se usa JSDoc en el código. Además de esto, se ha escrito un documento de documentación del sistema con una descripción general del proyecto, así como una guía para la configuración y las pruebas. El sistema debe estar disponible y listo para un mayor desarrollo por parte del cliente después de la finalización del proyecto. Esto se logra teniendo todo el proyecto alojado en sus repositorios privados, para que sea fácilmente accesible. Además de estar completamente documentado, el sistema se acopla de la manera más flexible y funcional posible. Esto debería facilitar el mantenimiento y el desarrollo posterior.
-%
-%Privacidad y seguridad de datos El sistema está configurado para protección con una función de inicio de sesión habilitada mediante el uso de un token de acceso. Sin embargo, esta medida de seguridad no está completamente implementada. Si bien la funcionalidad de inicio de sesión es relativamente completa, actualmente el token de acceso y otros datos del usuario solo se guardan en una tienda en LocalStorage, lo cual es un riesgo de seguridad. Además de esto, la funcionalidad de autorización de GraphQL/TypeGraphQL no se utiliza completamente en el Backend. Si bien todas las consultas y mutaciones, excepto la operación de inicio de sesión, requieren autorización con un token de acceso válido, actualmente no hay diferenciación entre tokens distintos. Esto significa que, siempre que un usuario tenga un token de acceso válido, tendrá acceso a todas las mutaciones y consultas. Además de esto, pueden acceder a todos los sitios y sensores, así como a otros usuarios, independientemente de si esos sitios y sensores están conectados al usuario. Una medida de seguridad que se implementó es un método simple que verifica las consultas a la base de datos de series temporales en busca de inyecciones de expresiones regulares y elimina los caracteres no deseados.
+\begin{lstlisting}[language=C,caption={Store de usuarios}, label={lst:usersStore}]
+export const useUsersStore = defineStore({
+    id: 'users',
 
-%A lo largo del proyecto se han realizado distintas pruebas, tanto de validación como 
-%de verificación. 
-%Verificación: ¿Estoy construyendo el producto correctamente?
-%Validación: ¿Estoy construyendo el producto correcto?
-%Como forma de validación de requisitos, se utilizan los prototipos del Apartado 3.4 de 
-%este documento. Se realizan reuniones con distintos entrenadores en la que se 
-%muestran los bocetos realizados, estos validan los requisitos dando su opinión acerca 
-%de ellos. De esta manera se añadirán los cambios aportados por los stakeholders para 
-%que los desarrolladores programen un software validado por estos.
-%La verificación del software trata de asegurar que se implementa correctamente una 
-%función, de acuerdo con la especificación y satisfaciendo los requisitos funcionales y no 
-%funcionales, esta se puede realizar a través de pruebas [49]. Para la verificación de los 
-%componentes se han usado las pruebas unitarias. Estas consisten en probar una parte 
-%del código y verificar que funciona correctamente, la ilustración 35 muestra un ejemplo 
-%de prueba unitaria sobre el controlador y el servicio de autenticación o auth.
-%En cada tarea definida en un sprint se encuentran las pruebas de aceptación, 
-%definidas por el equipo de desarrollo. Estas pruebas tratan de verificar que se cumplen 
-%las expectativas del cliente [50]. Una vez finalizado el sprint, en la reunión Sprint review, 
-%el Product Owner valida que el producto realiza la funcionalidad esperada y cumple con 
-%las expectativas. A su vez, se verifica que la funcionalidad desarrollada funciona 
-%correctamente, sin fallos
+    state: () : IUsersState => ({
+        pageNumber:    0,
+        pageSize:      0,
+        totalRecords: 0,
+        entityPage:   [] as IUsersRow[],
+        user: {id: 0, email:'',firstname:'',lastname:'',username:''} 
+    }),
+
+    getters: {
+        getUsersList: ( state ) : Array<IUsersRow> => state.entityPage,
+        getEntitiesCount: ( state ) : number => state.totalRecords
+    },
+
+    actions: {
+        // --- async calls actions ---
+
+        /**
+         * Tries to get the list of users, with the help of a definid axios apis
+         * to make the actual request
+         *
+         */
+        async reqUsersPages (payload: IDataTableQuery) : Promise<void> {
+
+             return await new Promise<void>((resolve, reject) => {
+                ApiUsers.reqUsersPage(payload)
+                .then((response:any) => {
+                    this.entityPage = response.data.rows                  
+                    this.totalRecords = response.data.total_rows
+                    this.pageSize = response.data.limit
+                    this.pageNumber = response.data.page
+                    
+                    resolve()
+
+                }).catch(error => {
+                    if (error.response.status === 404)
+                    {
+                        this.entityPage = []
+                        this.totalRecords = 0
+                        this.pageSize = 0
+                        this.pageNumber = payload.Offset
+                    }
+
+                    reject(error)
+                })
+            })
+        },
+     }
+   }
+})
+\end{lstlisting}
+
+El fragmento de código \ref{lst:usersStore} muestra la \textit{store} de usuarios. El estado de esta \textit{store} contiene la lista de usuarios, y otros datos que permiten la paginación de estos. Además contiene un elemento de tipo usuario que es utilizado para cargar los datos de un usuario cuando su información va a ser editada o consultada.
+
+Cada vez que se deben enviar datos al \textit{backend}, se lleva a cabo un determinado procedimiento. Primero, los datos se almacenan temporalmente dentro de la \textit{store} responsable de Pinia y desde dentro de la \textit{store} se activa una llamada API a través de las denominadas acciones.
+
+
+
+
+\subsection{Servicios}
+
+\subsection{Internacionalización}
+
+\subsection{Vistas}
+
+
+\section{Pruebas}
+Debido a problemas de tiempo las pruebas de IU no se realizaron automáticamente. Para sustituir las pruebas automáticas se ha realizado un proceso de caja negra final donde se ha tratado de buscar los fallos no solventados dentro de los procesos de desarrollo de la aplicación.(En esta sección se mostrarán en forma de alto nivel) Las ventajas de los test de caja negra son :
+
+\begin{itemize}
+\item El programador y el probador tienen objetivos independientes.
+\item Desarrollo más rápido de las pruebas: No se requiere conocimiento y comprensión de la estructura interna, ya que solo se prueban las funciones externas del \textit{frontend}.
+\item Sencillez: en el caso de aplicaciones grandes o complejas, la naturaleza inherente de las pruebas de caja negra ofrece una simplificación al verificar las salidas apropiadas recibidas en función de las entradas.
+\end{itemize}
+
+Desventajas
+
+\begin{itemize}
+\item Dado que no hay conocimientos sobre la implementación del código, el mismo código se puede probar varias veces, mientras que otras pueden no probarse nunca.
+\item Es imposible probar todas las entradas posibles en un período de tiempo razonable; por lo tanto, es posible que ciertos caminos nunca se prueben.
+\end{itemize}
+
+Se utilizó un navegador para probar y construir las características requeridas. Luego, el desarrollador, el autor de esta tesis y el propietario del producto trabajaron juntos para probar las características. La prueba se llevó a cabo en cada revisión de \textit{sprint}. Si la función superó completamente los requisitos de prueba de aceptación, la función se marcó como completa; de lo contrario, se le dio al desarrollador una lista de errores o comportamientos inesperados para que los corrigiera.
+
+Después de cada prueba de aceptación exitosa, se planeó una nueva característica para el siguiente sprint y se le dieron al desarrollador los requisitos de la prueba de aceptación. Si el desarrollador tenía algún problema o pregunta con la función o los requisitos de prueba de aceptación, se lo comunicó al propietario del producto y se tomó una resolución.
+
+\subsection{Test de navegabilidad}
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|p{4cm}|p{3cm}|c|c|}
+		\hline \textbf{Número} & \textbf{Descripción} & \textbf{URL} & \textbf{Salida esperada} & \textbf{Resultado}\\ 
+		\hline P-01 & Usuario no logueado intenta acceder a url protegidas & /users/* & Redirigir a login & Correcto\\
+		\hline P-02 & Usuario no logueado intenta acceder a url privada & /certificates/* & Redirigir a login & Correcto\\
+		\hline P-03 & Usuario sin rol de admin intenta acceder a url protegida & /users/* & Redirigir a inicio & Correcto\\
+		\hline P-04 & Usuario invitado intenta acceder a url protegidas & /certificates/* & Redirigir a inicio & Correcto\\
+		\hline P-05 & Usuarios intentan acceder a páginas que no son de su rol & /certificates/* & Redirigir a error & Correcto\\
+		\hline 
+		\end{tabular}
+		\caption{Pruebas de alto nivel de navegación}
+		\label{tab:navTest}
+	\end{center}
+\end{table}
+
+\subsection{Test de creación de usuarios y certificados}
+En estos test de alto nivel se busca testear la funcionalidad a la hora de la crear usuarios o certificados.
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|p{6cm}|c|}
+		\hline \textbf{Número} & \textbf{Descripción} & \textbf{Resultado}\\ 
+		\hline P-06 & Prueba de introducción de campos vacíos en la creación de usuarios y certificados & Correcto \\
+		\hline 
+		\end{tabular}
+		\caption{Pruebas de alto nivel de creación de usuarios y certificados}
+		\label{tab:createTest}
+	\end{center}
+\end{table}
+
+\subsection{Test de modificación de usuarios y certificados}
+Se ha testeado la funcionalidad correspondiente a la modificación de los usuarios o certificados.
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|p{6cm}|c|}
+				\hline \textbf{Número} & \textbf{Descripción} & \textbf{Resultado}\\ 
+				\hline P-07 & Modificación de los datos de un usuario & Correcto \\
+				\hline P-08 & Eliminación de usuario & Correcto \\
+				\hline P-09 & Revocar certificado & Correcto \\
+				\hline P-10 & Validación de certificado & Correcto \\
+				\hline 
+		\end{tabular}
+		\caption{Pruebas de alto nivel de modificación de usuarios y certificados}
+		\label{tab:modifyTest}
+	\end{center}
+\end{table}
+
+\subsection{Validación y visión de usuarios y certificaos}
+En esta sección se muestra una lista de las pruebas de alto nivel realizadas para la validación y visión de los usuarios y certificados.
+
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|p{6cm}|c|}
+				\hline \textbf{Número} & \textbf{Descripción} & \textbf{Resultado}\\ 
+				\hline P-06 & Prueba de introducción de campos vacíos en la creación de usuarios y certificados & Correcto \\
+				\hline 
+		\end{tabular}
+		\caption{Pruebas de alto nivel de validación y visión de usuarios y certificaos}
+		\label{tab:validateTest}
+	\end{center}
+\end{table}
