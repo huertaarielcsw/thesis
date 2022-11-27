@@ -18,8 +18,14 @@ Para el desarrollo de la aplicación web se ha utilizado un gran número de libr
 %Como estamos construyendo un SPA, \textit{index.html} es el sitio de inicio y también el único archivo \textit{.html} en el directorio. Su cuerpo contiene un solo elemento <div id=``app'' </div>, donde se montará el componente raíz \textit{App.vue}. La Figura 4.3 muestra el árbol de componentes Vue de \textit{App.vue}.
 
 %La Figura 3 muestra la estructura del proyecto y todas las carpetas y archivos se describen a continuación:
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.65]{Graphics/code}
+\caption{Estructura del código.}
+\label{fig:code}
+\end{figure}
 
-En la ilustración 31 se muestra la estructura por carpetas y archivos usados para el desarrollo del nivel de presentación. La carpeta ``src'' almacena todos los archivos con el código para la creación de la aplicación; el resto de las carpetas y ficheros son configuraciones del proyecto, muy importantes para el desarrollo de este, pero no se van a explicar. Dentro de esta encontramos las distintas carpetas y archivos:
+En la Figura \ref{fig:code} se muestra la estructura por carpetas y archivos usados para el desarrollo del nivel de presentación. La carpeta ``src'' almacena todos los archivos con el código para la creación de la aplicación; el resto de las carpetas y ficheros son configuraciones del proyecto, muy importantes para el desarrollo de este, pero no se van a explicar. Dentro de esta encontramos las distintas carpetas y archivos:
 
 \begin{itemize}
 \item \textbf{assets}: esta carpeta incluye los activos estáticos de la aplicación que pueden ser el logotipo de una empresa, imágenes, fuentes, entre otros.
@@ -35,7 +41,7 @@ En la ilustración 31 se muestra la estructura por carpetas y archivos usados pa
 \end{itemize}
 
 \subsection{Componentes}
-Cada \textit{framework} tiene su propia manera de definir los componentes y realizar su propia interpretación de estos. En Vue se pueden definir de varias formas, una de ellas  es la llamada componentes de un solo archivo o en inglés \textit{Single File Components}. Estos componentes nos permiten, como su nombre indica, encapsular el código CSS, HTML y Javascript en un único archivo.
+Cada \textit{framework} tiene su propia manera de definir los componentes y realizar su propia interpretación de estos. En Vue se pueden definir de varias formas, una de ellas  es la llamada componentes de un solo archivo o en inglés \textit{Single File Components}. Estos componentes nos permiten, como su nombre indica, encapsular el código CSS, HTML y TypeScript en un único archivo.
 
 Esto es un modo muy útil de definir los componentes puesto que cuando la aplicación escale en tamaño nos será más fácil encontrar el código deseado y reduciremos en gran medida el tamaño en archivos del proyecto.
 
@@ -75,7 +81,7 @@ En \ref{lst:app} se puede observar el código del archivo principal de la aplica
 \begin{itemize}
 \item En esta sección hacemos uso de los componentes reutilizables, alguno de ellos con renderización condicional usando ``v-if''.
 \end{itemize}
-\item <script>, dónde encontramos el código JavaScript. En este apartado nos encontramos con lo siguiente:
+\item <script>, dónde encontramos el código TypeScript. En este apartado nos encontramos con lo siguiente:
 \begin{itemize}
 \item Importación de bibliotecas y componentes a utilizar.
 \item components, sección dónde se realiza el registro de los componentes que se van a utilizar en el actual.
@@ -90,15 +96,102 @@ En \ref{lst:app} se puede observar el código del archivo principal de la aplica
 Para la aplicación, usamos una plantilla personalizada por el cliente, en la cual existían componentes ya definidos para los principales elementos de una página Web como la barra de navegación, los botones, campos de entrada de datos, entre otros.
 
 \subsection{Vistas}
-Las vistas en Vue no son más que componentes que representan una página y por tanto se utilizaran de forma diferente. Estos componentes especiales llamados vistas, se encargan de montar una estructura de componentes reutilizables, y además de encargarse de gestionar los datos necesarios que puedan requerir para suministrárselos a unos componentes u a otros, definiendo de esta manera las relaciones entre los mismos.
+Las vistas en Vue no son más que componentes que representan una página y por tanto se utilizarán de forma diferente. Estos componentes especiales llamados vistas, se encargan de montar una estructura de componentes reutilizables, y además de encargarse de gestionar los datos necesarios que puedan requerir para suministrárselos a unos componentes u a otros, definiendo de esta manera las relaciones entre los mismos.
 
 %poner codigo de tablas de certificados
 
 Tanto los componentes como las vistas se comunican con todas las demás entidades ubicadas en el lado del cliente. Esto se debe a que esos son los archivos que el usuario verá e interactuará. Siempre que un usuario quiera navegar de una vista a otra, debe hacer uso de las rutas que están definidas en la carpeta \textit{router} y las funciones proporcionadas por la biblioteca Vue-Router. Cuando un usuario quiera crear, leer, modificar o eliminar datos, debe hacerlo a través de las funciones proporcionadas por la biblioteca Axios que envían solicitudes al servidor. Luego, cuando el servidor envía una respuesta al \textit{frontend}, se almacena en la entidad de la \textit{store} de Pinia. Si un usuario desea obtener información, ejecuta métodos captadores ubicados en la entidad \textit{store} de Pinia que recuperan la información solicitada. Todas estas entidades se explicarán detalladamente en sus respectivas secciones.
 
-%En esta sección, daremos una breve descripción del componente CourseCard.vue. A continuación se muestra el código de la sección HTML del archivo CourseCard.vue:
+En esta sección, daremos una breve descripción de la vista ViewListUsers.vue, la cual muestra la lista de usuarios del sistema. A continuación se muestra un fragmento de código de la sección <script> de esta vista:
 
-%La biblioteca que provee de las herramientas para la definición de componentes en Vue es la base.
+\begin{lstlisting}[language=C,caption={Sección <script> de VueListUsers.vue}, label={lst:viewlist}]
+<script lang="ts">
+export default defineComponent({
+    name: 'ViewListUsers',
+    components: {
+        CmpCard,
+        CmpDataTable
+    },
+    setup() {
+        //#region ======= DECLARATIONS & LOCAL STATE ==========================================
+        const usersStore = useUsersStore()
+        const eMode: EntityTypes = EntityTypes.Users
+        const router = useRouter()
+        const toast = useToast()
+        const columns = HUsersTable
+        const { tfyBasicSuccess, tfyBasicFail } = useToastify(toast)
+        //#endregion ===========================================================
+
+        //region ======== HOOKS ================================================
+        onMounted(() => {
+            // populate users datatable
+            usersStore.reqUsersPages(queryBase).catch(err => tfyBasicFail(err, 'Users', 'request'))
+        })
+
+        //endregion ============================================================
+        
+        //#region ======= EVENTS HANDLERS ======================================
+        function h_navCreateUsers() {
+            router.push({
+                name  : RoutePathNames.usersForm,
+                params: {
+                    fmode: 'create' as TFormMode,
+                    id   : '',
+                    cname: RoutePathNames.usersCreate 
+                }
+            })
+        }
+        //#endregion =========================================================
+
+        return {
+            eMode,
+            columns,
+            usersStore,
+            h_navCreateUsers,
+        }
+    }
+})
+</script>
+\end{lstlisting}
+
+En este fragmento solo se muestran aquellas funciones y variables relacionadas a mostrar lista de usuarios y los eventos lanzados para navegar a la vista de crear usuario. Para obtener la lista de usuarios, al ser montado el componente, realizamos una petición al servidor a través de las funciones de Pinia, las cuales obtienen la lista y la guardan su estado. La función h\_navCreateUsers se encarga de manejar el evento lanzado cuando el usuario quiere navegar a la página de creación de usuarios mediante el uso del \textit{router}. Tanto la lista de usuarios guardada en Pinia, como las funciones que manejan los distintos eventos se las suministramos al componente CmpDataTable, el cual nos permite listar los usuarios en una tabla con funciones de paginado, y con distintos botones para las posibles acciones de gestión de usuarios.
+
+\begin{lstlisting}[language=C,caption={Sección <template> de ViewListUsers.vue}, label={lst:viewlist1}]
+<template>
+    <transition appear name="page-fade">
+        <div class="row">
+            <div class="col-12">
+                <CmpCard>
+                    <CmpDataTable table-type="hover"
+                                  :subject="$t('entities.users.name')"
+                                  :entityMode="eMode"
+                                  :columns="columns"
+                                  :data="usersStore.getUsersList"
+                                  :count="usersStore.getEntitiesCount"
+                                  :has-actions="true"
+                                  @navCreateIntent="h_navCreateUsers"
+                                  @requestIntent="h_reqQuery"
+                                  @editIntent="h_navEditUsers"
+                                  @detailsIntent="h_navUserDetails"
+                                  @deleteIntent="h_reqDeleteUser"
+                    >
+                    </CmpDataTable>
+                </CmpCard>
+            </div>
+        </div>
+    </transition>
+</template>
+\end{lstlisting}
+
+El fragmento de código \ref{lst:viewlist1} muestra como fue implementado la sección <template> de ViewListUsers.vue, es en esta sección donde utilizamos el componente CmpDataTable. El resultado obtenido se puede observar en la Figura \ref{fig:usersList}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Graphics/usersList}
+\caption{Vista de los usuarios.}
+\label{fig:usersList}
+\end{figure}
+
 \subsection{Router}
 El \textit{router} es una pieza fundamental de las SPA y por lo tanto es una pieza que no puede faltar en ningún \textit{framework} completo. Un \textit{router} es el elemento \textit{software} encargado de relacionar una URL a una vista, de manera que cuando se escriba una URL en el navegador, automáticamente se visualizara la vista relacionada. Además, un router debe proveer de diferentes herramientas para poder enviar datos dinámicos a las vistas y para establecer un sistema de permisos.
 
@@ -353,7 +446,7 @@ Si recibimos un error, verificamos el código de estado de ese error. Si se devu
 %\subsection{Internacionalización}
 
 \section{Pruebas}
-Debido a problemas de tiempo las pruebas de IU no se realizaron automáticamente. Para sustituir las pruebas automáticas se ha realizado un proceso de caja negra final donde se ha tratado de buscar los fallos no solventados dentro de los procesos de desarrollo de la aplicación.(En esta sección se mostrarán en forma de alto nivel) Las ventajas de los test de caja negra son :
+Debido a problemas de tiempo las pruebas de IU no se realizaron automáticamente. Para sustituir las pruebas automáticas se ha realizado un proceso de caja negra final donde se ha tratado de buscar los fallos no solventados dentro de los procesos de desarrollo de la aplicación. En esta sección se mostrarán en forma de alto nivel. Las ventajas de los test de caja negra son :
 
 \begin{itemize}
 \item El programador y el probador tienen objetivos independientes.
@@ -370,70 +463,78 @@ Desventajas
 
 Se utilizó un navegador para probar y construir las características requeridas. Luego, el desarrollador, el autor de esta tesis y el propietario del producto trabajaron juntos para probar las características. La prueba se llevó a cabo en cada revisión de \textit{sprint}. Si la función superó completamente los requisitos de prueba de aceptación, la función se marcó como completa; de lo contrario, se le dio al desarrollador una lista de errores o comportamientos inesperados para que los corrigiera.
 
-Después de cada prueba de aceptación exitosa, se planeó una nueva característica para el siguiente sprint y se le dieron al desarrollador los requisitos de la prueba de aceptación. Si el desarrollador tenía algún problema o pregunta con la función o los requisitos de prueba de aceptación, se lo comunicó al propietario del producto y se tomó una resolución.
+Las pruebas realizadas se agruparon en distintas tablas según su tipo para la mejor comprensión del lector. Las pruebas de navegabilidad se pueden observar en la Tabla \ref{tab:navTest}, estas se encargan de comprobar el correcto funcionamiento de los permisos del sistema. Las pruebas correspondientes a los resultados de las distintas consultas de certificados guardados en la \textit{blockchain} se pueden encontrar en la Tabla \ref{tab:validateTest}. La Tabla \ref{tab:createTest} muestra las distintas pruebas realizadas para comprobar la creación de usuarios y certificados, mientras que en la Tabla \ref{tab:modifyTest} se observan las pruebas de modificación de usuarios y certificados, incluyendo las de eliminar usuarios, e invalidar certificados y permisos de usuario.
 
-\subsection{Test de navegabilidad}
+%Después de cada prueba de aceptación exitosa, se planeó una nueva característica para el siguiente \textit{sprint} y se le dieron al desarrollador los requisitos de la prueba de aceptación. Si el desarrollador tenía algún problema o pregunta con la función o los requisitos de prueba de aceptación, se lo comunicó al propietario del producto y se tomó una resolución.
 
 \begin{table}[!h]
 	\begin{center}
-		\begin{tabular}{|c|p{4cm}|p{3cm}|c|c|}
+		\begin{tabular}{|c|p{3cm}|p{3cm}|c|c|}
 		\hline \textbf{Número} & \textbf{Descripción} & \textbf{URL} & \textbf{Salida esperada} & \textbf{Resultado}\\ 
-		\hline P-01 & Usuario no logueado intenta acceder a url protegidas & /users/* & Redirigir a login & Correcto\\
-		\hline P-02 & Usuario no logueado intenta acceder a url privada & /certificates/* & Redirigir a login & Correcto\\
-		\hline P-03 & Usuario sin rol de admin intenta acceder a url protegida & /users/* & Redirigir a inicio & Correcto\\
-		\hline P-04 & Usuario invitado intenta acceder a url protegidas & /certificates/* & Redirigir a inicio & Correcto\\
-		\hline P-05 & Usuarios intentan acceder a páginas que no son de su rol & /certificates/* & Redirigir a error & Correcto\\
+		\hline P-01 & Usuario no logueado intenta acceder a URL protegidas & /users/* & Redirigir a login & Correcto\\
+		\hline P-02 & Usuario no logueado intenta acceder a URL privada & /certificates/* & Redirigir a login & Correcto\\
+		\hline P-03 & Usuario gestor sin rol de administrador de sistemas intenta acceder a url protegida & /users/* & Redirigir a inicio & Correcto\\
+		\hline P-04 & Usuario invitado intenta acceder a URL protegidas & /certificates/* o /users/* & Redirigir a inicio & Correcto\\
+		\hline P-05 & Usuario administrador de sistema intenta acceder a URL protegida & /certificates/* & Redirigir a inicio & Correcto\\
+		\hline P-06 & Usuario gestor sin rol de decano, secretario o rector intenta acceder a URL protegida & /certificates/   validate-certificate & Redirigir a inicio & Correcto\\
+		\hline P-07 & Usuario gestor sin rol de administrador de certificados intenta acceder a URL protegida & /certificates/   create-certificate & Redirigir a inicio & Correcto\\
 		\hline 
 		\end{tabular}
-		\caption{Pruebas de alto nivel de navegación}
+		\caption{Pruebas de alto nivel de navegación.}
 		\label{tab:navTest}
 	\end{center}
 \end{table}
 
-\subsection{Test de creación de usuarios y certificados}
-En estos test de alto nivel se busca testear la funcionalidad a la hora de la crear usuarios o certificados.
+%\subsection{Test de creación de usuarios y certificados}
+%En estos test de alto nivel se busca testear la funcionalidad a la hora de la crear usuarios o certificados.
+\begin{table}[!h]
+	\begin{center}
+		\begin{tabular}{|c|p{5cm}|p{5cm}|c|}
+				\hline \textbf{Número} & \textbf{Descripción} & \textbf{Salida esperada} &  \textbf{Resultado}\\ 
+				\hline P-18 & Consulta de certificados según el identificador. & Se muestran todos los certificados asociado al identificador introducido como parámetro. & Correcto \\
+				\hline P-19 & Consulta de certificados según el nombre de a quién le fue acreditado. & Se muestran todos los certificados asociado al nombre introducido como parámetro. & Correcto \\
+				\hline P-20 & Consulta de certificados según su estado. & Se muestran todos los certificados que su estado sea el mismo que el introducido como parámetro. & Correcto \\
+				\hline 
+		\end{tabular}
+		\caption{Pruebas de alto nivel de las consultas de certificados.}
+		\label{tab:validateTest}
+	\end{center}
+\end{table}
 
 \begin{table}[!h]
 	\begin{center}
-		\begin{tabular}{|c|p{6cm}|c|}
-		\hline \textbf{Número} & \textbf{Descripción} & \textbf{Resultado}\\ 
-		\hline P-06 & Prueba de introducción de campos vacíos en la creación de usuarios y certificados & Correcto \\
+		\begin{tabular}{|c|p{4cm}|p{5cm}|c|}
+		\hline \textbf{Número} & \textbf{Descripción} & \textbf{Salida esperada} &  \textbf{Resultado}\\ 
+		\hline P-08 & Prueba de introducción de campos vacíos en la creación de usuarios y certificados & Si el campo que se dejo vacío era requerido, no realizar la creación de usuario, mantenerse en la página y mostrar mensaje de error pidiendo que sea llenado & Correcto \\
+		\hline P-09 & Creación de usuario & Se crea un nuevo usuario en el sistema, se muestra en la lista de usuarios y se puede iniciar sesión con sus credenciales & Correcto \\
+		\hline P-10 & Creación de certificados & Se crea un nuevo certificado en el sistema con estado creado y se muestra en la lista de certificados a validar por el secretario & Correcto \\
 		\hline 
 		\end{tabular}
-		\caption{Pruebas de alto nivel de creación de usuarios y certificados}
+		\caption{Pruebas de alto nivel de creación de usuarios y certificados.}
 		\label{tab:createTest}
 	\end{center}
 \end{table}
 
-\subsection{Test de modificación de usuarios y certificados}
-Se ha testeado la funcionalidad correspondiente a la modificación de los usuarios o certificados.
+%\subsection{Test de modificación de usuarios y certificados}
+%Se ha testeado la funcionalidad correspondiente a la modificación de los usuarios o certificados.
 
 \begin{table}[!h]
 	\begin{center}
-		\begin{tabular}{|c|p{6cm}|c|}
-				\hline \textbf{Número} & \textbf{Descripción} & \textbf{Resultado}\\ 
-				\hline P-07 & Modificación de los datos de un usuario & Correcto \\
-				\hline P-08 & Eliminación de usuario & Correcto \\
-				\hline P-09 & Revocar certificado & Correcto \\
-				\hline P-10 & Validación de certificado & Correcto \\
+		\begin{tabular}{|c|p{5cm}|p{5cm}|c|}
+				\hline \textbf{Número} & \textbf{Descripción} & \textbf{Salida esperada} &  \textbf{Resultado}\\ 
+				\hline P-11 & Modificación de los datos de un usuario &  Se actualizan los datos del usuario con los nuevos datos introducidos & Correcto \\
+				\hline P-12 & Eliminación de usuario & El usuario es correctamente eliminado de nuestro sistema, no se muestra en la lista de usuarios y no puede iniciar sesión.  & Correcto \\
+				\hline P-13 & Revocar certificado & El estado del certificado pasa a ser inválido. & Correcto \\
+				\hline P-14 & Validación de certificado por el secretario & El estado del certificado pasa a tener el estado correspondiente a la firma del secretario y este certificado se muestra en la lista de certificados por validar del decano. & Correcto \\
+				\hline P-15 & Validación de certificado por el decano & El estado del certificado pasa a tener el estado correspondiente a la firma del decano y este certificado se muestra en la lista de certificados por validar del rector. & Correcto \\
+				\hline P-16 & Validación de certificado por el rector & El estado del certificado pasa a tener el estado correspondiente a la firma del rector y este certificado pasa a tener total validez. & Correcto \\
+				\hline P-17 & Invalidar permisos de usuario & El usuario pierde todos sus permisos, pasa a tener rol invalidado y no puede acceder a las funcionalidades del sistema & Correcto \\
 				\hline 
 		\end{tabular}
-		\caption{Pruebas de alto nivel de modificación de usuarios y certificados}
+		\caption{Pruebas de alto nivel de modificación de usuarios y certificados.}
 		\label{tab:modifyTest}
 	\end{center}
 \end{table}
 
-\subsection{Validación y visión de usuarios y certificados}
-En esta sección se muestra una lista de las pruebas de alto nivel realizadas para la validación y visión de los usuarios y certificados.
-
-\begin{table}[!h]
-	\begin{center}
-		\begin{tabular}{|c|p{6cm}|c|}
-				\hline \textbf{Número} & \textbf{Descripción} & \textbf{Resultado}\\ 
-				\hline P-06 & Prueba de introducción de campos vacíos en la creación de usuarios y certificados & Correcto \\
-				\hline 
-		\end{tabular}
-		\caption{Pruebas de alto nivel de validación y visión de usuarios y certificaos}
-		\label{tab:validateTest}
-	\end{center}
-\end{table}
+%\subsection{Validación y visión de usuarios y certificados}
+%En esta sección se muestra una lista de las pruebas de alto nivel realizadas para la validación y visión de los usuarios y certificados.

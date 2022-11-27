@@ -3,38 +3,52 @@
  \nomgroup{A}
 
   \item [{\textbf{API}}]\begingroup Interfaz de programación de aplicaciones, un punto final de, por ejemplo, una base de datos con la que diferentes aplicaciones pueden interactuar y hacer uso de la aplicación.\nomeqref {1.0}
-		\nompageref{19}
+		\nompageref{15}
 
  \nomgroup{B}
 
   \item [{\textbf{Backend}}]\begingroup La parte del sistema que no está contenida o cargada en la aplicación del usuario, generalmente la API, el servidor y las bases de datos\nomeqref {0}
 		\nompageref{4}
 
+ \nomgroup{C}
+
+  \item [{\textbf{CRUD}}]\begingroup Crear, leer, modificar y eliminar (en inglés \textit{ Create Read Update Delete}), las cuatro operaciones básicas en el almacenamiento persistente como bases de datos.\nomeqref {0}
+		\nompageref{XI}
+  \item [{\textbf{CSS}}]\begingroup Las hojas de estilo en cascada (en inglés \textit{Cascading Style Sheets}), CSS es un lenguaje usado para definir la presentación de un documento estructurado escrito en HTML.\nomeqref {0}
+		\nompageref{XI}
+
+ \nomgroup{D}
+
+  \item [{\textbf{DOM}}]\begingroup Modelo en Objetos para la representación de Documentos es esencialmente una interfaz de programación de aplicaciones que proporciona un conjunto estándar de objetos para representar documentos HTML.\nomeqref {0}
+		\nompageref{XI}
+
  \nomgroup{E}
 
-  \item [{\textbf{Endpoint/punto de acceso}}]\begingroup Nodo de una comunicación en red. En este caso los puntos de acceso de este trabajo son las diferentes rutas ofrecidas por el servidor\nomeqref {0}
+  \item [{\textbf{Endpoint/punto de acceso}}]\begingroup Nodo de una comunicación en red. En este caso los puntos de acceso de este trabajo son las diferentes rutas ofrecidas por el servidor.\nomeqref {0}
 		\nompageref{XI}
 
  \nomgroup{F}
 
   \item [{\textbf{Framework}}]\begingroup Una gran biblioteca con una amplia funcionalidad, que a menudo depende de una gran cantidad de otras bibliotecas.\nomeqref {1.0}
-		\nompageref{16}
+		\nompageref{12}
   \item [{\textbf{Frontend}}]\begingroup La parte del sistema a la que el usuario tiene acceso directo, generalmente contiene la interfaz de usuario y la lógica de la aplicación.\nomeqref {1.0}
-		\nompageref{16}
+		\nompageref{12}
+
+ \nomgroup{H}
+
+  \item [{\textbf{HTML}}]\begingroup Lenguaje de Marcado de Hipertexto (en inglés \textit{HyperText Markup Language}), es el lenguaje de marcado predominante para la construcción de páginas Web. Se usa para describir la estructura y el contenido en forma de texto, así como para complementar el texto con objetos tales como imágenes.\nomeqref {0}
+		\nompageref{XI}
+  \item [{\textbf{HTTP}}]\begingroup (\textit{HyperText Transfer Protocol}): es un protocolo de transferencia de hipertexto es el usado en cada transacción de la web.\nomeqref {0}
+		\nompageref{XI}
 
  \nomgroup{J}
 
-  \item [{\textbf{JSON}}]\begingroup \textit{JavaScript Object Notation}. Formato de texto sencillo para el intercambio de datos\nomeqref {0}
+  \item [{\textbf{JSON}}]\begingroup \textit{JavaScript Object Notation}. Formato de texto sencillo para el intercambio de datos.\nomeqref {0}
 		\nompageref{XI}
 
  \nomgroup{T}
 
-  \item [{\textbf{Token}}]\begingroup Es una cadena de caracteres que contiene información, cifrada por el servidor, de un usuario en concreto\nomeqref {0}
+  \item [{\textbf{Token}}]\begingroup Es una cadena de caracteres que contiene información, cifrada por el servidor, de un usuario en concreto.\nomeqref {0}
 		\nompageref{XI}
-
- \nomgroup{U}
-
-  \item [{\textbf{UML}}]\begingroup Es un lenguaje de modelado de software\nomeqref {2.0}
-		\nompageref{25}
 
 \end{thenomenclature}

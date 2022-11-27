@@ -1,6 +1,6 @@
 \chapter{Propuesta}\label{chapter:proposal}
 
-En el presente capítulo se presenta la solución que se propone para dar respuesta al problema planteado, comentando el abanico de posibilidades que existen para elegir la metodología de desarrollo de \textit{software} más adecuada a nuestro proyecto y sobre el tipo de desarrollo a seguir. Contiene la descripción de los requerimientos del sistema tanto funcionales como no funcionales. Se detallan y justifican los principales actores y se hace una descripción de los casos de usos que incluyen todo lo que el sistema debe hacer. Se describe el diseño arquitectónico, además de los patrones de diseño empleados.
+En el presente capítulo se presenta la solución que se propone para dar respuesta al problema planteado, comentando el abanico de posibilidades que existen para elegir la metodología de desarrollo de \textit{software} más adecuada a nuestro proyecto y sobre el tipo de desarrollo a seguir. Se detallan y justifican los principales actores y se hace una descripción de los casos de usos que incluyen todo lo que el sistema debe hacer. Se describe el diseño arquitectónico, además de los patrones de diseño empleados.
 
 %del diagrama de clases y 
 %2.1 Introducción 
@@ -143,6 +143,7 @@ Antes de comenzar un \textit{sprint}, se realiza la reunión llamada \textit{spr
 %La mayor parte del trabajo del proyecto se realizó en línea. Esto se debió a varias razones, por ejemplo, el hecho de que todos usaban principalmente computadoras de escritorio para el trabajo y se habían acostumbrado a trabajar desde casa durante el covid 19, y las oficinas del cliente estaban a más de una hora de viaje. Los repositorios Git proporcionados por el cliente y la aplicación Telegram sirvieron como plataforma para la cooperación.
 
 \section{Análisis del sistema}
+Teniendo en cuenta la propuesta planteada en el capítulo anterior y la metodología de desarrollo adoptada, a continuación se desarrollará el análisis de los principales elementos del sistema. 
 %%\subsection{Requerimientos del sistema}
 %El Glosario Estándar IEEE de Terminología de Ingeniería de Software define un requisito como condición o capacidad que necesita un usuario para resolver un problema o lograr un objetivo [\cite{95}]. Los requisitos se pueden clasificar en: funcionales y no funcionales.
 %
@@ -241,7 +242,7 @@ La forma en que los actores utilizan el sistema puede ser representada a través
 %Los casos de usos identificados en el presente trabajo son enunciados a continuación:
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.6]{Graphics/useCasest}
+\includegraphics[width=\textwidth]{Graphics/useCasest}
 \caption{Diagrama de casos de uso del sistema}
 \label{fig:useCases}
 \end{figure}
@@ -288,7 +289,20 @@ A continuación se exponen algunos de los casos de uso de alto nivel, para logra
 \end{table}
 
 \subsection{Elementos importantes del sistema}
-Nuestra plataforma no registrará binarios (copia digital de título, entre otras), solo se registrarán datos asociados al certificado.
+El sistema que se presenta no registrará binarios (copia digital de título, entre otras), sino que los certificados serán representados por propiedades:
+\begin{itemize}
+\item \textbf{ID}: El identificador de los certificados es con fines de facilitar su búsqueda. No tiene una representación real en un certificado a papel. El campo es generado utilizando la fecha y hora de creación de la credencial. Su estructura es: YYYYMMDDHHMMSS (año, mes, día, hora, minuto y segundo concatenados)
+\item \textbf{Certificación}: Título que se le otorga al acreditado.
+\item \textbf{Título de oro}: Campo que representa si se alcanzó la distinción.
+\item \textbf{Emisor}: Centro que emite el certificado. Ej: Universidad de la Habana.
+\item \textbf{Acreditado}: Persona a la que se emite el título.
+\item \textbf{Fecha}: Fecha de emisión del documento.
+\item \textbf{Creador}: Usuario que creó dicho certificado en la base de datos.
+\item \textbf{Secretario, Decano y Rector}: Tres propiedades que guardan los nombres de los funcionarios que validan la Credencial.
+\item \textbf{Tomo y folio de facultad y universidad}: Dos propiedades que almacenan Tomo y folio bajo el cual fueron inscritos los documentos tanto en la facultad como en la universidad
+\item \textbf{Estado}: Refleja el estado actual del documento.
+\item \textbf{Razón de Invalidación}: Refleja, de estar el certificado en estado invalidado, la razón de la decisión.
+\end{itemize}
 
 En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. Los roles que se manejarán para los usuarios gestores son los siguientes:
 
@@ -301,6 +315,14 @@ En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. 
 \item \textbf{Inválido}: Usuario al que le fueron retirados sus privilegios por un administrador de sistema.
 \end{itemize}
 
+Los certificados pueden tener cinco estados:
+\begin{itemize}
+\item \textbf{Inválido}: El certificado fue invalidado por un usuario gestor con los permisos adecuados.
+\item \textbf{Creado}: El documento fue creado pero no posee ninguna firma de validación.
+\item \textbf{Firmado por Secretario}: El documento fue validado por un usuario gestor con rol de `secretario'.
+\item \textbf{Firmado por Secretario y Decano}: El documento fue validado por un usuarios gestores con rol `secretario' y `decano'.
+\item \textbf{Válido}: El certificado fue validado por usuarios gestores con rol `secretario', `decano' y `rector'.
+\end{itemize}
 %Para la emisión de los certificados, primeramente el administrador de certificados debe insertar el título. Una vez insertado, el decano debe aprobar o validar este certificado, el cual deberá entonces ser validado por el secretario general para finalmente ser validado por el rector. Para la validez del título debe haber sido validado por las tres últimas entidades mencionadas y siguiendo el orden en el que fueron nombradas.
 
 \subsection{Historias de usuario}
@@ -367,7 +389,7 @@ La fecha final del proyecto será acorde a la fecha límite de entrega de la con
 
 \begin{table}[!h]
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
+		\begin{tabular}{|p{2cm}|p{3cm}|p{3cm}|p{3.8cm}|}
 		\hline \textbf{Sprint} & \textbf{Comienzo} & \textbf{Final} & \textbf{H.U a desarrollar} \\ 
 		\hline Sprint 0 & 1/09/2022  & 15/09/2022 & -\\ 
 		\hline Sprint 1 & 15/09/2022 & 29/09/2022 & H.U-1\\ 
@@ -432,7 +454,7 @@ La arquitectura de nuestra interfaz de usuario también se basa en las arquitect
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.4]{Graphics/mySPAtt}
+\includegraphics[width=\textwidth]{Graphics/mySPAtt}
 \caption{Arquitectura de la solución}
 \label{fig:spa}
 \end{figure}
@@ -451,7 +473,7 @@ Por ejemplo, el entorno de desarrollo Vue está centrado en el componente Vista-
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.6]{Graphics/mvvm}
+\includegraphics[width=\textwidth]{Graphics/mvvm}
 \caption{Patrón de diseño MVVM en Vue [\cite{47}].}
 \label{fig:vmmv}
 \end{figure}
@@ -711,7 +733,7 @@ El siguiente diagrama contiene una propuesta de cómo se debe realizar el proces
 
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.3]{Graphics/autht}
+\includegraphics[width=\textwidth]{Graphics/authtt}
 \caption{Diagrama de secuencia del proceso de autentificación del sistema.}
 \label{fig:autht}
 \end{figure}
@@ -725,7 +747,7 @@ Un modelo de despliegue consiste en una representación estructural de la arquit
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.65]{Graphics/deploy}
+\includegraphics[width=\textwidth]{Graphics/deploy}
 \caption{Diagrama de despliegue del sistema.}
 \label{fig:deploy}
 \end{figure}
