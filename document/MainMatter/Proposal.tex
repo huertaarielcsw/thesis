@@ -107,79 +107,20 @@ Scrum es una metodología ágil donde se fomenta el trabajo en equipo y entregas
 \item Equipo de desarrollo: Es el encargado de desarrollar las tareas que se encuentran programadas en el sprint, realizar las estimaciones de tiempo de estas, negociar con el \textit{product owner}, y completar las entregas del producto.
 \end{itemize}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.3]{Graphics/SCRUM}
-\caption{Metodología SCRUM [\cite{94}].}
-\label{fig:SCRUM}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=0.3]{Graphics/SCRUM}
+%\caption{Metodología SCRUM [\cite{94}].}
+%\label{fig:SCRUM}
+%\end{figure}
+%
+%La Figura \ref{fig:SCRUM} muestra los fundamentos de Scrum. 
 
-La Figura \ref{fig:SCRUM} muestra los fundamentos de Scrum. Este tipo de metodología trata de realizar entregas del producto final, fijadas en un acuerdo entre el equipo de desarrollo y el \textit{product owner}, para conseguir un resultado completo con cada iteración. Normalmente las iteraciones son de 2 semanas, aunque puede haber equipos que prefieren 3 o 4 semanas.
+Este tipo de metodología trata de realizar entregas del producto final, fijadas en un acuerdo entre el equipo de desarrollo y el \textit{product owner}, para conseguir un resultado completo con cada iteración. Normalmente las iteraciones son de 2 semanas, aunque puede haber equipos que prefieren 3 o 4 semanas.
 
 El \textit{backlog} es un almacén en el cual se encuentran las tareas a realizar, ordenadas por prioridad [\cite{93}]. El equipo de desarrollo es el encargado de añadir y realizar las estimaciones de las tareas, siendo el \textit{product owner} el responsable de priorizar estas. Una vez las tareas se encuentran priorizadas de mayor a menor importancia, según la capacidad del equipo de desarrollo, estos proceden a crear el \textit{sprint}. El \textit{sprint} es el período de tiempo determinado para realizar el trabajo acordado para alcanzar los objetivos propuestos. Es muy importante tener bien definida la tarea, junto con las pruebas de aceptación y una estimación en horas o puntos.
 
 Antes de comenzar un \textit{sprint}, se realiza la reunión llamada \textit{sprint planning}, para seleccionar y comunicar qué tareas es capaz de realizar el equipo, las cuales son seleccionadas del inicio del \textit{backlog}. Una vez finalizado el \textit{sprint} el \textit{product owner} realiza una revisión del trabajo entregado por el equipo de desarrollo y una reunión de retrospectiva en la cual todos los integrantes dejan sus impresiones con el objetivo de mejorar como equipo.
-
-Siendo el equipo solamente una persona (el autor de este trabajo), no existe ningún rol, pero se mantiene la creación y el mantenimiento del \textit{backlog}, siguiendo una organización de \textit{sprints}, permitiendo tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente. Si el equipo aumentara en un futuro, se comenzaría a hacer uso de los roles definidos en la metodología.
-
-La fecha final del proyecto será acorde a la fecha límite de entrega de la convocatoria ordinaria del Trabajo de Fin de Grado. Por tanto, se ha establecido la duración de los sprints en 2 semanas, teniendo cada uno una carga de 34h aproximadamente por \textit{sprint}. En la tabla \ref{tab:sprints} puede verse una planificación inicial. Esta planificación es susceptible a cambios, así como la fecha de finalización podría ser cambiada.
-
-%        Para la administración de tareas, se ha utilizado la herramienta Jira, creada por la 
-%empresa Atlassian, que permite realizar una gestión ágil del proyecto. Jira crea 
-%Aplicación web para la gestión de clubes de fútbol
-%48
-%automáticamente el backlog, que es la lista de trabajo donde se encuentran las tareas 
-%encontrándose arriba las más importantes por el propietario del producto [40].
-%Dentro de Jira, se puede crear distintos sprints, explicado anteriormente en el punto 
-%3.4.1, indicando las fechas y las tareas que existen. Además, permite visualizar los 
-%informes del sprint, siendo muy útiles para el equipo de desarrollo y sobre todo para el 
-%Scrum máster.
-%La plataforma no solo permite la creación y el seguimiento de los sprints, también es 
-%posible realizar un seguimiento de los bugs registrados. 
-
-
-\begin{table}[!h]
-	\begin{center}
-		\begin{tabular}{|c|c|c|}
-		\hline \textbf{Sprint} & \textbf{Comienzo} & \textbf{Final}\\ 
-		\hline Sprint 1 & 1/09/2022  & 15/09/2022\\ 
-		\hline Sprint 2 & 15/09/2022 & 29/09/2022\\ 
-		\hline Sprint 3 & 29/09/2022 & 13/10/2022\\ 
-		\hline Sprint 4 & 13/10/2022 & 27/10/2022\\ 
-		\hline Sprint 5 & 27/10/2022 & 10/11/2022\\ 
-		\hline Sprint 6 & 10/09/2022 & 24/10/2022\\ 
-		\hline 
-		\end{tabular}
-		\caption{Planificación inicial de los sprints}
-		\label{tab:sprints}
-	\end{center}
-\end{table}
-
-
-Las historias de usuario se usan, en el contexto de la ingeniería de requisitos ágil, como una herramienta de comunicación que combina las fortalezas de ambos medios: escrito y verbal. Describen, en una o dos frases, una funcionalidad de \textit{software} desde el punto de vista del usuario, con el lenguaje que éste emplearía. El foco está puesto en qué necesidades o problemas soluciona lo que se va a construir
-
-\begin{table}[!h]
-	\begin{center}
-		\begin{tabular}{|c|c|p{6cm}|}
-		\hline \textbf{H.U} & \textbf{Nombre} & \textbf{Descripción}\\ 
-		\hline 1 & Autentificación & Como usuario gestor quiero poder autenticarme para acceder al sistema. \\
-		\hline 2 & Cerrar sesión & Como usuario gestor quiero poder cerrar la sesión actual. \\
-		\hline 3 & Añadir usuario & Como administrador quiero poder añadir nuevos usuarios al sistema.\\
-		\hline 4 & Lista de usuarios & Como administrador quiero poder ver los usuarios registrados en el sistema\\
-		\hline 5 & Modificar usuario & Como administrador quiero poder modificar los usuarios registrados en el sistema.\\
-		\hline 6 & Eliminar usuario & Como administrador quiero poder eliminar los usuarios registrados en el sistema.\\
-		\hline 7 & Crear certificado & Como gestor quiero poder añadir nuevos certificados.\\
-		\hline 8 & Lista de certificados emitidos & Como gestor quiero poder ver los certificados emitidos.\\
-		\hline 9 & Validar certificados & Como gestor quiero poder validar los certificados\\
-		\hline 10& Revocar certificado & Como gestor quiero poder revocar los certificaados.\\
-		\hline 11& Lista de certificados revocados & Como gestor quiero poder ver los certificados revocados.\\
-		\hline 12& Consultar certificados & Como usuario quiero poder ver los certificados según los parámetros seleccionados\\
-		\hline 
-		\end{tabular}
-		\caption{Descripción de las historias de usuario}
-		\label{tab:backlog}
-	\end{center}
-\end{table}
 
 %\item A partir de un identificador, conocer los títulos que posee la persona asociada al identificador.
 %\item Autenticar usuarios.
@@ -201,7 +142,7 @@ Las historias de usuario se usan, en el contexto de la ingeniería de requisitos
 
 %La mayor parte del trabajo del proyecto se realizó en línea. Esto se debió a varias razones, por ejemplo, el hecho de que todos usaban principalmente computadoras de escritorio para el trabajo y se habían acostumbrado a trabajar desde casa durante el covid 19, y las oficinas del cliente estaban a más de una hora de viaje. Los repositorios Git proporcionados por el cliente y la aplicación Telegram sirvieron como plataforma para la cooperación.
 
-%\section{Análisis: Especificación de requisitos del sistema}
+\section{Análisis del sistema}
 %%\subsection{Requerimientos del sistema}
 %El Glosario Estándar IEEE de Terminología de Ingeniería de Software define un requisito como condición o capacidad que necesita un usuario para resolver un problema o lograr un objetivo [\cite{95}]. Los requisitos se pueden clasificar en: funcionales y no funcionales.
 %
@@ -298,9 +239,17 @@ Los \textbf{gestores} serán usuarios registrados en un sistema de terceros. Est
 La forma en que los actores utilizan el sistema puede ser representada a través de los casos de usos [\cite{91}]. Estos últimos son artefactos narrativos que describen, bajo la forma de acciones y reacciones, el comportamiento del sistema desde el punto de vista del actor.
 
 %Los casos de usos identificados en el presente trabajo son enunciados a continuación:
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{Graphics/useCasest}
+\caption{Diagrama de casos de uso del sistema}
+\label{fig:useCases}
+\end{figure}
 
-\subsubsection{Diagrama de casos de uso del sistema}
-Los diagramas de casos de usos [\cite{91}] son un tipo de diagrama dónde se puede representar el comportamiento esperado del sistema, desde la visión de los usuarios, sin llegar a un alto nivel de especificación acerca de cómo se implementan las acciones.
+%\subsubsection{Diagrama de casos de uso del sistema}
+En la Figura \ref{fig:useCases} se observa el diagrama de casos de uso del sistema a desarrollar. Los diagramas de casos de usos [\cite{91}] son un tipo de diagrama dónde se puede representar el comportamiento esperado del sistema, desde la visión de los usuarios, sin llegar a un alto nivel de especificación acerca de cómo se implementan las acciones. 
+
+%El diagrama de casos de uso del sistema a desarrollar se puede encontrar en la Figura \ref{fig:useCases}.
 
 Los principales elementos que nos encontramos en este tipo de diagramas son:
 \begin{itemize}
@@ -309,17 +258,8 @@ Los principales elementos que nos encontramos en este tipo de diagramas son:
 \item Actor: Son las entidades externas al sistema que interactúan con el.
 \end{itemize}
 
-Los diagramas de casos de uso del sistema a desarrollar se puede encontrar en la Figura \ref{fig:useCases}, que se muestra a continuación:
-
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.6]{Graphics/useCasest}
-\caption{Diagrama de casos de uso del sistema}
-\label{fig:useCases}
-\end{figure}
-
-\subsubsection{Descripción de los casos de uso del sistema}
-A continuación se exponen los casos de uso de alto nivel, para lograr entender los procesos globales de la aplicación:
+%\subsubsection{Descripción de los casos de uso del sistema}
+A continuación se exponen algunos de los casos de uso de alto nivel, para lograr entender los procesos globales de la aplicación. El resto puede ser encontrado en los anexos \ref{appendix:useCase}.
 
 \begin{table}[!h]
 	\begin{center}
@@ -327,7 +267,6 @@ A continuación se exponen los casos de uso de alto nivel, para lograr entender 
 		\hline \textbf{CU1} & Conocer títulos \\ 
 		\hline \textbf{Actor} & Anónimo \\ 
 		\hline \textbf{Descripción} & El usuario podrá conocer los títulos asociados a una persona al introducir el identificador que representa a la persona.  \\ 
-		\hline \textbf{Referencia} & Requisito funcional 1 \\ 
 		\hline 
 		\end{tabular}
 		\caption{Caso de uso: Conocer títulos}
@@ -341,7 +280,6 @@ A continuación se exponen los casos de uso de alto nivel, para lograr entender 
 		\hline \textbf{CU2} & Autentificación \\ 
 		\hline \textbf{Actor} & Gestor\\ 
 		\hline \textbf{Descripción} & El usuario de tipo gestor deberá insertar el nombre de usuario y su contraseña para poder acceder al sistema.\\ 
-		\hline \textbf{Referencia} & Requisito funcional 2 \\ 
 		\hline 
 		\end{tabular}
 		\caption{Caso de uso: Autentificación}
@@ -349,61 +287,102 @@ A continuación se exponen los casos de uso de alto nivel, para lograr entender 
 	\end{center}
 \end{table}
 
+\subsection{Elementos importantes del sistema}
+Nuestra plataforma no registrará binarios (copia digital de título, entre otras), solo se registrarán datos asociados al certificado.
+
+En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. Los roles que se manejarán para los usuarios gestores son los siguientes:
+
+\begin{itemize}
+\item \textbf{Administrador de Sistemas}: Encargado de manejar los usuarios que participan en el sistema: crearlos, editarlos, eliminarlos o invalidarle sus credenciales.
+\item \textbf{Administrador de Certificados}: Usuario que tiene los permisos para gestionar los certificados: crearlos, editarlos, eliminarlos o invalidarlos. Este rol no valida los certificados.
+\item \textbf{Secretario General}: Usuario que tiene los permisos para validar certificados recién creados. Puede invalidar los certificados que encuentre inconsistentes.
+\item \textbf{Decano de Facultad}: Usuario que tiene los permisos para validar certificados aprobados por el Secretario General. Puede invalidar los certificados que encuentre inconsistentes.
+\item \textbf{Rector de Universidad}: Usuario que tiene los permisos para validar certificados aprobados por el decano. Es el último eslabón para hacer un certificado válido. Puede invalidar los certificados que encuentre inconsistentes.
+\item \textbf{Inválido}: Usuario al que le fueron retirados sus privilegios por un administrador de sistema.
+\end{itemize}
+
+%Para la emisión de los certificados, primeramente el administrador de certificados debe insertar el título. Una vez insertado, el decano debe aprobar o validar este certificado, el cual deberá entonces ser validado por el secretario general para finalmente ser validado por el rector. Para la validez del título debe haber sido validado por las tres últimas entidades mencionadas y siguiendo el orden en el que fueron nombradas.
+
+\subsection{Historias de usuario}
+Las historias de usuario se usan, en el contexto de la ingeniería de requisitos ágil, como una herramienta de comunicación que combina las fortalezas de ambos medios: escrito y verbal. Describen, en una o dos frases, una funcionalidad de \textit{software} desde el punto de vista del usuario, con el lenguaje que éste emplearía. Se enfocan en qué necesidades o problemas soluciona lo que se va a construir.
+
+A continuación se exponen algunos de las historias de uso de alto nivel, las demás pueden ser encontradas en los anexos \ref{appendix:useHistory}.
+
 \begin{table}[!h]
 	\begin{center}
 		\begin{tabular}{|c|p{10cm}|}
-		\hline \textbf{CU3} & Listar diplomas emitidos \\ 
-		\hline \textbf{Actor} & Gestor\\ 
-		\hline \textbf{Descripción} & El gestor podrá realizar consultas para obtener la lista de diplomas emitidos que cumplen con la parametrización establecida. \\ 
-		\hline \textbf{Referencia} & Requisitos funcionales 3, 4 \\ 
+		\hline \textbf{H.U-1} & Conocer títulos \\ 
+		\hline \textbf{Usuario} & Anónimo\\ 
+		\hline \textbf{Descripción} & Como usuario anónimo quiero poder conocer los certificados de una persona para poder observar las habilidades y estudios de esa persona. \\ 
 		\hline 
 		\end{tabular}
-		\caption{Caso de uso: Listar diplomas emitidos}
-		\label{tab:CU3}
+		\caption{Historia de Usuario: Conocer títulos}
+		\label{tab:HU1}
 	\end{center}
 \end{table}
 
 \begin{table}[!h]
 	\begin{center}
 		\begin{tabular}{|c|p{10cm}|}
-		\hline \textbf{CU4} & Listar diplomas revocados \\ 
-		\hline \textbf{Actor} & Gestor\\ 
-		\hline \textbf{Descripción} & El gestor podrá realizar consultas para obtener la lista de diplomas revocados y sus motivos. \\ 
-		\hline \textbf{Referencia} & Requisito funcional 5 \\ 
+		\hline \textbf{H.U-2} & Autentificación \\ 
+		\hline \textbf{Usuario} & Gestor \\ 
+		\hline \textbf{Descripción} & Como usuario gestor quiero poder autenticarme para poder tener acceso al sistema. \\ 
 		\hline 
 		\end{tabular}
-		\caption{Caso de uso: Listar diplomas revocados}
-		\label{tab:CU4}
+		\caption{Historia de Usuario: Autentificación}
+		\label{tab:HU2}
 	\end{center}
 \end{table}
 
 \begin{table}[!h]
 	\begin{center}
 		\begin{tabular}{|c|p{10cm}|}
-		\hline \textbf{CU5} & Añadir diploma \\ 
-		\hline \textbf{Actor} & Gestor\\ 
-		\hline \textbf{Descripción} & El gestor podrá añadir diplomas al sistema, al insertar los metadatos que definen las propiedades del certificado a emitir. \\ 
-		\hline \textbf{Referencia} & Requisito funcional 6 \\ 
+		\hline \textbf{H.U-3} & Cerrar sesión \\ 
+		\hline \textbf{Usuario} & Gestor \\ 
+		\hline \textbf{Descripción} & Como usuario gestor quiero poder cerrar la sesión actual para poder salir de forma segura del sistema. \\ 
 		\hline 
 		\end{tabular}
-		\caption{Caso de uso: Añadir diploma}
-		\label{tab:CU5}
+		\caption{Historia de Usuario: Cerrar sesión}
+		\label{tab:HU3}
 	\end{center}
 \end{table}
 
+\subsection{Planificación de desarrollo}
+Siendo el equipo solamente una persona (el autor de este trabajo), no existe ningún rol, pero se mantiene la creación y el mantenimiento del \textit{backlog}, siguiendo una organización de \textit{sprints}, permitiendo tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente. Si el equipo aumentara en un futuro, se comenzaría a hacer uso de los roles definidos en la metodología.
+
+La fecha final del proyecto será acorde a la fecha límite de entrega de la convocatoria ordinaria del Trabajo de Fin de Grado. Por tanto, se ha establecido la duración de los sprints en 2 semanas, teniendo cada uno una carga de 34h aproximadamente por \textit{sprint}. En la tabla \ref{tab:sprints} puede verse una planificación inicial. Esta planificación es susceptible a cambios, así como la fecha de finalización podría ser cambiada.
+
+%        Para la administración de tareas, se ha utilizado la herramienta Jira, creada por la 
+%empresa Atlassian, que permite realizar una gestión ágil del proyecto. Jira crea 
+%Aplicación web para la gestión de clubes de fútbol
+%48
+%automáticamente el backlog, que es la lista de trabajo donde se encuentran las tareas 
+%encontrándose arriba las más importantes por el propietario del producto [40].
+%Dentro de Jira, se puede crear distintos sprints, explicado anteriormente en el punto 
+%3.4.1, indicando las fechas y las tareas que existen. Además, permite visualizar los 
+%informes del sprint, siendo muy útiles para el equipo de desarrollo y sobre todo para el 
+%Scrum máster.
+%La plataforma no solo permite la creación y el seguimiento de los sprints, también es 
+%posible realizar un seguimiento de los bugs registrados.
+
 \begin{table}[!h]
 	\begin{center}
-		\begin{tabular}{|c|p{10cm}|}
-		\hline \textbf{CU6} & Revocar diploma \\ 
-		\hline \textbf{Actor} & Gestor\\ 
-		\hline \textbf{Descripción} & El gestor podrá revocar diplomas.\\ 
-		\hline \textbf{Referencia} & Requisito funcional 7\\ 
+		\begin{tabular}{|c|c|c|c|}
+		\hline \textbf{Sprint} & \textbf{Comienzo} & \textbf{Final} & \textbf{H.U a desarrollar} \\ 
+		\hline Sprint 0 & 1/09/2022  & 15/09/2022 & -\\ 
+		\hline Sprint 1 & 15/09/2022 & 29/09/2022 & H.U-1\\ 
+		\hline Sprint 2 & 29/09/2022 & 13/10/2022 & H.U-2, H.U-3\\ 
+		\hline Sprint 3 & 13/10/2022 & 27/10/2022 & H.U-4\\ 
+		\hline Sprint 4 & 27/10/2022 & 10/11/2022 & H.U-5, H.U-6, H.U-7\\ 
+		\hline Sprint 5 & 10/09/2022 & 24/10/2022 & H.U-8\\ 
 		\hline 
 		\end{tabular}
-		\caption{Caso de uso: Revocar diploma}
-		\label{tab:CU6}
+		\caption{\textit{Backlog} inicial}
+		\label{tab:sprints}
 	\end{center}
 \end{table}
+
+Debido a la poca experiencia del autor con las tecnologías establecidas por el cliente, se realizará un \textit{sprint} 0 con el objetivo de analizar y aprender estas tecnologías para la correcta realización del proyecto.
 
 \section{Diseño del sistema}
 Tras el apartado de análisis, en el que se ha establecido cuales son los elementos que se desean incluir en el sistema, se desarrolla a continuación el apartado, en el que se explica cómo se quieren llevar a cabo los requisitos.
@@ -416,59 +395,47 @@ Según [\cite{99}], la arquitectura de un sistema puede basarse en un patrón o 
 %Para empezar la sección de diseño, se va a exponer la arquitectura del sistema que se va a
 %implementar, destacando dos aspectos relevantes, el patrón de diseño Modelo Vista VistaModelo (MVVM) y la denominada arquitectura backendless
 
-Para la realización del sistema se apuesta por la división de 3 niveles: presentación, lógica de negocio y persistencia. 
-
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.9]{Graphics/levels}
-\caption{Arquitectura del sistema}
-\label{fig:3levels}
-\end{figure}
-
-La arquitectura de tres niveles organiza el sistema en distintos niveles lógicos y físicos. El nivel de presentación, donde se encuentra la interfaz del usuario, en la cual se enfoca el presente trabajo; el nivel de negocio, donde se encuentra toda la lógica para procesar los datos y, por último, el nivel de persistencia, donde se almacenan los datos [\cite{96}]. Cada nivel puede encontrarse en una infraestructura distinta y desacoplado de los demás, por lo que estos niveles pueden escalar y actualizarse según sea necesario. Suele haber una confusión entre nivel y capa. La división en capas es simplemente la división funcional, sin embargo, la división en niveles es una división funcional y de infraestructura. Esto quiere decir que el \textit{software} se ejecuta en distintas máquinas y no en la misma.
-
-El nivel de presentación es la encargada de mostrar al usuario la información, interactuar con él y ajustar estos datos a las especificaciones que son demandadas por la capa de negocio. En el caso de nuestra aplicación este nivel se ejecuta en el navegador web. 
-
-El nivel de negocio es el encargado de facilitar al nivel de presentación los datos necesarios, a la vez que recolecta los datos aportados por este para procesarlos. Este nivel está también conectado con el nivel de persistencia, enviándole peticiones para almacenar o recuperar datos de este [\cite{96}].
-
-El nivel de persistencia es donde residen los datos y generalmente está formada por un gestor encargado de realizar el almacenamiento de datos. Este nivel recibe las peticiones de negocio, quien le dice qué datos necesita o qué datos tiene que almacenar. El nivel de persistencia no se puede comunicar directamente con el nivel de presentación, siempre debe de comunicarse con negocio previamente [\cite{96}]. 
-
-%Vue.js utiliza una arquitectura basada en componentes, separando así grandes trozos de código en componentes más pequeños. Además, en Vue.js, todo es un componente, y cada componente está escrito con HTML, CSS y JavaScript, lo que favorece la legibilidad y la simplicidad.
+%Para la realización del sistema se apuesta por la división de 3 niveles: presentación, lógica de negocio y persistencia. 
 %
-%El back-end proporcionará endpoints para el registro y el acceso de un usuario, así
-%como una API CRUD para el manejo de notas (crear, recuperar, actualizar y eliminar);
-%y será el front-end el que haga uso de estos puntos de acceso para darle al usuario un
-%servicio de notas online.
+%\begin{figure}[htp]
+%\centering
+%\includegraphics[scale=0.9]{Graphics/levels}
+%\caption{Arquitectura del sistema}
+%\label{fig:3levels}
+%\end{figure}
+%
+%La arquitectura de tres niveles organiza el sistema en distintos niveles lógicos y físicos. El nivel de presentación, donde se encuentra la interfaz del usuario, en la cual se enfoca el presente trabajo; el nivel de negocio, donde se encuentra toda la lógica para procesar los datos y, por último, el nivel de persistencia, donde se almacenan los datos [\cite{96}]. Cada nivel puede encontrarse en una infraestructura distinta y desacoplado de los demás, por lo que estos niveles pueden escalar y actualizarse según sea necesario. Suele haber una confusión entre nivel y capa. La división en capas es simplemente la división funcional, sin embargo, la división en niveles es una división funcional y de infraestructura. Esto quiere decir que el \textit{software} se ejecuta en distintas máquinas y no en la misma.
+%
+%El nivel de presentación es la encargada de mostrar al usuario la información, interactuar con él y ajustar estos datos a las especificaciones que son demandadas por la capa de negocio. En el caso de nuestra aplicación este nivel se ejecuta en el navegador web. 
+%
+%El nivel de negocio es el encargado de facilitar al nivel de presentación los datos necesarios, a la vez que recolecta los datos aportados por este para procesarlos. Este nivel está también conectado con el nivel de persistencia, enviándole peticiones para almacenar o recuperar datos de este [\cite{96}].
+%
+%El nivel de persistencia es donde residen los datos y generalmente está formada por un gestor encargado de realizar el almacenamiento de datos. Este nivel recibe las peticiones de negocio, quien le dice qué datos necesita o qué datos tiene que almacenar. El nivel de persistencia no se puede comunicar directamente con el nivel de presentación, siempre debe de comunicarse con negocio previamente [\cite{96}]. 
+%
+%%Vue.js utiliza una arquitectura basada en componentes, separando así grandes trozos de código en componentes más pequeños. Además, en Vue.js, todo es un componente, y cada componente está escrito con HTML, CSS y JavaScript, lo que favorece la legibilidad y la simplicidad.
+%%
+%%El back-end proporcionará endpoints para el registro y el acceso de un usuario, así
+%%como una API CRUD para el manejo de notas (crear, recuperar, actualizar y eliminar);
+%%y será el front-end el que haga uso de estos puntos de acceso para darle al usuario un
+%%servicio de notas online.
+%
+%Como mencionamos previamente, el presente trabajo de diploma se enfoca en el desarrollo del nivel de presentación. 
 
-Como mencionamos previamente, el presente trabajo de diploma se enfoca en el desarrollo del nivel de presentación. El empleo de Vue para el desarrollo de nuestra solución nos permite dividir la aplicación en distintos bloques funcionales independientes llamados componentes, esto se suele denominar arquitectura de componentes[\cite{50}]. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Esta arquitectura permite generar aplicaciones a base de la reutilización de estos componentes, evitando tener código redundante.
+El empleo de Vue para el desarrollo de nuestra solución nos permite dividir la aplicación en distintos bloques funcionales independientes llamados componentes, esto se suele denominar arquitectura de componentes[\cite{50}]. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Esta arquitectura permite generar aplicaciones a base de la reutilización de estos componentes, evitando tener código redundante.
+
+La arquitectura de nuestra solución es una arquitectura \textit{N-Layer} adaptada a las características del proyecto (ver Figura \ref{fig:spa}). Cuando el usuario accede en el navegador a nuestra aplicación, internamente al componente raíz App.vue se le pasa un componente enrutador, el cual debe hacer uso de las rutas definidas para cargar la vista deseada por el usuario. Las vistas son las diferentes ventanas de la página web (página principal, la lista de usuarios, entre otras), mientras que los componentes son pequeños trozos de código que se repiten en las diferentes vistas (barra de navegación, botones, entre otras). Para trabajar con datos, las vistas invocan a las funciones de Pinia, las cuales se encargan de realizar las peticiones a la API, la cual escucha y responde a las solicitudes de los clientes. Las peticiones a la API se realizan mediante la herramienta Axios, la cual también es la encargada de realizar las acciones necesarias para recopilar los datos y enviar la respuesta de vuelta a Pinia. Cuando Pinia ya ha obtenido la respuesta, este envía los datos a la vista, quien muestra al usuario el contenido de la ruta a la que accedió.
+
 
 %La arquitectura de este nivel está basada en componentes. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Por ejemplo, el componente de carga interactúa con el componente de inicio cuando se realiza la carga para actualizar la interfaz de usuario. Toda la funcionalidad se realiza en estructuras de componentes pequeños y estos componentes están diseñados para ser reutilizables.
 
-La arquitectura de nuestra interfaz de usuario también se basa en las arquitecturas cliente-servidor y aplicación de página única (SPA). Las SPA se caracterizan por cargar todos los recursos de la aplicación web en la consulta inicial, como si se tratara sólo de una página. Los componentes cambian dinámicamente a medida que el usuario va interaccionando con ellos. Esto proporciona una interfaz de usuario más rápida y fluida, ya que todas las representaciones se realizan localmente en el navegador del usuario. La página solicita nueva información del servidor cuando los datos se almacenan o se obtienen del servidor (Ver Figura \ref{fig:spa}).
+La arquitectura de nuestra interfaz de usuario también se basa en las arquitecturas cliente-servidor y SPA. Las SPA se caracterizan por cargar todos los recursos de la aplicación web en la consulta inicial, como si se tratara sólo de una página. Los componentes cambian dinámicamente a medida que el usuario va interaccionando con ellos. Esto proporciona una interfaz de usuario más rápida y fluida, ya que todas las representaciones se realizan localmente en el navegador del usuario. La página solicita nueva información del servidor cuando los datos se almacenan o se obtienen del servidor (Ver Figura \ref{fig:spa}).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.4]{Graphics/mySPAt}
-\caption{Ciclo de Petición-Respuesta Cliente-Servidor en una SPA.}
+\includegraphics[scale=0.4]{Graphics/mySPAtt}
+\caption{Arquitectura de la solución}
 \label{fig:spa}
 \end{figure}
- 
-%El empleo del framework Vue nos permite 
-%
-%La aplicación del portal web se creó como una aplicación de página única (SPA). La aplicación de una sola página se ejecuta dentro del navegador y cuando un usuario interactúa con ella, el contenido de la página cambia dinámicamente y la página nunca se vuelve a cargar. Esto proporciona una interfaz de usuario más rápida y fluida, ya que todas las representaciones se realizan localmente en el navegador del usuario. La página solicita nueva información del servidor cuando los datos se almacenan o se obtienen del servidor.
-%
-%Las aplicaciones de página única, o single page applications (SPA), se caracterizan por 
-%cargar todos los recursos de la aplicación web en la consulta inicial, como si se tratara sólo 
-%de una página. Los componentes cambian dinámicamente a medida que el usuario va 
-%interaccionando con ellos. 
-%Este paradigma evita las interrupciones causadas por la carga en el servidor de cada página 
-%por separado que la aplicación tenga, ya que simula el contenido de las diferentes rutas, 
-%posibilitando al usuario navegar hacia delante o atrás de manera casi inmediata, 
-%proporcionando de esta manera una experiencia de usuario mucho más fluida.
-
-%La aplicación del portal web se creó como una aplicación de página única (SPA). La aplicación de una sola página se ejecuta dentro del navegador y cuando un usuario interactúa con ella, el contenido de la página cambia dinámicamente y la página nunca se vuelve a cargar. Esto proporciona una interfaz de usuario más rápida y fluida, ya que todas las representaciones se realizan localmente en el navegador del usuario. La página solicita nueva información del servidor cuando los datos se almacenan o se obtienen del servidor.
-%
-%La arquitectura de esta aplicación está basada en componentes. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Por ejemplo, el componente de carga interactúa con el componente de inicio cuando se realiza la carga para actualizar la interfaz de usuario. Toda la funcionalidad se realiza en estructuras de componentes pequeños y estos componentes están diseñados para ser reutilizables.
 
 \subsection{Patrones de diseño}
 
@@ -484,7 +451,7 @@ Por ejemplo, el entorno de desarrollo Vue está centrado en el componente Vista-
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.8]{Graphics/vmmv}
+\includegraphics[scale=0.6]{Graphics/mvvm}
 \caption{Patrón de diseño MVVM en Vue [\cite{47}].}
 \label{fig:vmmv}
 \end{figure}
@@ -738,13 +705,6 @@ La autentificación de portador (también llamada autenticación de token) es un
 
 Tanto en el servidor, como en el sitio web, nos centraremos en la seguridad. Entre otras cosas: el servidor creará y verificará tokens de identificación (\textit{Bearer token}) para cada usuario, y nuestra interfaz los usará para saber quien está identificado en cada momento y los permisos asociados a ellos; todas las contraseñas de los usuarios se guardarán en formato hash usando la función bcrypt; y, por último, todos los datos recibidos por el servidor se validarán para evitar usos incorrectos.
 
-En este trabajo solo se manejarán dos roles para los usuarios gestores:
-
-\begin{itemize}
-\item \textbf{Admin}: gestor de mayores privilegios al cual se le asocian1 todos los permisos.
-\item \textbf{Secretariado}: gestor con acceso limitado a las funcionalidades del sistema.
-\end{itemize}
-
 %JWT opera de una manera diferente. Un token solo se almacena en el lado del cliente de la aplicación, y no en el servidor. En cuanto a la escalabilidad, es mejor usar JWT para autorizar solicitudes, ya que no se almacena en el servidor, por lo tanto, no utiliza la memoria del servidor.
 
 El siguiente diagrama contiene una propuesta de cómo se debe realizar el proceso de autenticación y la interacción de cada parte.
@@ -765,7 +725,7 @@ Un modelo de despliegue consiste en una representación estructural de la arquit
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.3]{Graphics/deploy}
+\includegraphics[scale=0.65]{Graphics/deploy}
 \caption{Diagrama de despliegue del sistema.}
 \label{fig:deploy}
 \end{figure}

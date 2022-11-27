@@ -153,7 +153,7 @@ Para el buen diseño de nuestra interfaz de usuario serán consideradas las sigu
 %\end{itemize}
 
 \section{Proceso de diseño de la interfaz de usuario}
-El proceso de análisis y diseño de una interfaz de usuario es iterativo y puede representarse mediante un modelo en espiral. El proceso de análisis y diseño de la interfaz de usuario consta de cuatro actividades [\cite{36,37}].
+El proceso de análisis y diseño de una interfaz de usuario es iterativo y puede representarse mediante un modelo en espiral \ref{fig:espiral}. El proceso de análisis y diseño de la interfaz de usuario consta de cuatro actividades [\cite{36,37}].
 
 \begin{figure}[h]
 \centering
@@ -163,10 +163,13 @@ El proceso de análisis y diseño de una interfaz de usuario es iterativo y pued
 \end{figure}
 
 \begin{enumerate}
-\item Análisis: El análisis de la interfaz de usuario se centra en el usuario, la tarea, el contenido y el entorno de trabajo que interactúan con el sistema. Inicialmente, el enfoque se basa en el perfil de los usuarios que interactuarán con el sistema, es decir, la comprensión, la habilidad y el conocimiento, el tipo de usuario, etc., según el perfil del usuario, los usuarios se dividen en categorías. De cada categoría se recopilan requisitos. Basado en los requisitos, el desarrollador comprende cómo desarrollar la interfaz. Una vez recopilados todos los requisitos, se realiza un análisis detallado. En la parte de análisis se identifican, describen y elaboran las tareas que realiza el usuario para establecer los objetivos del sistema. El análisis del entorno del usuario se centra en el entorno físico de trabajo.
-\item Diseño de la interfaz: el objetivo de esta fase es definir el conjunto de objetos y acciones de la interfaz, es decir, los mecanismos de control que permiten al usuario realizar las tareas deseadas. Indicar cómo estos mecanismos de control afectan al sistema. Especificar la secuencia de acciones de tareas y subtareas, también denominada escenario de usuario. Indicar el estado del sistema cuando el usuario realiza una determinada tarea. Siempre seguir las tres reglas de oro establecidas por Theo Mandel. Los problemas de diseño como el tiempo de respuesta, la estructura de comando y acción, el manejo de errores y las funciones de ayuda se consideran a medida que se refina el modelo de diseño. Esta fase sirve como base para la fase de implementación.
+\item Análisis: El análisis de la interfaz de usuario se centra en el usuario, la tarea, el contenido y el entorno de trabajo que interactúan con el sistema. En la parte de análisis se identifican, describen y elaboran las tareas que realiza el usuario para establecer los objetivos del sistema.
+%Inicialmente, el enfoque se basa en el perfil de los usuarios que interactuarán con el sistema, es decir, la comprensión, la habilidad y el conocimiento, el tipo de usuario, etc., según el perfil del usuario, los usuarios se dividen en categorías. De cada categoría se recopilan requisitos. Basado en los requisitos, el desarrollador comprende cómo desarrollar la interfaz. Una vez recopilados todos los requisitos, se realiza un análisis detallado. En la parte de análisis se identifican, describen y elaboran las tareas que realiza el usuario para establecer los objetivos del sistema. El análisis del entorno del usuario se centra en el entorno físico de trabajo.
+\item Diseño de la interfaz: el objetivo de esta fase es definir el conjunto de objetos y acciones de la interfaz, es decir, los mecanismos de control que permiten al usuario realizar las tareas deseadas. Esta fase sirve como base para la fase de implementación.
+%Indicar cómo estos mecanismos de control afectan al sistema. Especificar la secuencia de acciones de tareas y subtareas, también denominada escenario de usuario. Indicar el estado del sistema cuando el usuario realiza una determinada tarea. Siempre seguir las tres reglas de oro establecidas por Theo Mandel. Los problemas de diseño como el tiempo de respuesta, la estructura de comando y acción, el manejo de errores y las funciones de ayuda se consideran a medida que se refina el modelo de diseño. Esta fase sirve como base para la fase de implementación.
 \item Construcción e implementación de la interfaz: La actividad de implementación comienza con la creación de un prototipo (modelo) que permite evaluar escenarios de uso. A medida que continúa el proceso de diseño iterativo, se puede utilizar un conjunto de herramientas de interfaz de usuario que permite la creación de ventanas, menús, interacción de dispositivos, mensajes de error, comandos y muchos otros elementos de un entorno interactivo para completar la construcción de una interfaz.
-\item Validación de la interfaz: esta fase se centra en probar la interfaz. La interfaz debería ser tal que debería poder realizar tareas correctamente y debería poder manejar una variedad de tareas. Debe cumplir con todos los requisitos del usuario. Debe ser fácil de usar y fácil de aprender. Los usuarios deben aceptar la interfaz como útil en su trabajo.
+\item Validación de la interfaz: esta fase se centra en probar la interfaz. La interfaz debería ser tal que debería poder realizar tareas correctamente y debería poder manejar una variedad de tareas. Debe cumplir con todos los requisitos del usuario. 
+%Debe ser fácil de usar y fácil de aprender. Los usuarios deben aceptar la interfaz como útil en su trabajo.
 \end{enumerate}
 
 %Las pruebas determinan la efectividad de una aplicación de interfaz de usuario que debe probarse y expone qué tan fácil o difícil es usar la interfaz de usuario para la audiencia más amplia posible. Los dos principales tipos de pruebas son los siguientes:
@@ -245,12 +248,12 @@ Luego, la aplicación maneja el enrutamiento y la carga de páginas en el lado d
 
 Debido a las características del presente trabajo, se ha optado por implementar una SPA para el desarrollo de nuestra interfaz de usuario, proporcionando así una experiencia fluida al usuario. %trabajarlo
 
-\subsection{PWA}
-A diferencia de los tipos anteriores de aplicaciones Web, el término aplicación Web progresiva (PWA, por sus siglas en inglés) es inclusivo. Significa que las aplicaciones pueden ser tanto SPA como PWA al mismo tiempo.
-
-La principal característica de este tipo de aplicaciones es la posibilidad de, tras acceder a la URL de la aplicación por primera vez, añadirla a la pantalla de inicio del dispositivo, y así poder ejecutarla como una app nativa [\cite{102}]. Esto supone una gran diferencia con respecto a las aplicaciones Web convencionales, puesto que, mientras que para acceder a una página web clásica debes entrar a través de su URL y descargar el contenido de esta cada vez que se visita, para usar una PWA solo basta con acceder una primera vez y, tras añadirla a la pantalla de inicio, se descarga en el dispositivo todo el contenido de la aplicación, tanto el estático (ficheros HTML, CSS, JavaScript, imágenes, etc), como el dinámico, que se almacena mediante memoria caché. Por lo tanto, esto hace que la aplicación se pueda ejecutar offline, eso sí, sin actualizar el contenido dinámico hasta que no se disponga nuevamente de conexión.
-
-Desde un punto de vista técnico, las PWA están compuestas, como mínimo, por un manifiesto JSON (JavaScript Object Notation) con metadatos, y con el denominado \textit{service worker}, un archivo JavaScript que se encarga de manejar todo lo necesario para el funcionamiento \textit{offline} de la aplicación.
+%\subsection{PWA}
+%A diferencia de los tipos anteriores de aplicaciones Web, el término aplicación Web progresiva (PWA, por sus siglas en inglés) es inclusivo. Significa que las aplicaciones pueden ser tanto SPA como PWA al mismo tiempo.
+%
+%La principal característica de este tipo de aplicaciones es la posibilidad de, tras acceder a la URL de la aplicación por primera vez, añadirla a la pantalla de inicio del dispositivo, y así poder ejecutarla como una app nativa [\cite{102}]. Esto supone una gran diferencia con respecto a las aplicaciones Web convencionales, puesto que, mientras que para acceder a una página web clásica debes entrar a través de su URL y descargar el contenido de esta cada vez que se visita, para usar una PWA solo basta con acceder una primera vez y, tras añadirla a la pantalla de inicio, se descarga en el dispositivo todo el contenido de la aplicación, tanto el estático (ficheros HTML, CSS, JavaScript, imágenes, etc), como el dinámico, que se almacena mediante memoria caché. Por lo tanto, esto hace que la aplicación se pueda ejecutar offline, eso sí, sin actualizar el contenido dinámico hasta que no se disponga nuevamente de conexión.
+%
+%Desde un punto de vista técnico, las PWA están compuestas, como mínimo, por un manifiesto JSON (JavaScript Object Notation) con metadatos, y con el denominado \textit{service worker}, un archivo JavaScript que se encarga de manejar todo lo necesario para el funcionamiento \textit{offline} de la aplicación.
 
 \section{Tecnologías empleadas}
 
@@ -276,7 +279,7 @@ Los \textit{frameworks frontends}\nomenclature[framework]{\textbf{Framework}}{Un
 
 En la Figura \ref{fig:espiral}, se puede visualizar cuáles han sido los \textit{frameworks} más populares y cómo han ido variando en los últimos años, según el porcentaje de preguntas obtenidas en el famoso dominio ``Stack Overflow''.
 
-\begin{figure}[htp]
+\begin{figure}[!h]
 \centering
 \includegraphics[scale=0.9]{Graphics/stackoverflow}
 \caption{Porcentaje de preguntas en Stack Overflow sobre distintos \textit{frameworks}. Fuente:[\cite{50}]}
