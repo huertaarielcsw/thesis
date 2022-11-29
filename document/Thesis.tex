@@ -74,6 +74,15 @@
 \newcommand{\minn}[1]{\min\left\{ #1 \right\} }
 \newcommand{\lldpcf}{1.25}
 \newcommand{\nnorm}[1]{\left\lvert #1 \right\rvert }
+\newcommand*\wildcard[2][5cm]{%
+  \mbox{%
+    \vbox to 3cm{%
+      \vfill
+      \hbox to #1{\hrulefill}\par
+      \hbox to #1{\strut\hfil#2\hfil}
+    }
+  }
+}
 \renewcommand{\lstlistingname}{Ejemplo de código}
 \renewcommand{\lstlistlistingname}{Ejemplos de código}
 

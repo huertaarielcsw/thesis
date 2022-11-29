@@ -288,7 +288,7 @@ A continuación se exponen algunos de los casos de uso de alto nivel, para logra
 	\end{center}
 \end{table}
 
-\subsection{Elementos importantes del sistema}
+\subsection{Lógica del negocio}
 El sistema que se presenta no registrará binarios (copia digital de título, entre otras), sino que los certificados serán representados por propiedades:
 \begin{itemize}
 \item \textbf{ID}: El identificador de los certificados es con fines de facilitar su búsqueda. No tiene una representación real en un certificado a papel. El campo es generado utilizando la fecha y hora de creación de la credencial. Su estructura es: YYYYMMDDHHMMSS (año, mes, día, hora, minuto y segundo concatenados)
@@ -304,7 +304,7 @@ El sistema que se presenta no registrará binarios (copia digital de título, en
 \item \textbf{Razón de Invalidación}: Refleja, de estar el certificado en estado invalidado, la razón de la decisión.
 \end{itemize}
 
-En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. Los roles que se manejarán para los usuarios gestores son los siguientes:
+En la aplicación, existirán varios roles con distintas funcionalidades. El personal de las instituciones universitarias podrán realizar consultas más especializadas y gestionar los certificados digitales según el rol que posea, para ello necesitarán iniciar sesión con sus credenciales asignadas. Los roles que se manejarán para los usuarios gestores son los siguientes:
 
 \begin{itemize}
 \item \textbf{Administrador de Sistemas}: Encargado de manejar los usuarios que participan en el sistema: crearlos, editarlos, eliminarlos o invalidarle sus credenciales.
@@ -318,7 +318,7 @@ En nuestra aplicación, exisitirán varios roles con distintas funcionalidades. 
 Los certificados pueden tener cinco estados:
 \begin{itemize}
 \item \textbf{Inválido}: El certificado fue invalidado por un usuario gestor con los permisos adecuados.
-\item \textbf{Creado}: El documento fue creado pero no posee ninguna firma de validación.
+\item \textbf{Creado}: El documento fue creado, pero no posee ninguna firma de validación.
 \item \textbf{Firmado por Secretario}: El documento fue validado por un usuario gestor con rol de `secretario'.
 \item \textbf{Firmado por Secretario y Decano}: El documento fue validado por un usuarios gestores con rol `secretario' y `decano'.
 \item \textbf{Válido}: El certificado fue validado por usuarios gestores con rol `secretario', `decano' y `rector'.
@@ -370,7 +370,7 @@ A continuación se exponen algunos de las historias de uso de alto nivel, las de
 \end{table}
 
 \subsection{Planificación de desarrollo}
-Siendo el equipo solamente una persona (el autor de este trabajo), no existe ningún rol, pero se mantiene la creación y el mantenimiento del \textit{backlog}, siguiendo una organización de \textit{sprints}, permitiendo tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente. Si el equipo aumentara en un futuro, se comenzaría a hacer uso de los roles definidos en la metodología.
+Siendo el equipo solamente una persona (el autor de este trabajo), no existe ningún rol, pero de acuerdo con Scrum, se mantiene la creación y el mantenimiento del \textit{backlog}, siguiendo una organización de \textit{sprints}, permitiendo tener alguna parte del sistema funcionando después de cada iteración, para que esto pudiera ser presentado y discutido con el cliente \footnote{El Instituto de Criptografía de la Universidad de La Habana toma el rol del cliente.}. Si el equipo aumentara en un futuro, se comenzaría a hacer uso de los roles formalmente definidos en la metodología.
 
 La fecha final del proyecto será acorde a la fecha límite de entrega de la convocatoria ordinaria del Trabajo de Fin de Grado. Por tanto, se ha establecido la duración de los sprints en 2 semanas, teniendo cada uno una carga de 34h aproximadamente por \textit{sprint}. En la tabla \ref{tab:sprints} puede verse una planificación inicial. Esta planificación es susceptible a cambios, así como la fecha de finalización podría ser cambiada.
 
@@ -414,6 +414,12 @@ La arquitectura de un \textit{software} se encarga de entender cómo debe organi
 
 Según [\cite{99}], la arquitectura de un sistema puede basarse en un patrón o un estilo arquitectónico particular. Un patrón arquitectónico es una descripción de una organización del sistema, captan la esencia de una arquitectura usada en diferentes sistemas de \textit{software}.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Graphics/mySPAtt}
+\caption{Arquitectura de la solución}
+\label{fig:spa}
+\end{figure}
 %Para empezar la sección de diseño, se va a exponer la arquitectura del sistema que se va a
 %implementar, destacando dos aspectos relevantes, el patrón de diseño Modelo Vista VistaModelo (MVVM) y la denominada arquitectura backendless
 
@@ -443,21 +449,13 @@ Según [\cite{99}], la arquitectura de un sistema puede basarse en un patrón o 
 %
 %Como mencionamos previamente, el presente trabajo de diploma se enfoca en el desarrollo del nivel de presentación. 
 
-El empleo de Vue para el desarrollo de nuestra solución nos permite dividir la aplicación en distintos bloques funcionales independientes llamados componentes, esto se suele denominar arquitectura de componentes[\cite{50}]. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Esta arquitectura permite generar aplicaciones a base de la reutilización de estos componentes, evitando tener código redundante.
+El empleo de Vue para el desarrollo de la aplicación permite dividir la aplicación en distintos bloques funcionales independientes llamados componentes, esto se suele denominar arquitectura de componentes[\cite{50}]. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Esta arquitectura permite generar aplicaciones a base de la reutilización de estos componentes, evitando tener código redundante.
 
-La arquitectura de nuestra solución es una arquitectura \textit{N-Layer} adaptada a las características del proyecto (ver Figura \ref{fig:spa}). Cuando el usuario accede en el navegador a nuestra aplicación, internamente al componente raíz App.vue se le pasa un componente enrutador, el cual debe hacer uso de las rutas definidas para cargar la vista deseada por el usuario. Las vistas son las diferentes ventanas de la página web (página principal, la lista de usuarios, entre otras), mientras que los componentes son pequeños trozos de código que se repiten en las diferentes vistas (barra de navegación, botones, entre otras). Para trabajar con datos, las vistas invocan a las funciones de Pinia, las cuales se encargan de realizar las peticiones a la API, la cual escucha y responde a las solicitudes de los clientes. Las peticiones a la API se realizan mediante la herramienta Axios, la cual también es la encargada de realizar las acciones necesarias para recopilar los datos y enviar la respuesta de vuelta a Pinia. Cuando Pinia ya ha obtenido la respuesta, este envía los datos a la vista, quien muestra al usuario el contenido de la ruta a la que accedió.
-
+La arquitectura de la solución propuesta es una arquitectura \textit{N-Layer} adaptada a las características del proyecto (ver Figura \ref{fig:spa}). Cuando el usuario accede en el navegador a la aplicación, internamente al componente raíz App.vue se le transfiere un componente enrutador, el cual debe hacer uso de las rutas definidas para cargar la vista deseada por el usuario. Las vistas son las diferentes páginas del sitio Web \footnote{Página principal, la lista de usuarios, la lista de certificados, entre otras} que se encargan de gestionar los datos a los distintos componentes que la conforman. Los componentes son pequeños bloques funcionales de código que son comunes en las diferentes vistas (como por ejemplo la barra de navegación, los botones, entre otras.); su utilidad está dada por el hecho de que son definidos una sola vez y luedo son reutilizados en distintas ocasiones. Para trabajar con datos, las vistas invocan a las funciones de Pinia, las cuales se encargan de realizar las peticiones a la API, la cual escucha y responde a las solicitudes de los clientes. La capa encargada de manejar las solicitudes a la API fue denominada Custom, esta capa es la encargada de realizar las acciones necesarias para recopilar los datos y enviar la respuesta de vuelta a Pinia. Cuando Pinia ya ha obtenido la respuesta, este envía los datos a la vista, quien muestra al usuario el contenido de la ruta a la que accedió.
 
 %La arquitectura de este nivel está basada en componentes. Todos los componentes relacionados entre sí se agrupan y se comunican entre sí para realizar las tareas. Por ejemplo, el componente de carga interactúa con el componente de inicio cuando se realiza la carga para actualizar la interfaz de usuario. Toda la funcionalidad se realiza en estructuras de componentes pequeños y estos componentes están diseñados para ser reutilizables.
 
-La arquitectura de nuestra interfaz de usuario también se basa en las arquitecturas cliente-servidor y SPA. Las SPA se caracterizan por cargar todos los recursos de la aplicación web en la consulta inicial, como si se tratara sólo de una página. Los componentes cambian dinámicamente a medida que el usuario va interaccionando con ellos. Esto proporciona una interfaz de usuario más rápida y fluida, ya que todas las representaciones se realizan localmente en el navegador del usuario. La página solicita nueva información del servidor cuando los datos se almacenan o se obtienen del servidor (Ver Figura \ref{fig:spa}).
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{Graphics/mySPAtt}
-\caption{Arquitectura de la solución}
-\label{fig:spa}
-\end{figure}
+%La arquitectura de la interfaz de usuario propuesta también se basa en las arquitecturas cliente-servidor. Las SPA se caracterizan por cargar todos los recursos de la aplicación Web en la consulta inicial, como si se tratara sólo de una página. Los componentes cambian dinámicamente a medida que el usuario va interaccionando con ellos. Esto proporciona una interfaz de usuario más rápida y fluida, ya que todas las representaciones se realizan localmente en el navegador del usuario. La página solicita nueva información del servidor cuando los datos almacenados en la página ya no se corresponden con los que se encuentran en el servidor. (Ver Figura \ref{fig:spa}).
 
 \subsection{Patrones de diseño}
 
@@ -717,26 +715,24 @@ Los servicios de gestión de estado de Vue utilizan el patrón de observador, pe
 %\subsection{Diagramas de diseño}
 
 \subsection{Elementos de seguridad}
-
-% ---------------------------------- seguridad
-Como habíamos mencionado previamente en la definición de actores del sistema, los gestores son usuarios registrados en un sistema de terceros y además cuentan con un rol definido en dicho sistema de terceros. Nuestra interfaz de usuario debe ser capaz de mostrar visualmente las secciones del \textit{back office} relacionadas a los permisos asociados al rol del usuario autenticado.
-
-%JSON Web Token es una forma alternativa de autorizar usuarios a la forma tradicional de usar sesiones. Tradicionalmente, los identificadores de sesión se almacenan en el servidor y se transmiten a la \textit{cookie} del cliente. Cuando el cliente realiza una solicitud al servidor, la identificación de la sesión del cliente se pasa a través del campo de encabezado en la solicitud HTTP al servidor. Luego, el servidor compara la identificación de la sesión recibida del cliente con la almacenada en el servidor. Si coinciden, la solicitud se resuelve; si no, la solicitud se rechaza.
-
-La autentificación de portador (también llamada autenticación de token) es un esquema de autentificación HTTP que involucra tokens de seguridad llamados \textit{Bearer tokens} [\cite{98}]. El nombre ``Autenticación de portador'' puede entenderse como ``dar acceso al portador de este token''. El \textit{Bearer token} es una cadena críptica, generalmente generada por el servidor en respuesta a una solicitud de inicio de sesión.
-
-Tanto en el servidor, como en el sitio web, nos centraremos en la seguridad. Entre otras cosas: el servidor creará y verificará tokens de identificación (\textit{Bearer token}) para cada usuario, y nuestra interfaz los usará para saber quien está identificado en cada momento y los permisos asociados a ellos; todas las contraseñas de los usuarios se guardarán en formato hash usando la función bcrypt; y, por último, todos los datos recibidos por el servidor se validarán para evitar usos incorrectos.
-
-%JWT opera de una manera diferente. Un token solo se almacena en el lado del cliente de la aplicación, y no en el servidor. En cuanto a la escalabilidad, es mejor usar JWT para autorizar solicitudes, ya que no se almacena en el servidor, por lo tanto, no utiliza la memoria del servidor.
-
-El siguiente diagrama contiene una propuesta de cómo se debe realizar el proceso de autenticación y la interacción de cada parte.
-
 \begin{figure}[!h]
 \centering
 \includegraphics[width=\textwidth]{Graphics/authtt}
 \caption{Diagrama de secuencia del proceso de autentificación del sistema.}
 \label{fig:autht}
 \end{figure}
+% ---------------------------------- seguridad
+Como se había mencionado previamente en la definición de actores del sistema, los gestores son usuarios registrados en el sistema y además cuentan con un rol definido en dicho sistema. La interfaz de usuario que se propone debe ser capaz de mostrar visualmente las secciones del \textit{back office} relacionadas a los permisos asociados al rol del usuario autenticado.
+
+%JSON Web Token es una forma alternativa de autorizar usuarios a la forma tradicional de usar sesiones. Tradicionalmente, los identificadores de sesión se almacenan en el servidor y se transmiten a la \textit{cookie} del cliente. Cuando el cliente realiza una solicitud al servidor, la identificación de la sesión del cliente se pasa a través del campo de encabezado en la solicitud HTTP al servidor. Luego, el servidor compara la identificación de la sesión recibida del cliente con la almacenada en el servidor. Si coinciden, la solicitud se resuelve; si no, la solicitud se rechaza.
+
+La autentificación de portador (también llamada autenticación de token) es un esquema de autentificación HTTP que involucra tokens de seguridad llamados \textit{Bearer tokens} [\cite{98}]. El nombre ``Autenticación de portador'' puede entenderse como ``dar acceso al portador de este token''. El \textit{Bearer token} es una cadena críptica, generalmente generada por el servidor en respuesta a una solicitud de inicio de sesión.
+
+Tanto el servidor, como el sitio web, se centran en la seguridad. Entre otras cosas: el servidor creará y verificará tokens de identificación (\textit{Bearer token}) para cada usuario, y la interfaz los usará para saber quién está identificado en cada momento y los permisos asociados a ellos; todas las contraseñas de los usuarios se guardarán en formato hash usando la función bcrypt; y, por último, todos los datos recibidos por el servidor se validarán para evitar usos incorrectos.
+
+%JWT opera de una manera diferente. Un token solo se almacena en el lado del cliente de la aplicación, y no en el servidor. En cuanto a la escalabilidad, es mejor usar JWT para autorizar solicitudes, ya que no se almacena en el servidor, por lo tanto, no utiliza la memoria del servidor.
+
+El diagrama \ref{fig:autht} contiene una propuesta de cómo se debe realizar el proceso de autenticación y la interacción de cada parte.
 
 %
 %Se envía un token JWT a través de la solicitud HTTP al servidor. Luego, el servidor decodifica y valida el token. Si se valida el token, se resuelve la solicitud, si no, se rechaza la solicitud. JWT es propuesto como un estándar abierto por IETF y es elegido por muchos como la tecnología de referencia para la autorización.
@@ -747,7 +743,7 @@ Un modelo de despliegue consiste en una representación estructural de la arquit
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{Graphics/deploy}
+\includegraphics[scale=0.65]{Graphics/deploy}
 \caption{Diagrama de despliegue del sistema.}
 \label{fig:deploy}
 \end{figure}

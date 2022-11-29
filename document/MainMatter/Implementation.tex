@@ -9,7 +9,7 @@ Una vez desarrollado el \textit{software}, el mismo debe ser sometido a una seri
 %reduciendo el desarrollo repetitivo [47]
 
 \section{Implementación}
-Para el desarrollo de la aplicación web se ha utilizado un gran número de librerías y recursos externos para facilitar el desarrollo [\cite{47}]. Por ello no se van a explicar todos, sino los de más relevancia acorde a las secciones en las que se ha estructurado el proyecto, que son las que tienen que ver con el \textit{framework} Vue.
+Para el desarrollo de la aplicación web se ha utilizado un gran número de librerías y recursos externos para facilitar el desarrollo. Por ello no se van a explicar todos, sino los de más relevancia acorde a las secciones en las que se ha estructurado el proyecto, que son las que tienen que ver con el \textit{framework} Vue.
 %En este apartado se comentan algunas de las partes de la implementación realizada para el desarrollo del prototipo con Vue 3.
 
 %\section{Estructura del código}
@@ -25,25 +25,25 @@ Para el desarrollo de la aplicación web se ha utilizado un gran número de libr
 \label{fig:code}
 \end{figure}
 
-En la Figura \ref{fig:code} se muestra la estructura por carpetas y archivos usados para el desarrollo del nivel de presentación. La carpeta ``src'' almacena todos los archivos con el código para la creación de la aplicación; el resto de las carpetas y ficheros son configuraciones del proyecto, muy importantes para el desarrollo de este, pero no se van a explicar. Dentro de esta encontramos las distintas carpetas y archivos:
+En la Figura \ref{fig:code} se muestra la estructura por carpetas y archivos usados para el desarrollo del nivel de presentación. La carpeta ``src'' almacena todos los archivos con el código para la creación de la aplicación; el resto de las carpetas y ficheros son configuraciones del proyecto, muy importantes para el desarrollo de este, pero no se van a explicar. Dentro de esta se encuentran las distintas carpetas y archivos:
 
 \begin{itemize}
 \item \textbf{assets}: esta carpeta incluye los activos estáticos de la aplicación que pueden ser el logotipo de una empresa, imágenes, fuentes, entre otros.
-\item \textbf{components}: esta carpeta contiene todos los componentes de la aplicación.
+\item \textbf{components}: esta carpeta contiene todos los componentes de la aplicación, los cuales son usados por las vistas para mostrar la página al usuario.
 \item \textbf{directives}: esta carpeta contiene todas las directivas de la aplicación.
 \item \textbf{layouts}: contiene los componentes que se encargan del diseño visual de la interfaz.
-\item \textbf{router}: contiene todas las rutas que muestran las vistas.
-\item \textbf{services}: contiene todos los servicios y definiciones de la aplicación.
-\item \textbf{stores}: contiene todos los \textit{stores} creados mediante la biblioteca Pinia.
-\item \textbf{views}: contiene todas las vistas de la aplicación.
+\item \textbf{router}: contiene todas las rutas que muestran las vistas. Estas rutas sirven para la navegación entre las distintas vistas de la aplicación.
+\item \textbf{services}: contiene todos los servicios y definiciones de la aplicación, los cuales contribuyen a proveer lógica específica según el servicio, a las vistas y otras capas de la aplicación.
+\item \textbf{stores}: contiene todos los \textit{stores} creados mediante la biblioteca Pinia, los cuales almacenan los datos necesarios para las vistas.
+\item \textbf{views}: contiene todas las vistas de la aplicación, las cuales se encargan de gestionar los datos necesarios de los distintos componentes que las conforman y permiten la interacción con el usuario al mostrarle la información requerida.
 \item \textbf{App.vue}: este archivo es el componente raíz donde se anidan todos los demás componentes. Este archivo es responsable de manejar todos los componentes.
 \item \textbf{main.ts}: archivo encargado de cargar la aplicación. En él se adjuntan las librerías principales, como Pinia y el archivo principal (App.vue).
 \end{itemize}
 
 \subsection{Componentes}
-Cada \textit{framework} tiene su propia manera de definir los componentes y realizar su propia interpretación de estos. En Vue se pueden definir de varias formas, una de ellas  es la llamada componentes de un solo archivo o en inglés \textit{Single File Components}. Estos componentes nos permiten, como su nombre indica, encapsular el código CSS, HTML y TypeScript en un único archivo.
+Cada \textit{framework} tiene su propia manera de definir los componentes y realizar su propia interpretación de estos. En Vue se pueden definir de varias formas, una de ellas  es la llamada componentes de un solo archivo o en inglés \textit{Single File Components}. Estos componentes permiten, como su nombre indica, encapsular el código CSS, HTML y TypeScript en un único archivo.
 
-Esto es un modo muy útil de definir los componentes puesto que cuando la aplicación escale en tamaño nos será más fácil encontrar el código deseado y reduciremos en gran medida el tamaño en archivos del proyecto.
+Esto es un modo muy útil de definir los componentes puesto que cuando la aplicación escale en tamaño será más fácil encontrar el código deseado y se reducirá en gran medida el tamaño en archivos del proyecto.
 
 \begin{lstlisting}[language=C,caption={Código del archivo App.vue}, label={lst:app}]
 <template>
@@ -75,34 +75,34 @@ export default defineComponent({
 </style>
 \end{lstlisting}
 
-En \ref{lst:app} se puede observar el código del archivo principal de la aplicación desarrollada denominado ``App.vue''. El archivo, al igual que los archivos ``.vue'' de este proyecto, est'a dividido en tres secciones:
+En \ref{lst:app} se puede observar el código del archivo principal de la aplicación desarrollada denominado ``App.vue''. El archivo, al igual que los archivos ``.vue'' de este proyecto, está dividido en tres secciones:
 \begin{itemize}
-\item <template>, dónde incorporamos el código HTML
+\item <template>, dónde se incorpora el código HTML
 \begin{itemize}
-\item En esta sección hacemos uso de los componentes reutilizables, alguno de ellos con renderización condicional usando ``v-if''.
+\item En esta sección se hace uso de los componentes reutilizables, alguno de ellos con renderización condicional usando ``v-if''.
 \end{itemize}
-\item <script>, dónde encontramos el código TypeScript. En este apartado nos encontramos con lo siguiente:
+\item <script>, dónde se encuentra el código TypeScript. En este apartado se tiene lo siguiente:
 \begin{itemize}
 \item Importación de bibliotecas y componentes a utilizar.
-\item components, sección dónde se realiza el registro de los componentes que se van a utilizar en el actual.
-\item Composition API, el cambio más característico de la versión 3 de Vue, lo utilizamos con la función setup(), la cual se ejecuta al inicializar el componente. En el return de la función devolvemos todos aquellos objetos o funciones que queramos usar en el componente.
-\item Ciclo de vida, usamos onMounted() para inicializar algunas propiedades que requieren tener valor nada más haya sido montado el componente.
-\item Propiedades computadas, computed() cachea los datos hasta que los valores de las variables reactivas con las que se conforma no cambien. Esto nos evita realizar cálculos innecesarios.
+\item \textit{components}, sección dónde se realiza el registro de los componentes que se van a utilizar en el actual.
+\item Composition API, el cambio más característico de la versión 3 de Vue, se utiliza con la función setup(), la cual se ejecuta al inicializar el componente. En el return de la función se devuelven todos aquellos objetos o funciones que se quieren usar en el componente.
+\item Ciclo de vida, se usa onMounted() para inicializar algunas propiedades que requieren tener valor nada más haya sido montado el componente.
+\item Propiedades computadas, computed() cachea los datos hasta que los valores de las variables reactivas con las que se conforma no cambien. Esto evita realizar cálculos innecesarios.
 \item Pinia, useStore se implementa para tener una gestión de estados centralizada.
 \end{itemize}
 \item <style>, dónde se implementa el CSS de la página.
 \end{itemize}
 
-Para la aplicación, usamos una plantilla personalizada por el cliente, en la cual existían componentes ya definidos para los principales elementos de una página Web como la barra de navegación, los botones, campos de entrada de datos, entre otros.
+Para la aplicación, se utilizó una plantilla personalizada por el cliente, en la cual existían componentes ya definidos para los principales elementos de una página Web como la barra de navegación, los botones, campos de entrada de datos, entre otros.
 
 \subsection{Vistas}
 Las vistas en Vue no son más que componentes que representan una página y por tanto se utilizarán de forma diferente. Estos componentes especiales llamados vistas, se encargan de montar una estructura de componentes reutilizables, y además de encargarse de gestionar los datos necesarios que puedan requerir para suministrárselos a unos componentes u a otros, definiendo de esta manera las relaciones entre los mismos.
 
 %poner codigo de tablas de certificados
 
-Tanto los componentes como las vistas se comunican con todas las demás entidades ubicadas en el lado del cliente. Esto se debe a que esos son los archivos que el usuario verá e interactuará. Siempre que un usuario quiera navegar de una vista a otra, debe hacer uso de las rutas que están definidas en la carpeta \textit{router} y las funciones proporcionadas por la biblioteca Vue-Router. Cuando un usuario quiera crear, leer, modificar o eliminar datos, debe hacerlo a través de las funciones proporcionadas por la biblioteca Axios que envían solicitudes al servidor. Luego, cuando el servidor envía una respuesta al \textit{frontend}, se almacena en la entidad de la \textit{store} de Pinia. Si un usuario desea obtener información, ejecuta métodos captadores ubicados en la entidad \textit{store} de Pinia que recuperan la información solicitada. Todas estas entidades se explicarán detalladamente en sus respectivas secciones.
+Tanto los componentes como las vistas se comunican con todas las demás entidades ubicadas en el lado del cliente. Esto se debe a que esos son los archivos que el usuario verá e interactuará. Siempre que un usuario quiera navegar de una vista a otra, debe hacer uso de las rutas que están definidas en la carpeta \textit{router} y las funciones proporcionadas por la biblioteca Vue-Router. Cuando un usuario quiera crear, leer, modificar o eliminar datos, debe hacerlo a través de las funciones proporcionadas por la capa Custom, la cual a través del uso de la herramienta Axios, envía solicitudes al servidor. Luego, cuando el servidor envía una respuesta al \textit{frontend}, se almacena en la entidad de la \textit{store} de Pinia. Si un usuario desea obtener información, ejecuta métodos captadores ubicados en la entidad \textit{store} de Pinia que recuperan la información solicitada. Todas estas entidades se explicarán detalladamente en sus respectivas secciones.
 
-En esta sección, daremos una breve descripción de la vista ViewListUsers.vue, la cual muestra la lista de usuarios del sistema. A continuación se muestra un fragmento de código de la sección <script> de esta vista:
+En esta sección, se brinda una breve descripción de la vista ViewListUsers.vue, la cual muestra la lista de usuarios del sistema. A continuación se muestra un fragmento de código de la sección <script> de esta vista:
 
 \begin{lstlisting}[language=C,caption={Sección <script> de VueListUsers.vue}, label={lst:viewlist}]
 <script lang="ts">
@@ -154,7 +154,7 @@ export default defineComponent({
 </script>
 \end{lstlisting}
 
-En este fragmento solo se muestran aquellas funciones y variables relacionadas a mostrar lista de usuarios y los eventos lanzados para navegar a la vista de crear usuario. Para obtener la lista de usuarios, al ser montado el componente, realizamos una petición al servidor a través de las funciones de Pinia, las cuales obtienen la lista y la guardan su estado. La función h\_navCreateUsers se encarga de manejar el evento lanzado cuando el usuario quiere navegar a la página de creación de usuarios mediante el uso del \textit{router}. Tanto la lista de usuarios guardada en Pinia, como las funciones que manejan los distintos eventos se las suministramos al componente CmpDataTable, el cual nos permite listar los usuarios en una tabla con funciones de paginado, y con distintos botones para las posibles acciones de gestión de usuarios.
+En este fragmento solo se muestran aquellas funciones y variables relacionadas a mostrar lista de usuarios y los eventos lanzados para navegar a la vista de crear usuario. Para obtener la lista de usuarios, al ser montado el componente, se realiza una petición al servidor a través de las funciones de Pinia, las cuales obtienen la lista y la guardan su estado. La función h\_navCreateUsers se encarga de manejar el evento lanzado cuando el usuario quiere navegar a la página de creación de usuarios mediante el uso del \textit{router}. Tanto la lista de usuarios guardada en Pinia, como las funciones que manejan los distintos eventos son suministradas al componente CmpDataTable, el cual permite listar los usuarios en una tabla con funciones de paginado, y con distintos botones para las posibles acciones de gestión de usuarios.
 
 \begin{lstlisting}[language=C,caption={Sección <template> de ViewListUsers.vue}, label={lst:viewlist1}]
 <template>
@@ -183,7 +183,7 @@ En este fragmento solo se muestran aquellas funciones y variables relacionadas a
 </template>
 \end{lstlisting}
 
-El fragmento de código \ref{lst:viewlist1} muestra como fue implementado la sección <template> de ViewListUsers.vue, es en esta sección donde utilizamos el componente CmpDataTable. El resultado obtenido se puede observar en la Figura \ref{fig:usersList}.
+El fragmento de código \ref{lst:viewlist1} muestra como fue implementado la sección <template> de ViewListUsers.vue, es en esta sección donde es utilizado el componente CmpDataTable. El resultado obtenido se puede observar en la Figura \ref{fig:usersList}.
 
 \begin{figure}[htbp]
 \centering
@@ -195,7 +195,7 @@ El fragmento de código \ref{lst:viewlist1} muestra como fue implementado la sec
 \subsection{Router}
 El \textit{router} es una pieza fundamental de las SPA y por lo tanto es una pieza que no puede faltar en ningún \textit{framework} completo. Un \textit{router} es el elemento \textit{software} encargado de relacionar una URL a una vista, de manera que cuando se escriba una URL en el navegador, automáticamente se visualizara la vista relacionada. Además, un router debe proveer de diferentes herramientas para poder enviar datos dinámicos a las vistas y para establecer un sistema de permisos.
 
-Vue viene con una biblioteca integrada que maneja el enrutamiento. Al crear un proyecto Vue, se genera automáticamente una carpeta de \textit{router} con un archivo index.ts con una configuración de ruta completa. Para definir nuevas rutas, simplemente podemos agregar un objeto al arreglo de rutas. El objeto consta de tres atributos:
+Vue viene con una biblioteca integrada que maneja el enrutamiento. Al crear un proyecto Vue, se genera automáticamente una carpeta de \textit{router} con un archivo index.ts con una configuración de ruta completa. Para definir nuevas rutas, simplemente se puede agregar un objeto al arreglo de rutas. El objeto consta de tres atributos:
 
 \begin{itemize}
 \item ruta: La URL para acceder a la ruta.
@@ -203,9 +203,9 @@ Vue viene con una biblioteca integrada que maneja el enrutamiento. Al crear un p
 \item componente: El archivo que representa esta ruta.
 \end{itemize}
 
-En el campo del componente, podemos especificar el nombre del archivo directamente en el atributo del componente o pasarlo a una función que implemente \textit{lazy-loading}. La función extrae el código de la ruta del paquete ts y crea un fragmento separado para él. Este fragmento de código solo se carga cuando un usuario ingresa a la ruta. Es fácil de implementar y mejora significativamente el rendimiento de la aplicación.
+En el campo del componente, se puede especificar el nombre del archivo directamente en el atributo del componente o pasarlo a una función que implemente \textit{lazy-loading}. La función extrae el código de la ruta del paquete ts y crea un fragmento separado para él. Este fragmento de código solo se carga cuando un usuario ingresa a la ruta. Es fácil de implementar y mejora significativamente el rendimiento de la aplicación.
 
-El fragmento de código \ref{lst:router} muestra el \textit{router} de nuestra aplicación, donde además de las rutas básicas relacionadas con el inicio de sesión y la página inicial, añadimos las rutas relacionadas a los usuarios y los certificados. 
+El fragmento de código \ref{lst:router} muestra el \textit{router} de la aplicación, donde además de las rutas básicas relacionadas con el inicio de sesión y la página inicial, se añaden las rutas relacionadas a los usuarios y los certificados.
 
 \begin{lstlisting}[language=C,caption={Configuración de las rutas}, label={lst:router}]
 const router = createRouter({
@@ -235,7 +235,7 @@ const router = createRouter({
 })
 \end{lstlisting}
 
-La biblioteca de Vue-router tiene funciones que nos permiten tener más control sobre las rutas. Tomemos esta función como un ejemplo:
+La biblioteca de Vue-router tiene funciones que permiten tener más control sobre las rutas. Se tomará la siguiente función como un ejemplo:
 
 \begin{lstlisting}[language=C,caption={Función para controlar el acceso a rutas}, label={lst:routerAccess}]
 // GUARD - authentication checker | axios hook
@@ -257,8 +257,8 @@ router.beforeEach(( to, _, next ) => {
 })
 \end{lstlisting}
 
-La función router.beforeEach se ejecuta antes de cada navegación. Nos gustaría comprobar si el usuario está autenticado al navegar por la aplicación.
-Escribimos una declaración if que verifica si el usuario está intentando navegar a una ruta que requiere autenticación y si el usuario está autenticado. Si el usuario no está autenticado, lo redirigimos a la página de inicio de sesión y, si lo está, continuamos y lo dejamos navegar a la ruta deseada.
+La función router.beforeEach se ejecuta antes de cada navegación. Se comprueba si el usuario está autenticado al navegar por la aplicación.
+Se escribió una declaración $if$ que verifica si el usuario está intentando navegar a una ruta que requiere autenticación y si el usuario está autenticado. Si el usuario no está autenticado, es redirigido a la página de inicio de sesión y, si lo está, se continua y el usuario puede navegar a la ruta deseada.
 
 %El enrutamiento maneja lo que muestra el SPA cuando un usuario visita una determinada ruta de URL. https://my#app/home y https://my-app/users/2 son ejemplos de rutas de URL que la herramienta de enrutamiento de un SPA manejaría de manera diferente. La aplicación detecta qué ruta de URL se proporciona y presenta la página según la vista que corresponde a la ruta actual. Por ejemplo, https://my#app/home representará la vista de inicio y https://my-app/users/2 representará una vista que muestra al usuario con id 2. A menudo, se supone que ciertas rutas no deben mostrarse. para todo el mundo. Por ejemplo, es posible que algunas rutas solo estén disponibles para los usuarios que hayan iniciado sesión en la aplicación. Esta protección de rutas a menudo se puede implementar con herramientas de enrutamiento SPA.
 \subsection{Store}
@@ -270,7 +270,7 @@ La incorporación de una \textit{store} viene dado por la necesidad de hacer una
 
 Una \textit{store} es como un almacén de datos global a la aplicación en el cual los componentes podrán añadir y obtener estos de forma organizada, haciendo uso de una serie de herramientas que facilitan esta serie de interacciones de forma ordenada para que se pueda realizar un seguimiento de los cambios en los datos.
 
-Cuando se trata de SPA, un estado podría describirse como una estructura de datos que contiene información sobre la aplicación. Pinia se utiliza para guardar el estado de los componentes; tiene una \textit{store} raíz y permite crear cualquier cantidad de \textit{stores} individuales. Para nuestra aplicación, vamos a usar solamente tres \textit{stores}:
+Cuando se trata de SPA, un estado podría describirse como una estructura de datos que contiene información sobre la aplicación. Pinia se utiliza para guardar el estado de los componentes; tiene una \textit{store} raíz y permite crear cualquier cantidad de \textit{stores} individuales. Para nuestra aplicación, se van a utilizar solamente tres \textit{stores}:
 
 \begin{itemize}
 \item auth: para el control de la autentificación y autorización.
@@ -341,12 +341,12 @@ export const useUsersStore = defineStore({
 })
 \end{lstlisting}
 
-El fragmento de código \ref{lst:usersStore} muestra la \textit{store} de usuarios. El estado de esta \textit{store} contiene la lista de usuarios, y los datos que permiten la paginación de estos. Además contiene un elemento de tipo usuario que es utilizado para cargar los datos de un usuario cuando su información va a ser editada o consultada. La acción reqUsersPages permite actualizar la lista de usuarios y los elementos del paginado del estado, mientras que el captador getUsersList nos permite obtener la lista de usuarios.
+El fragmento de código \ref{lst:usersStore} muestra la \textit{store} de usuarios. El estado de esta \textit{store} contiene la lista de usuarios, y los datos que permiten la paginación de estos. Además contiene un elemento de tipo usuario que es utilizado para cargar los datos de un usuario cuando su información va a ser editada o consultada. La acción reqUsersPages permite actualizar la lista de usuarios y los elementos del paginado del estado, mientras que el captador getUsersList permite obtener la lista de usuarios.
 
 Cada vez que se deben enviar datos al \textit{backend}, se lleva a cabo un determinado procedimiento. Primero, los datos se almacenan temporalmente dentro de la \textit{store} responsable de Pinia y desde dentro de la \textit{store} se activa una llamada API a través de las denominadas acciones mediante la herramienta Axios.
 
-\subsection{Axios}
-Axios se utiliza para realizar solicitudes HTTP asincrónicas basadas en promesas. Creamos un archivo para cada grupo de solicitudes, como api-auth.ts, api-users.ts y api-certificates.ts. Escribimos las llamadas a la API en estos archivos en lugar de escribirlas directamente en los archivos de vista/componente. Estructurar el código de esta manera lo hizo más limpio y legible.
+\subsection{Custom}
+En esta capa, se utiliza Axios para realizar solicitudes HTTP asincrónicas basadas en promesas. Fue creado un archivo para cada grupo de solicitudes, como api-auth.ts, api-users.ts y api-certificates.ts. Se escribieron las llamadas a la API en estos archivos en lugar de escribirlas directamente en los archivos de vista/componente. Estructurar el código de esta manera lo hizo más limpio y legible.
 
 \begin{lstlisting}[language=C,caption={Ejemplo de una solicitud al servidor usando axios}, label={lst:axios}]
 const version = config.site.current_version
@@ -367,9 +367,9 @@ export class ApiAuth {
   }
 \end{lstlisting}
 
-El código anterior llegará al endpoint /api/v1/auth en el servidor, que ejecutará una consulta para poder iniciar sesión en nuestro sistema en función de los datos recibidos de la llamada Axios.
+El código anterior llegará al endpoint /api/v1/auth en el servidor, que ejecutará una consulta para poder iniciar sesión en nuestro sistema en función de los datos recibidos de la llamada.
 
-Es posible personalizar la forma en que Axios maneja las solicitudes, y en nuestro caso esto era necesario. Para hacer esto, es necesario crear una nueva instancia de Axios y definir la configuración personalizada. Siguiendo el patrón singleton, creamos un nuevo archivo en el que creamos una nueva instancia de Axios que podría reutilizarse e importarse cuando sea necesario:
+Es posible personalizar la forma en que Axios maneja las solicitudes. Para hacer esto, es necesario crear una nueva instancia de Axios y definir la configuración personalizada. Siguiendo el patrón singleton, se creó un nuevo archivo donde se crea una nueva instancia de Axios, la cual se denominó customInstance, que podría reutilizarse e importarse cuando sea necesario:
 
 \begin{lstlisting}[language=C,caption={Instancia única de Axios}, label={lst:axios1}]
 import axios from 'axios'
@@ -385,11 +385,11 @@ const customInstance = axios.create({
 })
 \end{lstlisting}
 
-Lo configuramos con una URL a la que enviará solicitudes. En este caso, durante el desarrollo es ``http://localhost:7001/''. Cuando se crea la instancia, podemos personalizar la forma en que se manejan las solicitudes mediante el uso de interceptores. Los interceptores son funciones que se invocan cada vez que Axios realiza una solicitud.
+Fue configurado con una URL a la que enviará solicitudes. En este caso, durante el desarrollo es ``http://localhost:7001/''. Cuando se crea la instancia, se puede personalizar la forma en que se manejan las solicitudes mediante el uso de interceptores. Los interceptores son funciones que se invocan cada vez que se realiza una solicitud.
 
-Muchas de nuestras solicitudes requerían que se enviara un token en el encabezado de la solicitud. Este proceso era muy repetitivo y requería un exceso de código que podía automatizarse. Escribimos la siguiente función para solucionar este problema:
+Muchas de las solicitudes requerían que se enviara un token en el encabezado de la solicitud. Este proceso era muy repetitivo y requería un exceso de código que podía automatizarse. Se escribió la siguiente función para solucionar este problema:
 
-\begin{lstlisting}[language=C,caption={Interceptor de solicitudes de Axios}, label={lst:axios2}]
+\begin{lstlisting}[language=C,caption={Interceptor de solicitudes}, label={lst:axios2}]
 customInstance.interceptors.request.use(
     config => {
 
@@ -406,11 +406,11 @@ customInstance.interceptors.request.use(
 )
 \end{lstlisting}
 
-Todas las solicitudes ejecutadas necesitaban un token. Escribimos una declaración if para verificar si la solicitud tenía el token. Si no lo tenía, recuperamos el token del almacenamiento local y lo pasamos al encabezado de la solicitud.
+Todas las solicitudes ejecutadas necesitaban un token. Se escribió una declaración $if$ para verificar si la solicitud tenía el token. Si no lo tenía, se recuperaba el token del almacenamiento local y se le pasaba al encabezado de la solicitud.
 
 %Además de pasar automáticamente el token en el encabezado de la solicitud, también agrega una capa adicional de seguridad al verificar si el token existe en el almacenamiento local antes de resolver la solicitud.
 
-La segunda función de interceptor que hicimos fue manejar errores. Aborda el mismo problema que el primero en términos de código redundante. Los errores con el estado 401 se manejaron de la misma manera en todas las solicitudes, por lo que en lugar de escribir el mismo código para cada solicitud, escribimos una función que automáticamente manejara esos errores de la manera que queríamos:
+La segunda función de interceptor creada fue para manejar errores. Aborda el mismo problema que el primero en términos de código redundante. Los errores con el estado 401 fueron manejados de la misma manera en todas las solicitudes, por lo que en lugar de escribir el mismo código para cada solicitud, se escribió una función que automáticamente manejara esos errores de la manera que se quería:
 
 \begin{lstlisting}[language=C,caption={Interceptor de respuestas de Axios}, label={lst:axios2}]
 customInstance.interceptors.response.use(
@@ -431,7 +431,7 @@ customInstance.interceptors.response.use(
 )
 \end{lstlisting}
 
-Si recibimos un error, verificamos el código de estado de ese error. Si se devuelve 401 cuando el usuario no está autorizado, eliminamos el token del almacenamiento local si existe y redirigimos al usuario a la página de inicio de sesión.
+Si se recibe un error, se verifica el código de estado de ese error. Si se devuelve 401 cuando el usuario no está autorizado, se elimina el token del almacenamiento local si existe y se redirige al usuario a la página de inicio de sesión.
 
 %\subsection{Servicios}
 %La capa de servicio se creó por la necesidad de centralizar en un único lugar todas 
@@ -446,7 +446,8 @@ Si recibimos un error, verificamos el código de estado de ese error. Si se devu
 %\subsection{Internacionalización}
 
 \section{Pruebas}
-Debido a problemas de tiempo las pruebas de IU no se realizaron automáticamente. Para sustituir las pruebas automáticas se ha realizado un proceso de caja negra final donde se ha tratado de buscar los fallos no solventados dentro de los procesos de desarrollo de la aplicación. En esta sección se mostrarán en forma de alto nivel. Las ventajas de los test de caja negra son :
+%Debido a problemas de tiempo las pruebas de IU no se realizaron automáticamente.
+Las pruebas de la IU no se realizaron de manera automática. Para sustituir las pruebas automáticas se ha realizado un proceso de caja negra final donde se ha tratado de buscar los fallos no solventados dentro de los procesos de desarrollo de la aplicación. En esta sección se mostrarán en forma de alto nivel. Las ventajas de los test de caja negra son :
 
 \begin{itemize}
 \item El programador y el probador tienen objetivos independientes.
@@ -458,7 +459,7 @@ Desventajas
 
 \begin{itemize}
 \item Dado que no hay conocimientos sobre la implementación del código, el mismo código se puede probar varias veces, mientras que otras pueden no probarse nunca.
-\item Es imposible probar todas las entradas posibles en un período de tiempo razonable; por lo tanto, es posible que ciertos caminos nunca se prueben.
+\item Se hace relativamente difícil probar todas las entradas posibles en un período de tiempo razonable.
 \end{itemize}
 
 Se utilizó un navegador para probar y construir las características requeridas. Luego, el desarrollador, el autor de esta tesis y el propietario del producto trabajaron juntos para probar las características. La prueba se llevó a cabo en cada revisión de \textit{sprint}. Si la función superó completamente los requisitos de prueba de aceptación, la función se marcó como completa; de lo contrario, se le dio al desarrollador una lista de errores o comportamientos inesperados para que los corrigiera.
